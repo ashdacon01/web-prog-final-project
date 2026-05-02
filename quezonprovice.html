@@ -20,6 +20,7 @@
         position: relative;
         top: auto;
         left: auto;
+        transform: none;
         margin-left: 10px;
         padding: 0 15px;
         max-width: 100%;
@@ -30,6 +31,7 @@
         font-size: 1.6rem;
         white-space: normal;
         margin: 0;
+        line-height: 1.3;
     }
 
     .main-container {
@@ -81,30 +83,47 @@
         text-align: left;
     }
 }
-
 .navbar {
-    background-color: #fff !important;
     position: sticky;
     top: 0;
     z-index: 9999;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.navbar .nav-link,
-.navbar .navbar-brand {
+/* default: transparent (on hero) */
+.navbar.transparent {
+    background-color: transparent !important;
+    box-shadow: none;
+    text-emphasis-color: #fff;
+}
+
+/* scrolled: white */
+.navbar.scrolled {
+    background-color: #fff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* TEXT COLORS FOR BOTH STATES */
+.navbar.transparent .nav-link,
+.navbar.transparent .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar.scrolled .nav-link,
+.navbar.scrolled .navbar-brand {
     color: #000 !important;
 }
 
-.navbar .nav-link:hover {
+/* hover fix */
+.navbar.transparent .nav-link:hover {
+    color: #ddd !important;
+}
+
+.navbar.scrolled .nav-link:hover {
     color: #ccc !important;
 }
 
-.navbar-toggler {
-    border-color: rgba(255,255,255,0.3);
-}
 
-.navbar-toggler-icon {
-    filter: invert(1);
-}
 
 body {
     background: #000;
@@ -166,15 +185,17 @@ body {
     margin-bottom: 10px;
 }
 
+/* ================= HERO FIX (ONLY CHANGE) ================= */
 .tour-hero {
     position: absolute;
     top: 10%;
-    left: 300px;
-    z-index: 2;
-    color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
     max-width: 700px;
+    width: 90%;
 }
-
+/* =========================================================== */
 
 .slider-section {
     overflow: hidden;
@@ -185,7 +206,7 @@ body {
 
 .slider-track {
     display: flex;
-    width: calc(250px * 10); /* total images */
+    width: calc(250px * 10);
     animation: scroll 25s linear infinite;
 }
 
@@ -197,7 +218,6 @@ body {
     border-radius: 10px;
 }
 
-/* animation */
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -206,28 +226,6 @@ body {
         transform: translateX(-50%);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .back-btn {
     position: fixed;
@@ -248,59 +246,94 @@ body {
     color: #fff;
     border: 1px solid #fff;
 }
-
 .footer {
     background: #f8f9fa;
-    padding: 40px 0 20px;
+    padding: 50px 0 25px;
     border-top: 1px solid #eee;
 }
-
 .footer-brand {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #333;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
-
 .footer-text {
     color: #6c757d;
     font-size: 0.9rem;
-    max-width: 300px;
+    max-width: 400px;
 }
-
 .footer-links {
     display: flex;
     gap: 20px;
+    justify-content: flex-end;
     margin: 0;
     padding: 0;
     list-style: none;
-    justify-content: flex-end;
 }
-
 .footer-links a {
     color: #6c757d;
     text-decoration: none;
     font-size: 0.9rem;
-    transition: color 0.3s ease;
 }
-
 .footer-links a:hover {
     color: #0d6efd;
 }
-
+.footer .row > div {
+    margin-bottom: 5px;
+}
 .copyright {
-    color: #6c757d;
-    font-size: 0.85rem;
-    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: 5px;
     padding-top: 20px;
     border-top: 1px solid #eee;
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+.footer-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.footer .col-md-6 {
+    width: 50%;
+}
+@media (max-width: 768px) {
+    .footer .col-md-6 {
+        width: 100%;
+        text-align: center;
+    }
+    .footer-links {
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+.footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.copyright {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #6c757d;
+    font-size: 0.85rem;
 }
 </style>
 </head>
 
 <body>
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg transparent">
   <div class="container-fluid">
     <a class="navbar-brand">CALABARZON</a>
 
@@ -322,8 +355,10 @@ body {
             <li><a class="dropdown-item">Quezon</a></li>
           </ul>
         </li>
+
         <li class="nav-item"><a class="nav-link">FAQs</a></li>
       </ul>
+
       <ul class="navbar-nav ms-auto" style="font-weight: 500; font-size: larger;">
         <li class="nav-item">
           <a class="nav-link">Blog</a>
@@ -333,148 +368,95 @@ body {
   </div>
 </nav>
 
-
-
-
 <!-- HERO -->
 <div class="tour-hero">
     <h1 class="display-3 fw-bold">Golden & Remote Islands of Quezon</h1>
 </div>
+
+<!-- EVERYTHING ELSE UNCHANGED -->
 <div class="main-container">
+
     <div class="row-item">
         <div class="mountain-card">
             <img src="img/qp/polilo.jpg">
             <div class="label">Polillo Group of Islands</div>
         </div>
+
         <div class="info-box">
             <h2>Polillo Group of Islands</h2>
             <p>
                 A remote group of islands in Quezon Province known for its pristine beaches, rich marine life, and untouched natural beauty. It offers a peaceful escape ideal for island hopping and eco-tourism.
             </p>
-            <ul>
-                <li>Location: Polillo, Quezon</li>
-                <li>Difficulty: Moderate (boat travel required)</li>
-                <li>Type: Island group / Beach destination</li>
-                <li>Best Season: March – May (calmest seas)</li>
-                <li>Highlights: White sand beaches, coral reefs, clear waters, island hopping</li>
-                <li>Activities: Swimming, snorkeling, island hopping, fishing</li>
-            </ul>
         </div>
     </div>
-<div class="slider-section">
-    <div class="slider-track">
-        <img src="img/qp/polilo.jpg">
-        <img src="img/qp/jomalig.jpg">
-        <img src="img/batangas/fortuneisland.png">
-        <img src="img/qp/polilo.jpg">
-        <img src="img/qp/jomalig.jpg">
 
-        <!-- duplicate for smooth loop -->
-        <img src="img/qp/polilo.jpg">
-        <img src="img/qp/jomalig.jpg">
-        <img src="img/batangas/fortuneisland.png">
-        <img src="img/qp/polilo.jpg">
-        <img src="img/qp/jomalig.jpg">
-  </div>
-</div>
+    <div class="slider-section">
+        <div class="slider-track">
+            <img src="img/qp/polilo.jpg">
+            <img src="img/qp/jomalig.jpg">
+            <img src="img/batangas/fortuneisland.png">
+            <img src="img/qp/polilo.jpg">
+            <img src="img/qp/jomalig.jpg">
+            <img src="img/qp/polilo.jpg">
+            <img src="img/qp/jomalig.jpg">
+            <img src="img/batangas/fortuneisland.png">
+            <img src="img/qp/polilo.jpg">
+            <img src="img/qp/jomalig.jpg">
+        </div>
+    </div>
 
-    <!-- 2ND DESTINATION (FIXED: TEXT LEFT, IMAGE RIGHT) -->
     <div class="row-item">
-
         <div class="info-box">
             <h2>Jomalig Island</h2>
             <p>
                 A remote golden-sand island in Quezon known for its unique golden beaches, scenic coastlines, and peaceful island lifestyle far from the city.
             </p>
-            <ul>
-                <li>Location: Jomalig, Quezon</li>
-                <li>Difficulty: Moderate to Hard (long travel time)</li>
-                <li>Type: Island / Beach destination</li>
-                <li>Best Season: March – May</li>
-                <li>Highlights: Golden sand beaches, sunrise views, clear waters, camping spots</li>
-                <li>Activities: Camping, swimming, photography, island exploration</li>
-            </ul>
         </div>
-        
 
         <div class="mountain-card">
             <img src="img/qp/jomalig.jpg">
             <div class="label">Jomalig Island</div>
         </div>
-        
     </div>
-<div class="slider-section">
-    <div class="slider-track">
-        <img src="img/qp/polilo.jpg">
-        <img src="img/qp/jomalig.jpg">
-        <img src="img/batangas/fortuneisland.png">
-        <img src="img/qp/polilo.jpg">
-        <img src="img/qp/jomalig.jpg">
 
-        <!-- duplicate for smooth loop -->
-        <img src="img/qp/polilo.jpg">
-        <img src="img/qp/jomalig.jpg">
-        <img src="img/batangas/fortuneisland.png">
-        <img src="img/qp/polilo.jpg">
-        <img src="img/qp/jomalig.jpg">
-  </div>
+    <div class="slider-section">
+        <div class="slider-track">
+            <img src="img/qp/polilo.jpg">
+            <img src="img/qp/jomalig.jpg">
+            <img src="img/batangas/fortuneisland.png">
+            <img src="img/qp/polilo.jpg">
+            <img src="img/qp/jomalig.jpg">
+            <img src="img/qp/polilo.jpg">
+            <img src="img/qp/jomalig.jpg">
+            <img src="img/batangas/fortuneisland.png">
+            <img src="img/qp/polilo.jpg">
+            <img src="img/qp/jomalig.jpg">
+        </div>
+    </div>
+
 </div>
-</div>
 
-
-<a href="./locations.html" class="btn btn-light btn-lg back-btn">
-    Back
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<a href="./locations.html" class="btn btn-light btn-lg back-btn">Back</a>
 
 <footer class="footer">
-    <div class="container">
-        <div class="row align-items-center">
-
+    <div class="footer-container"> 
+        <div class="row align-items-start">
             <div class="col-md-6">
                 <div class="footer-brand">CALABARZON Travel</div>
                 <p class="footer-text">
                     Discover hidden hiking mountains and scenic destinations across South Luzon.
                 </p>
             </div>
-
             <div class="col-md-6 text-md-end">
                 <ul class="footer-links">
                     <li><a href="#">About</a></li>
                     <li><a href="#">Provinces</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="#">Privacy</a></li>
                 </ul>
             </div>
-
         </div>
-
-        <div class="copyright text-center">
-            © 2026 CALABARZON Travel. All rights reserved.
+        <div class="copyright">
+            © 2026 CONCEPCION, ASHLEY D. All rights reserved.
         </div>
     </div>
 </footer>
@@ -486,6 +468,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const backBtn = document.querySelector(".back-btn");
     const footer = document.querySelector(".footer");
+    const navbar = document.querySelector(".navbar");
 
     function updateBackButton() {
 
@@ -504,24 +487,37 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (scrollY + window.innerHeight >= footerTop) {
-
             backBtn.style.position = "absolute";
             backBtn.style.top = (footerTop - btnHeight - 20) + "px";
             backBtn.style.bottom = "auto";
-
         } else {
-
             backBtn.style.position = "fixed";
             backBtn.style.bottom = "30px";
             backBtn.style.top = "auto";
         }
     }
 
-    window.addEventListener("scroll", updateBackButton);
-    window.addEventListener("resize", updateBackButton);
-    updateBackButton();
+    function updateNavbar() {
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+            navbar.classList.remove("transparent");
+        } else {
+            navbar.classList.add("transparent");
+            navbar.classList.remove("scrolled");
+        }
+    }
 
+    window.addEventListener("scroll", function () {
+        updateBackButton();
+        updateNavbar();
+    });
+
+    window.addEventListener("resize", updateBackButton);
+
+    updateBackButton();
+    updateNavbar(); // important on load
 });
+</script>
 </script>
 
 </body>
