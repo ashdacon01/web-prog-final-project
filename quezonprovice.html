@@ -32,12 +32,10 @@
         margin: 0;
     }
 
-    /* CRITICAL FIX: override desktop offset */
     .main-container {
         display: flex;
         flex-direction: column;
         gap: 30px;
-
         margin: 100px auto 80px auto !important;
         margin-left: 0 !important;
         padding: 0 15px;
@@ -53,7 +51,6 @@
         margin-bottom: 35px;
     }
 
-    /* override fixed 600px width */
     .mountain-card {
         width: 85% !important;
         max-width: 340px;
@@ -62,7 +59,6 @@
         overflow: hidden;
     }
 
-    /* override fixed 500px height */
     .mountain-card img {
         width: 100%;
         height: auto;
@@ -85,10 +81,6 @@
         text-align: left;
     }
 }
-
-
-
-
 
 .navbar {
     background-color: #fff !important;
@@ -114,49 +106,22 @@
     filter: invert(1);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 body {
     background: #000;
     margin: 0;
     color: white;
 }
 
-/* container */
 .main-container {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-top: 220px;
-    margin-bottom: 150px;
-    margin-left: 100px;
+
+    margin: 220px auto 150px auto;
+    max-width: 1200px;             
+    padding: 0 20px;               
 }
 
-/* EACH ROW */
 .row-item {
     display: flex;
     align-items: center;
@@ -164,7 +129,6 @@ body {
     margin-bottom: 60px;
 }
 
-/* LEFT IMAGE */
 .mountain-card {
     width: 600px;
     cursor: pointer;
@@ -190,7 +154,6 @@ body {
     font-weight: 500;
 }
 
-/* RIGHT INFO */
 .info-box {
     flex: 1;
 }
@@ -203,15 +166,65 @@ body {
     margin-bottom: 10px;
 }
 
-/* HERO */
 .tour-hero {
     position: absolute;
     top: 10%;
-    left: 5%;
+    left: 300px;
     z-index: 2;
     color: #fff;
     max-width: 700px;
 }
+
+
+.slider-section {
+    overflow: hidden;
+    width: 100%;
+    margin: 80px 0;
+    margin-top: -70px;
+}
+
+.slider-track {
+    display: flex;
+    width: calc(250px * 10); /* total images */
+    animation: scroll 25s linear infinite;
+}
+
+.slider-track img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+
+/* animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -236,14 +249,6 @@ body {
     border: 1px solid #fff;
 }
 
-
-
-
-
-
-
-
-
 .footer {
     background: #f8f9fa;
     padding: 40px 0 20px;
@@ -262,7 +267,6 @@ body {
     font-size: 0.9rem;
     max-width: 300px;
 }
-
 
 .footer-links {
     display: flex;
@@ -296,7 +300,6 @@ body {
 
 <body>
 
-
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand">CALABARZON</a>
@@ -319,10 +322,8 @@ body {
             <li><a class="dropdown-item">Quezon</a></li>
           </ul>
         </li>
-
         <li class="nav-item"><a class="nav-link">FAQs</a></li>
       </ul>
-
       <ul class="navbar-nav ms-auto" style="font-weight: 500; font-size: larger;">
         <li class="nav-item">
           <a class="nav-link">Blog</a>
@@ -335,23 +336,16 @@ body {
 
 
 
-
-
-
 <!-- HERO -->
 <div class="tour-hero">
     <h1 class="display-3 fw-bold">Golden & Remote Islands of Quezon</h1>
 </div>
-
-
 <div class="main-container">
-
     <div class="row-item">
         <div class="mountain-card">
             <img src="img/qp/polilo.jpg">
             <div class="label">Polillo Group of Islands</div>
         </div>
-
         <div class="info-box">
             <h2>Polillo Group of Islands</h2>
             <p>
@@ -367,12 +361,25 @@ body {
             </ul>
         </div>
     </div>
+<div class="slider-section">
+    <div class="slider-track">
+        <img src="img/qp/polilo.jpg">
+        <img src="img/qp/jomalig.jpg">
+        <img src="img/batangas/fortuneisland.png">
+        <img src="img/qp/polilo.jpg">
+        <img src="img/qp/jomalig.jpg">
 
+        <!-- duplicate for smooth loop -->
+        <img src="img/qp/polilo.jpg">
+        <img src="img/qp/jomalig.jpg">
+        <img src="img/batangas/fortuneisland.png">
+        <img src="img/qp/polilo.jpg">
+        <img src="img/qp/jomalig.jpg">
+  </div>
+</div>
+
+    <!-- 2ND DESTINATION (FIXED: TEXT LEFT, IMAGE RIGHT) -->
     <div class="row-item">
-        <div class="mountain-card">
-            <img src="img/qp/jomalig.jpg">
-            <div class="label">Jomalig Island</div>
-        </div>
 
         <div class="info-box">
             <h2>Jomalig Island</h2>
@@ -388,17 +395,60 @@ body {
                 <li>Activities: Camping, swimming, photography, island exploration</li>
             </ul>
         </div>
+        
+
+        <div class="mountain-card">
+            <img src="img/qp/jomalig.jpg">
+            <div class="label">Jomalig Island</div>
+        </div>
+        
     </div>
+<div class="slider-section">
+    <div class="slider-track">
+        <img src="img/qp/polilo.jpg">
+        <img src="img/qp/jomalig.jpg">
+        <img src="img/batangas/fortuneisland.png">
+        <img src="img/qp/polilo.jpg">
+        <img src="img/qp/jomalig.jpg">
 
+        <!-- duplicate for smooth loop -->
+        <img src="img/qp/polilo.jpg">
+        <img src="img/qp/jomalig.jpg">
+        <img src="img/batangas/fortuneisland.png">
+        <img src="img/qp/polilo.jpg">
+        <img src="img/qp/jomalig.jpg">
+  </div>
+</div>
 </div>
 
 
-
-
-</div>
 <a href="./locations.html" class="btn btn-light btn-lg back-btn">
     Back
 </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <footer class="footer">
@@ -445,7 +495,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const footerRect = footer.getBoundingClientRect();
 
-        // MODE SWITCH (dark/light based on footer visibility)
         if (footerRect.top < window.innerHeight - 80) {
             backBtn.classList.add("light-mode");
             backBtn.classList.remove("dark-mode");
@@ -454,7 +503,6 @@ document.addEventListener("DOMContentLoaded", function () {
             backBtn.classList.remove("light-mode");
         }
 
-        // STOP AT FOOTER (no overlap)
         if (scrollY + window.innerHeight >= footerTop) {
 
             backBtn.style.position = "absolute";
