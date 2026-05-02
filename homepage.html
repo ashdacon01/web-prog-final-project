@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homepage</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+@media (max-width: 768px) {
+    .tour-hero {
+        left: 5%;
+        right: 5%;
+        max-width: 100%;
+    }
+    .tour-hero h1 {
+        font-size: 2rem;
+    }
+    .tour-hero p {
+        font-size: 1rem;
+    }
+    .footer .row {
+        text-align: center;
+    }
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 15px;
+    }
+    .social-links {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+/* =========================
+   GLOBAL RESET / BASE STYLE
+========================= */
+html, body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR SECTION
+========================= */
+.navbar {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: 0.4s ease;
+}
+.navbar.scrolled {
+    background: #000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: #fff !important;
+}
+.navbar .nav-link:hover {
+    color: #ccc !important;
+}
+
+
+/* =========================
+   HERO SECTION (MAIN TOP)
+========================= */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+.hero-image {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.hero-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+.tour-hero {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: #fff;
+    max-width: 700px;
+}
+
+/* =========================
+   HERO SECTION (SECOND / SLIDER)
+========================= */
+.hero-section {
+    height: 900px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero-bg {
+    position: absolute;
+    inset: 0;
+}
+.bg-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.bg-track img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(14px);
+    transform: scale(1.25);
+    opacity: 0;
+    transition: 1.5s ease-in-out;
+}
+.bg-track img.active {
+    opacity: 1;
+}
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+}
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+/* LEFT HERO CARD */
+.hero-card {
+    background: rgba(101, 176, 238, 0.92);
+    padding: 40px;
+    width: 600px;
+    height: 420px;
+    transform: translateX(40px);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* HERO BUTTON */
+.hero-btn {
+    position: absolute;
+    right: 30px;
+    margin-top: 320px;
+    padding: 10px;
+    width: 160px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+}
+/* RIGHT SLIDER */
+.hero-slider {
+    width: 45%;
+    height: 420px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    transform: translateX(-20px);
+}
+.slide-track img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.slide-track img.active {
+    opacity: 1;
+}
+
+/* =========================
+   SPECIALS SECTION (PROPER CENTER)
+========================= */
+.section {
+    padding: 60px 80px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+.section h1 {
+    color: #c9a46c;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+/* =========================
+   CENTER WRAPPER (KEY FIX)
+========================= */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+
+    width: fit-content;     /* 🔥 important */
+    margin: 0 auto;         /* 🔥 true centering */
+}
+.tab {
+    padding: 14px 16px;
+    cursor: pointer;
+    color: #ccc;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+}
+.tab:hover {
+    color: #fff;
+    border: 1px solid rgba(201, 164, 108, 0.4);
+    background: rgba(201, 164, 108, 0.08);
+}
+.tab.active {
+    background: #c9a46c;
+    color: #000;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(201, 164, 108, 0.3);
+}
+
+/* =========================
+   CONTENT (NO STRETCH)
+========================= */
+.content {
+    width: 320px;           /* 🔥 fixed width */
+    border-left: 2px solid #c9a46c;
+    padding-left: 30px;
+    text-align: left;
+}
+
+/* =========================
+   IMAGE
+========================= */
+.image {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;         /* 🔥 prevents flex distortion */
+}
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================
+   FESTIVAL SECTION
+========================= */
+.festival-section {
+    padding: 60px 20px;
+    background: #0f0f0f;
+    color: #fff;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.festival-title {
+    color: #c9a46c;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+/* GRID */
+.festival-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* CARD */
+.festival-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.festival-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(201,164,108,0.5);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* TEXT */
+.festival-card h2 {
+    color: #c9a46c;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.festival-card h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.festival-card .date {
+    color: #c9a46c;
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+.festival-card p {
+    font-size: 13px;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .festival-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   FOOTER SECTION
+========================= */
+.footer {
+    background: #f8f9fa;
+    padding: 50px 0 25px;
+    border-top: 1px solid #eee;
+}
+.footer-brand {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+.footer-text {
+    color: #6c757d;
+    font-size: 0.9rem;
+    max-width: 400px;
+}
+.footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.footer-links a {
+    color: #6c757d;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.footer-links a:hover {
+    color: #0d6efd;
+}
+.footer .row > div {
+    margin-bottom: 15px;
+}
+.copyright {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+.footer-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* force proper row behavior */
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/* columns behave like bootstrap again */
+.footer .col-md-6 {
+    width: 50%;
+}
+@media (max-width: 768px) {
+    .footer .col-md-6 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+.footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.copyright {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+/* =========================
+   RESPONSIVE FIXES (SAFE)
+========================= */
+@media (max-width: 992px) {
+
+    /* HERO SECTION 2 (stack instead of side-by-side) */
+    .hero-overlay {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+    .hero-card {
+        width: 100%;
+        height: auto;
+        transform: none;
+    }
+    .hero-slider {
+        width: 100%;
+        height: 300px;
+        transform: none;
+    }
+    .hero-btn {
+        position: static;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .hero-section {
+        height: auto;
+        padding: 60px 0;
+    }
+    /* SPECIALS SECTION (stack layout) */
+    .section .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .content {
+        width: 100%;
+        border-left: none;
+        padding-left: 0;
+        text-align: center;
+    }
+    .image {
+        width: 250px;
+        height: 250px;
+    }
+}
+@media (max-width: 576px) {
+    .tour-hero h1 {
+        font-size: 1.6rem;
+    }
+    .tour-hero p {
+        font-size: 0.9rem;
+    }
+    .section {
+        padding: 40px 20px;
+    }
+    .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .tab {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .image {
+        width: 200px;
+        height: 200px;
+    }
+}
+</style>
+
+<body>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand">CALABARZON</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Provinces</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item">Cavite</a></li>
+            <li><a class="dropdown-item">Laguna</a></li>
+            <li><a class="dropdown-item">Batangas</a></li>
+            <li><a class="dropdown-item">Rizal</a></li>
+            <li><a class="dropdown-item">Quezon</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link">FAQs</a></li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="hero">
+    <div class="hero-image">
+        <img src="img/qp/Bundok_Banahawss.jpg" alt="Mount Banahaw">
+    </div>
+    <div class="tour-hero">
+        <h1 class="display-3 fw-bold">
+            Discover Hidden Hiking Mountains and Waterfalls in South Luzon
+        </h1>
+        <p class="lead">Cavite • Laguna • Batangas • Rizal • Quezon</p>
+    </div>
+</div>
+<section class="hero-section">
+    <div class="hero-bg">
+        <div class="bg-track">
+            <img src="img/qp/jomalig.jpg" alt="">
+            <img src="img/batangas/fortuneisland.png" alt="">
+            <img src="img/qp/polilo.jpg" alt="">
+        </div>
+    </div>
+    <div class="hero-overlay">
+        <div class="hero-card">
+            <h6>CALABARZON REGION</h6>
+            <h1>RICH CULTURE & DESTINATIONS</h1>
+            <p>
+                CALABARZON (Cavite, Laguna, Batangas, Rizal, and Quezon) is a vibrant region in Southern Luzon
+                known for its historical landmarks, natural attractions, thriving industries, and diverse culture.
+            </p>
+            <button class="hero-btn">Explore Now</button>
+        </div>
+        <div class="hero-slider">
+            <div class="slide-track">
+                <img src="img/qp/jomalig.jpg" alt="">
+                <img src="img/batangas/fortuneisland.png" alt="">
+                <img src="img/qp/polilo.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section">
+  <h1>SPECIALS</h1>
+  <div class="container">
+    <div class="tabs">
+        <div class="tab" onclick="showTab('cavite', 'img/cavite.jpg')">Cavite</div>
+        <div class="tab active" onclick="showTab('laguna', 'img/bukopiess.png')">Laguna</div>
+        <div class="tab" onclick="showTab('batangas', 'img/batangas.jpg')">Batangas</div>
+        <div class="tab" onclick="showTab('rizal', 'img/bukopiess.png')">Rizal</div>
+        <div class="tab" onclick="showTab('quezon', 'img/quezon.jpg')">Quezon</div>
+    </div>
+    <div class="content">
+      <div class="tab-content active" id="laguna">
+        <div class="tab-content" id="cavite">
+        <h3>Cavite Favorites</h3>
+        <p>
+          <strong>Bacalao</strong> – Salted fish stew.<br><br>
+        </p>
+      </div>
+        <h3>Laguna Favorites</h3>
+        <p>
+          <strong>Buko Pie</strong> – Creamy coconut dessert with flaky crust.<br><br>
+        </p>
+      </div>
+      <div class="tab-content" id="batangas">
+        <h3>Batangas Favorites</h3>
+        <p>
+          <strong>Bulalo</strong> – Rich beef marrow soup.<br><br>
+        </p>
+      </div>
+      <div class="tab-content" id="rizal">
+        <h3>Rizal Favorites</h3>
+        <p>
+          <strong>Suman</strong> – Sticky rice in banana leaves.<br><br>
+        </p>
+      </div>
+      <div class="tab-content" id="quezon">
+        <h3>Quezon Favorites</h3>
+        <p>
+          <strong>Pancit Habhab</strong> – Noodles eaten without utensils.<br><br>
+        </p>
+      </div>
+    </div>
+    <div class="image">
+      <img id="provinceImage" src="img/bukopiess.png" alt="Calabarzon Food">
+    </div>
+  </div>
+</section>
+
+<section class="festival-section">
+  <h1 class="festival-title">CALABARZON FESTIVAL CALENDAR</h1>
+
+  <div class="festival-grid">
+
+    <div class="festival-card">
+      <h2>Laguna</h2>
+      <h3>Anilag Festival</h3>
+      <p class="date">March 15</p>
+      <p>Showcases culture, agriculture, and traditions of Laguna.</p>
+    </div>
+
+    <div class="festival-card">
+      <h2>Quezon</h2>
+      <h3>Pahiyas Festival</h3>
+      <p class="date">May 15</p>
+      <p>Colorful harvest festival decorated with rice, fruits, and kiping.</p>
+    </div>
+
+    <div class="festival-card">
+      <h2>Batangas</h2>
+      <h3>Parada ng Lechon</h3>
+      <p class="date">June 24</p>
+      <p>Festive parade of roasted pigs during St. John the Baptist feast.</p>
+    </div>
+
+    <div class="festival-card">
+      <h2>Cavite</h2>
+      <h3>Regada Festival</h3>
+      <p class="date">August 25</p>
+      <p>Water festival featuring street games and celebrations.</p>
+    </div>
+
+    <div class="festival-card">
+      <h2>Rizal</h2>
+      <h3>Sumaka Festival</h3>
+      <p class="date">November 23</p>
+      <p>Celebrates local products like suman, mango, and cashew.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<footer class="footer">
+    <div class="footer-container"> 
+        <div class="row align-items-start">
+            
+            <div class="col-md-6">
+                <div class="footer-brand">CALABARZON Travel</div>
+                <p class="footer-text">
+                    Discover hidden hiking mountains and scenic destinations across South Luzon.
+                </p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <ul class="footer-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Provinces</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 CONCEPCION, ASHLEY D. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+});
+const fgImages = document.querySelectorAll(".slide-track img");
+const bgImages = document.querySelectorAll(".bg-track img");
+let index = 0;
+function changeSlides() {
+    fgImages.forEach(img => img.classList.remove("active"));
+    bgImages.forEach(img => img.classList.remove("active"));
+    fgImages[index].classList.add("active");
+    bgImages[index].classList.add("active");
+    index = (index + 1) % fgImages.length;
+}
+changeSlides();
+setInterval(changeSlides, 5000);
+</script>
+
+<script>
+function showTab(tabId, imgSrc) {
+  document.querySelectorAll('.tab-content')
+    .forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab')
+    .forEach(el => el.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  event.target.classList.add('active');
+  document.getElementById('provinceImage').src = imgSrc;
+}
+</script>
+</body>
+</html>
