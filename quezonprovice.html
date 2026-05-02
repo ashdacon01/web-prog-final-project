@@ -218,6 +218,148 @@ body {
         transform: translateX(-50%);
     }
 }
+/* =========================
+   SPLIT FEATURE SECTION ONLY
+========================= */
+.split-feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+
+    max-width: 1200px;
+    margin: 0 auto 120px auto;
+    padding: 70px 50px;
+
+    background: #ffffff;   /* separates from black bg */
+    color: #111;
+
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* LEFT TEXT */
+.split-text {
+    flex: 1;
+}
+
+.split-text .sub {
+    color: #777;
+    letter-spacing: 2px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.split-text h2 {
+    font-size: 2.5rem;
+    margin: 10px 0 20px;
+    color: #111;
+}
+
+.split-text p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* MINI GRID */
+.mini-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.mini-box {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.mini-box img {
+    width: 30px;
+    margin-bottom: 10px;
+}
+
+.mini-box h4 {
+    color: #111;
+    margin: 5px 0;
+}
+
+.mini-box p {
+    color: #555;
+    font-size: 14px;
+}
+
+.split-images {
+    flex: 0 0 420px;   /* 🔥 HARD LOCK WIDTH (THIS IS THE FIX) */
+    height: 420px;
+
+    position: relative;
+}
+/* MAIN IMAGE MUST ALWAYS FILL SPACE */
+.img-main {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    border-radius: 15px;
+
+    display: block;
+
+    transition: opacity 0.25s ease;
+
+    flex-shrink: 0; /* safety */
+}
+
+.img-small {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #fff;
+}
+
+/* floating images */
+.img-1 {
+    bottom: -20px;
+    left: -20px;
+}
+
+.img-2 {
+    top: -20px;
+    right: -20px;
+}
+.img-main {
+    transition: opacity 0.3s ease;
+}
+
+/* =========================
+   MOBILE RESPONSIVE ONLY FOR THIS SECTION
+========================= */
+@media (max-width: 768px) {
+
+    .split-feature {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .mini-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .split-images {
+        width: 100%;
+        min-height: 300px;
+    }
+
+    .img-small {
+        width: 120px;
+        height: 120px;
+    }
+}
+
 
 .back-btn {
     position: fixed;
@@ -421,8 +563,52 @@ body {
         </div>
     </div>
 
-</div>
 
+<section class="split-feature">
+
+    <div class="split-text">
+        <small class="sub">QUEZON PROVINCE CUISINE</small>
+        <h2>Local Food Delicacies</h2>
+
+        <p>
+            Quezon Province is known for its rich and comforting Filipino dishes 
+            that reflect its coastal and agricultural lifestyle.
+        </p>
+
+        <div class="mini-grid">
+
+            <!-- CLICKABLE ITEM 1 -->
+            <div class="mini-box" onclick="changeFoodImage('img/qp/ginataang.jpg')">
+                <img src="https://img.icons8.com/ios/50/1f3d36/coconut.png">
+                <h4>Ginataang Sariwa</h4>
+                <p>Fresh vegetables and seafood cooked in coconut milk.</p>
+            </div>
+
+            <!-- CLICKABLE ITEM 2 -->
+            <div class="mini-box" onclick="changeFoodImage('img/qp/sinantol.jpg')">
+                <img src="https://img.icons8.com/ios/50/1f3d36/fish.png">
+                <h4>Sinantol</h4>
+                <p>Santol cooked in creamy coconut sauce with shrimp or pork.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="split-images">
+        <!-- MAIN IMAGE (THIS WILL CHANGE) -->
+        <img class="img-main" id="foodMainImage" src="img/qp/jomalig.jpg">
+
+        <img class="img-small img-1" src="img/qp/polilo.jpg">
+        <img class="img-small img-2" src="img/batangas/fortuneisland.png">
+    </div>
+
+</section>
+
+
+
+
+
+</div>
 <a href="./locations.html" class="btn btn-light btn-lg back-btn">Back</a>
 
 <footer class="footer">
@@ -504,7 +690,20 @@ document.addEventListener("DOMContentLoaded", function () {
     updateBackButton();
     updateNavbar();
 });
+
+
+function changeFoodImage(imagePath) {
+    const img = document.getElementById("foodMainImage");
+
+    img.style.opacity = 0;
+
+    setTimeout(() => {
+        img.src = imagePath;
+        img.style.opacity = 1;
+    }, 200);
+}
 </script>
+
 
 </body>
 </html>
