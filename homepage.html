@@ -592,41 +592,40 @@ html, body {
   <h1>SPECIALS</h1>
   <div class="container">
     <div class="tabs">
-        <div class="tab" onclick="showTab('cavite', 'img/cavite.jpg')">Cavite</div>
-        <div class="tab active" onclick="showTab('laguna', 'img/bukopiess.png')">Laguna</div>
+        
+        <div class="tab active" onclick="showTab('cavite', 'img/bukopiess.png')">Cavite</div>
+        <div class="tab" onclick="showTab('cavite', ' ')">Laguna</div>
         <div class="tab" onclick="showTab('batangas', 'img/batangas.jpg')">Batangas</div>
         <div class="tab" onclick="showTab('rizal', 'img/bukopiess.png')">Rizal</div>
         <div class="tab" onclick="showTab('quezon', 'img/quezon.jpg')">Quezon</div>
     </div>
     <div class="content">
-      <div class="tab-content active" id="laguna">
+      <div class="tab-content active" id="cavite">
         <div class="tab-content" id="cavite">
-        <h3>Cavite Favorites</h3>
+        <h3 onclick="window.location.href='cavite.html#food'" style="cursor:pointer;">Cavite Favorites</h3>
         <p>
           <strong>Bacalao</strong> – Salted fish stew.<br><br>
         </p>
       </div>
-        <h3>Laguna Favorites</h3>
+        <h3 onclick="window.location.href='laguna.html#food'" style="cursor:pointer;">Laguna Favorites</h3>
         <p>
           <strong>Buko Pie</strong> – Creamy coconut dessert with flaky crust.<br><br>
         </p>
       </div>
       <div class="tab-content" id="batangas">
-        <h3>Batangas Favorites</h3>
+        <h3 onclick="window.location.href='batangas.html#food'" style="cursor:pointer;">Batangas Favorites</h3>
         <p>
           <strong>Bulalo</strong> – Rich beef marrow soup.<br><br>
         </p>
       </div>
       <div class="tab-content" id="rizal">
-        <h3>Rizal Favorites</h3>
+        <h3 onclick="window.location.href='rizal.html#food'" style="cursor:pointer;">Rizal Favorites</h3>
         <p>
           <strong>Suman</strong> – Sticky rice in banana leaves.<br><br>
         </p>
       </div>
       <div class="tab-content" id="quezon">
-        <h3 onclick="window.location.href='quezonprovince.html#food'" style="cursor:pointer;">
-  Quezon Favorites
-</h3>
+        <h3 onclick="window.location.href='quezonprovince.html#food'" style="cursor:pointer;">Quezon Favorites</h3>
         <p>
           <strong>Pancit Habhab</strong> – Noodles eaten without utensils.<br><br>
           
