@@ -220,7 +220,7 @@ html, body {
 }
 body {
     margin: 0;
-    background: #000;
+    background: linear-gradient(145deg, #121212, #0e0e0e);
 }
 .section::before,
 .section::after {
@@ -502,33 +502,44 @@ body {
 
 
 
-
-
 /* SECTION */
+
+#faqs {
+    scroll-margin-top: 90px;
+}
 .faq-section {
     max-width: 950px;
-    margin: 50px auto 10px; 
+    margin: 50px auto 10px;
     text-align: center;
     color: #fff;
-    padding-bottom: 80px; 
+    padding-bottom: 80px;
 }
+
 .faq-section h1 {
     font-size: 42px;
     margin-bottom: 15px;
 }
+
 .faq-section p {
     font-size: 16px;
     color: #b0c4d4;
     margin-bottom: 60px;
 }
+
+/* FAQ BOX (MATCH FESTIVAL STYLE) */
 .faq {
-    background: #1f2c3a;
+    background: linear-gradient(145deg, #121212, #0e0e0e);
     border-radius: 10px;
-    overflow: hidden; 
+    overflow: hidden;
+    border: 1px solid rgba(214,180,106,0.18);
 }
+
+/* ITEM */
 .faq-item {
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
+
+/* QUESTION */
 .faq-question {
     width: 100%;
     background: none;
@@ -537,11 +548,12 @@ body {
     color: #dbe9f4;
     text-align: left;
     padding: 22px 30px;
-    font-size: 17px;
+    font-size: 14px;
     cursor: pointer;
     position: relative;
 }
 
+/* ARROW */
 .faq-question::after {
     content: "▾";
     position: absolute;
@@ -550,10 +562,12 @@ body {
     transition: transform 0.3s;
 }
 
+/* ACTIVE */
 .faq-item.active .faq-question::after {
     transform: rotate(180deg);
 }
 
+/* ANSWER */
 .faq-answer {
     max-height: 0;
     overflow: hidden;
@@ -566,6 +580,7 @@ body {
 .faq-item.active .faq-answer {
     max-height: 300px;
 }
+
 .faq-answer p {
     margin: 20px 0;
     font-size: 15px;
@@ -574,35 +589,46 @@ body {
 }
 
 /* ============================*/
-/* SUGGESTION (FIXED PROPERLY) */
+/* SUGGESTION */
 /* =========================== */
 
 .suggestion-item {
     margin-top: 50px;
-    background: #1f2c3a;        
-    border-radius: 10px;        
-    overflow: hidden;        
-    border: 1px solid rgba(255,255,255,0.05);
+    background: linear-gradient(145deg, #121212, #0e0e0e);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(214,180,106,0.18);
 }
+
+/* remove arrow */
 .no-arrow::after {
     display: none;
 }
+
+/* suggestion box content */
 .suggestion-item .faq-answer {
-    max-height: none !important;
-    overflow: visible !important;
+    max-height: none;
+    overflow: visible;
     padding: 30px;
-    background: #243545;
+    background: transparent;
 }
+
+/* text */
 .suggestion-content p {
     margin: 0 0 15px;
     font-size: 15px;
     color: #bcd0df;
+    line-height: 1.6;
 }
+
+/* form */
 .suggestion-content form {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
+
+/* inputs */
 .suggestion-content input,
 .suggestion-content textarea {
     width: 100%;
@@ -612,11 +638,16 @@ body {
     background: #243545;
     color: #fff;
     font-size: 14px;
+    font-family: inherit;
 }
+
+/* placeholder */
 .suggestion-content input::placeholder,
 .suggestion-content textarea::placeholder {
     color: #8fa6b8;
 }
+
+/* button */
 .suggestion-content button {
     align-self: flex-start;
     background: #c9a46c;
@@ -628,9 +659,15 @@ body {
     cursor: pointer;
     transition: 0.3s;
 }
+
 .suggestion-content button:hover {
     background: #e0b97a;
 }
+
+
+
+
+
 
 /* =========================
    FOOTER SECTION
@@ -780,6 +817,7 @@ body {
 <body>
 
 <div id="top"></div>
+
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
 
@@ -799,18 +837,20 @@ body {
         </li>
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle no-select" href="#" role="button" data-bs-toggle="dropdown"
+          <a class="nav-link dropdown-toggle no-select" href="#" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             Provinces
-        </a>
-        <ul class="dropdown-menu">
+          </a>
+          <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="cavite.html">Cavite</a></li>
             <li><a class="dropdown-item" href="laguna.html">Laguna</a></li>
             <li><a class="dropdown-item" href="batangas.html">Batangas</a></li>
             <li><a class="dropdown-item" href="rizal.html">Rizal</a></li>
             <li><a class="dropdown-item" href="quezon.html">Quezon</a></li>
-        </ul>
+          </ul>
         </li>
+
+        <!-- FAQ LINK (unchanged but now stable scrolling) -->
         <li class="nav-item">
           <a class="nav-link" href="#faqs">FAQs</a>
         </li>
@@ -866,11 +906,10 @@ body {
     </div>
 </section>
 <section class="section">
-  <h1>SPECIALS</h1>
+  <h1>CALABARZON DELICACY</h1>
 
   <div class="container">
 
-    <!-- TABS -->
     <div class="tabs">
       <div class="tab active" onclick="showTab('cavite', 'img/bukopiess.png')">Cavite</div>
       <div class="tab" onclick="showTab('laguna', 'img/laguna.jpg')">Laguna</div>
@@ -997,48 +1036,44 @@ body {
 
   </div>
 </section>
-
-
-
-
-<section class="faq-section">
+<section class="faq-section" id="faqs">
     <h1>Frequently Asked Questions</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Quick guide for exploring CALABARZON (Cavite, Laguna, Batangas, Rizal, Quezon).</p>
 
     <div class="faq">
 
         <div class="faq-item">
-            <button class="faq-question">1. What services does TanahAir offer?</button>
+            <button class="faq-question">1. What makes CALABARZON a popular travel destination?</button>
             <div class="faq-answer">
-                <p>We provide design, branding, and digital solutions tailored for your business.</p>
+                <p>CALABARZON is popular because it’s near Metro Manila and offers a mix of beaches, mountains, heritage towns, and nature spots in one region.</p>
             </div>
         </div>
 
         <div class="faq-item">
-            <button class="faq-question">2. Why should I choose a Design studio like TanahAir?</button>
+            <button class="faq-question">2. Do I need a tour guide when visiting CALABARZON?</button>
             <div class="faq-answer">
-                <p>We focus on creative, modern, and effective design strategies.</p>
+                <p>Most destinations can be explored independently, but hiring a local guide is helpful for hiking spots and hidden attractions.</p>
             </div>
         </div>
 
         <div class="faq-item">
-            <button class="faq-question">3. How does TanahAir create content?</button>
+            <button class="faq-question">3. What outdoor activities can I do in CALABARZON?</button>
             <div class="faq-answer">
-                <p>We analyze your brand and build content based on your goals.</p>
+                <p>You can go hiking in Rizal, island hopping in Batangas, sightseeing in Cavite, waterfall trekking in Laguna, and cultural tours in Quezon.</p>
             </div>
         </div>
 
         <div class="faq-item">
-            <button class="faq-question">4. What will be delivered? And when?</button>
+            <button class="faq-question">4. How many days do I need to explore CALABARZON?</button>
             <div class="faq-answer">
-                <p>Deliverables depend on your package, typically within agreed timelines.</p>
+                <p>A 3–5 day trip is ideal for covering multiple provinces, but even a weekend trip can already let you explore one or two destinations.</p>
             </div>
         </div>
 
         <div class="faq-item">
-            <button class="faq-question">5. What often will results be reported?</button>
+            <button class="faq-question">5. Are there budget-friendly travel options in CALABARZON?</button>
             <div class="faq-answer">
-                <p>Reports are usually provided weekly or monthly.</p>
+                <p>Yes, CALABARZON is very budget-friendly with affordable transport, low-cost accommodations, and free natural attractions like beaches and waterfalls.</p>
             </div>
         </div>
 
