@@ -170,6 +170,7 @@ html, body {
     flex-direction: column;
     justify-content: center;
 }
+
 /* HERO BUTTON */
 .hero-btn {
     position: absolute;
@@ -185,6 +186,7 @@ html, body {
     color: #000;
     cursor: pointer;
 }
+
 /* RIGHT SLIDER */
 .hero-slider {
     width: 85%;
@@ -207,8 +209,6 @@ html, body {
 .slide-track img.active {
     opacity: 1;
 }
-
-
 
 /* =========================
    SPECIALS SECTION
@@ -397,6 +397,7 @@ body {
     color: #fff;
     text-align: center;
     font-family: 'Poppins', sans-serif;
+    padding-bottom: 120px;
 }
 
 .festival-title {
@@ -539,10 +540,6 @@ body {
     }
 }
 
-
-
-
-
 /* =========================
    FOOTER SECTION
 ========================= */
@@ -551,62 +548,73 @@ body {
     padding: 50px 0 25px;
     border-top: 1px solid #eee;
 }
+
+/* FULL-WIDTH CONTROL */
+.footer-container {
+    max-width: 100%;
+    margin-top: 0px;
+    padding: 0 200px; 
+}
+
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+}
+
+/* COLUMNS */
+.footer .col-md-6 {
+    width: 50%;
+}
+
 .footer-brand {
     font-size: 1.4rem;
     font-weight: 600;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 }
+
+/* TEXT */
 .footer-text {
     color: #6c757d;
     font-size: 0.9rem;
     max-width: 400px;
 }
+
+/* LINKS */
 .footer-links {
     display: flex;
     gap: 20px;
     justify-content: flex-end;
-    margin: 0;
-    padding: 0;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
 .footer-links a {
     color: #6c757d;
     text-decoration: none;
     font-size: 0.9rem;
 }
+
 .footer-links a:hover {
     color: #0d6efd;
 }
-.footer .row > div {
-    margin-bottom: 15px;
-}
+
+/* COPYRIGHT */
 .copyright {
     text-align: center;
-    width: 100%;
-    margin-top: 20px;
+    margin-top: 25px;
     padding-top: 20px;
     border-top: 1px solid #eee;
     color: #6c757d;
     font-size: 0.85rem;
 }
-.footer-container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
 
-/* force proper row behavior */
-.footer .row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-
-/* columns behave like bootstrap again */
-.footer .col-md-6 {
-    width: 50%;
-}
+/* MOBILE */
 @media (max-width: 768px) {
     .footer .col-md-6 {
         width: 100%;
@@ -617,30 +625,24 @@ body {
         justify-content: center;
         margin-top: 15px;
     }
+
+    .footer-container {
+        padding: 0 20px;
+    }
 }
-.footer-links {
-    display: flex;
-    gap: 20px;
-    justify-content: flex-end;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.copyright {
-    text-align: center;
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-    color: #6c757d;
-    font-size: 0.85rem;
-}
+
+
+
+
+
+
+
 
 /* =========================
    RESPONSIVE FIXES (SAFE)
 ========================= */
 @media (max-width: 992px) {
 
-    /* HERO SECTION 2 (stack instead of side-by-side) */
     .hero-overlay {
         flex-direction: column;
         gap: 30px;
