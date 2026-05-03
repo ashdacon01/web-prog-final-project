@@ -15,29 +15,37 @@
     z-index: 99999;
     transition: all 0.3s ease;
 }
+
 .navbar .nav-link,
 .navbar .navbar-brand {
     color: #fff !important;
 }
+
 .navbar.scrolled {
     background-color: #fff !important;
 }
+
 .navbar.scrolled .nav-link,
 .navbar.scrolled .navbar-brand {
     color: #000 !important;
 }
+
 .navbar .nav-link:hover {
     color: #ccc !important;
 }
+
 .navbar.scrolled .nav-link:hover {
     color: #666 !important;
 }
+
 .navbar-toggler-icon {
     filter: invert(1);
 }
+
 .navbar.scrolled .navbar-toggler-icon {
     filter: invert(0);
 }
+
 body {
     padding-top: 70px;
 }
@@ -46,8 +54,10 @@ html, body {
     margin: 0;
     min-height: 100%;
     background-color: #000;
-    overflow-x: visible;
+    overflow-x: hidden;
 }
+
+/* ===================== GALLERY ===================== */
 .scroll-gallery {
     display: flex;
     justify-content: center; 
@@ -55,12 +65,14 @@ html, body {
     padding: 20px;
     margin-top: 300px;
 }
+
 .card-item {
     flex: 0 0 calc((100% - 60px) / 5);
     text-align: center;
     text-decoration: none;
     color: white;
 }
+
 .card-item img {
     width: 100%;
     height: 300px;
@@ -69,10 +81,12 @@ html, body {
     border-radius: 10px;
     transition: transform 0.4s ease, filter 0.4s ease;
 }
+
 .card-item:hover img {
     transform: scale(1.08);
     filter: grayscale(0%);
 }
+
 .label {
     margin-top: 15px;
     margin-bottom: 220px;
@@ -81,12 +95,13 @@ html, body {
     color: white;
     transition: all 0.3s ease;
 }
+
 .card-item:hover .label {
     transform: translateY(-4px);
     letter-spacing: 1.5px;
 }
 
-/* FIXED: make hero stable regardless of removed elements */
+/* ===================== HERO (FIXED) ===================== */
 .tour-hero {
     position: absolute;
     top: 300px;
@@ -98,75 +113,87 @@ html, body {
 
 .tour-hero h1 {
     white-space: nowrap;
+    word-break: break-word;
+    line-height: 1.1;
 }
+
+/* animation */
 .slide-text span {
     opacity: 0;
     transform: translateY(15px);
 }
+
 .slide-text span.show {
     opacity: 1;
     transform: translateY(0);
 }
 
+/* ===================== MOBILE FIX ===================== */
 @media (max-width: 768px) {
+
     .tour-hero {
-        position: relative;
-        top: auto;
-        left: auto;
-        text-align: left;
-        margin-left: -40px;
-        margin-top: 40px;
-        margin-bottom: -50px;
-        max-width: 100%;
-    }
-    .tour-hero h1 {
-        font-size: 1.8rem;
-        white-space: normal;
-        width: 100%;
-        text-align: left;
+        position: absolute;
+        top: 80px;
+        left: 5%;
+        max-width: 90%;
         margin: 0;
     }
+
+    .tour-hero h1 {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        white-space: normal;
+    }
+
     .scroll-gallery {
         display: block;
-        margin-top: 10px;
+        margin-top: 50px; /* keeps your layout rhythm intact */
         padding: 15px;
+        
     }
+    .label {
+        margin-top: 15px;
+        margin-bottom: 80px;
+    }
+
     .card-item {
         display: block;
         width: 100%;
         margin-bottom: 18px;
     }
+
     .card-item img {
         width: 100%;
         aspect-ratio: 1 / 1;
         height: auto;
         object-fit: cover;
     }
+
     html, body {
         overflow-x: hidden;
-        touch-action: pan-y;
     }
 }
 
-/* =========================
-   FOOTER SECTION
-========================= */
+/* ========================= FOOTER ========================= */
 .footer {
     background: #f8f9fa;
     padding: 50px 0 25px;
     border-top: 1px solid #eee;
 }
+
 .footer-brand {
     font-size: 1.4rem;
     font-weight: 600;
     color: #333;
     margin-bottom: 10px;
 }
+
 .footer-text {
     color: #6c757d;
     font-size: 0.9rem;
     max-width: 400px;
 }
+
 .footer-links {
     display: flex;
     gap: 20px;
@@ -175,66 +202,69 @@ html, body {
     padding: 0;
     list-style: none;
 }
+
 .footer-links a {
     color: #6c757d;
     text-decoration: none;
     font-size: 0.9rem;
 }
+
 .footer-links a:hover {
     color: #0d6efd;
 }
+
 .footer .row > div {
     margin-bottom: 5px;
 }
+
 .copyright {
     text-align: center;
     width: 100%;
-    margin-top: 5px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-    color: #6c757d;
-    font-size: 0.85rem;
-}
-.footer-container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-.footer .row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-.footer .col-md-6 {
-    width: 50%;
-}
-@media (max-width: 768px) {
-    .footer .col-md-6 {
-        width: 100%;
-        text-align: center;
-    }
-    .footer-links {
-        justify-content: center;
-        margin-top: 15px;
-    }
-}
-.footer-links {
-    display: flex;
-    gap: 20px;
-    justify-content: flex-end;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.copyright {
-    text-align: center;
     margin-top: 25px;
     padding-top: 20px;
     border-top: 1px solid #eee;
     color: #6c757d;
     font-size: 0.85rem;
 }
+
+.footer-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.footer .col-md-6 {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .footer .col-md-6 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
 </style>
+
+
+
+
+
+
+
+
+
+
 </head>
 
 <body>
