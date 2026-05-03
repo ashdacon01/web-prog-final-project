@@ -850,7 +850,15 @@ body {
           </ul>
         </li>
 
-        <!-- FAQ LINK (unchanged but now stable scrolling) -->
+        <!-- NEW SECTION LINKS -->
+        <li class="nav-item">
+          <a class="nav-link" href="#delicacy">Delicacy</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#festivals">Festivals</a>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="#faqs">FAQs</a>
         </li>
@@ -905,7 +913,9 @@ body {
         </div>
     </div>
 </section>
-<section class="section">
+
+
+<section class="section" id="delicacy">
   <h1>CALABARZON DELICACY</h1>
 
   <div class="container">
@@ -917,6 +927,7 @@ body {
       <div class="tab" onclick="showTab('rizal', 'img/rizal.jpg')">Rizal</div>
       <div class="tab" onclick="showTab('quezon', 'img/quezon.jpg')">Quezon</div>
     </div>
+
     <div class="content">
       <div class="tab-content active" id="cavite">
         <h3 onclick="window.location.href='cavite.html#food'">Cavite Favorites</h3>
@@ -925,6 +936,7 @@ body {
           Introduced during Spanish influence, it is commonly served during special occasions and family gatherings in Cavite.
         </p>
       </div>
+
       <div class="tab-content" id="laguna">
         <h3 onclick="window.location.href='laguna.html#food'">Laguna Favorites</h3>
         <p>
@@ -932,6 +944,7 @@ body {
           Originating in Los Baños, it is best known for its soft texture and fresh coconut flavor.
         </p>
       </div>
+
       <div class="tab-content" id="batangas">
         <h3 onclick="window.location.href='batangas.html#food'">Batangas Favorites</h3>
         <p>
@@ -959,110 +972,93 @@ body {
     </div>
   </div>
 </section>
-<section class="festival-section">
+<section class="festival-section" id="festivals">
   <h1 class="festival-title">CALABARZON FESTIVAL CALENDAR</h1>
-
   <div class="festival-grid">
-
     <a href="laguna.html#anilag" class="festival-card">
       <div class="festival-date-paper">
         <div class="fold"></div>
         <div class="month">MARCH</div>
         <div class="day">15</div>
       </div>
-
       <div class="festival-info">
         <h2>Laguna</h2>
         <h3>Anilag Festival</h3>
         <p>Showcases culture, agriculture, and traditions of Laguna.</p>
       </div>
     </a>
-
     <a href="quezonprovince.html#pahiyas" class="festival-card">
       <div class="festival-date-paper">
         <div class="fold"></div>
         <div class="month">MAY</div>
         <div class="day">15</div>
       </div>
-
       <div class="festival-info">
         <h2>Quezon</h2>
         <h3>Pahiyas Festival</h3>
         <p>Colorful harvest festival decorated with rice, fruits, and kiping.</p>
       </div>
     </a>
-
     <a href="batangas.html#parada" class="festival-card">
       <div class="festival-date-paper">
         <div class="fold"></div>
         <div class="month">JUNE</div>
         <div class="day">24</div>
       </div>
-
       <div class="festival-info">
         <h2>Batangas</h2>
         <h3>Parada ng Lechon</h3>
         <p>Festive parade of roasted pigs during St. John the Baptist feast.</p>
       </div>
     </a>
-
     <a href="cavite.html#regada" class="festival-card">
       <div class="festival-date-paper">
         <div class="fold"></div>
         <div class="month">AUG</div>
         <div class="day">25</div>
       </div>
-
       <div class="festival-info">
         <h2>Cavite</h2>
         <h3>Regada Festival</h3>
         <p>Water festival featuring street games and celebrations.</p>
       </div>
     </a>
-
     <a href="rizal.html#sumaka" class="festival-card">
       <div class="festival-date-paper">
         <div class="fold"></div>
         <div class="month">NOV</div>
         <div class="day">23</div>
       </div>
-
       <div class="festival-info">
         <h2>Rizal</h2>
         <h3>Sumaka Festival</h3>
         <p>Celebrates local products like suman, mango, and cashew.</p>
       </div>
     </a>
-
   </div>
 </section>
 <section class="faq-section" id="faqs">
     <h1>Frequently Asked Questions</h1>
     <p>Quick guide for exploring CALABARZON (Cavite, Laguna, Batangas, Rizal, Quezon).</p>
-
     <div class="faq">
-
         <div class="faq-item">
             <button class="faq-question">1. What makes CALABARZON a popular travel destination?</button>
             <div class="faq-answer">
                 <p>CALABARZON is popular because it’s near Metro Manila and offers a mix of beaches, mountains, heritage towns, and nature spots in one region.</p>
             </div>
         </div>
-
         <div class="faq-item">
             <button class="faq-question">2. Do I need a tour guide when visiting CALABARZON?</button>
             <div class="faq-answer">
                 <p>Most destinations can be explored independently, but hiring a local guide is helpful for hiking spots and hidden attractions.</p>
             </div>
         </div>
-
         <div class="faq-item">
             <button class="faq-question">3. What outdoor activities can I do in CALABARZON?</button>
             <div class="faq-answer">
                 <p>You can go hiking in Rizal, island hopping in Batangas, sightseeing in Cavite, waterfall trekking in Laguna, and cultural tours in Quezon.</p>
             </div>
         </div>
-
         <div class="faq-item">
             <button class="faq-question">4. How many days do I need to explore CALABARZON?</button>
             <div class="faq-answer">
@@ -1076,10 +1072,7 @@ body {
                 <p>Yes, CALABARZON is very budget-friendly with affordable transport, low-cost accommodations, and free natural attractions like beaches and waterfalls.</p>
             </div>
         </div>
-
     </div>
-
-    <!-- ✅ OUTSIDE FAQ BOX (THIS FIXES EVERYTHING) -->
     <div class="suggestion-item active">
         <div class="faq-question no-arrow">
             Still have questions?
@@ -1096,33 +1089,7 @@ body {
             </form>
         </div>
     </div>
-
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <footer class="footer">
     <div class="footer-container"> 
         <div class="row align-items-start">
@@ -1186,12 +1153,6 @@ function showTab(tabId, imgSrc, el) {
   const img = document.getElementById('provinceImage');
   if (img) img.src = imgSrc;
 }
-
-
-
-
-
-
 const items = document.querySelectorAll(".faq-item");
 
 items.forEach(item => {
@@ -1205,10 +1166,6 @@ items.forEach(item => {
         item.classList.toggle("active");
     });
 });
-
-
-
-
 const form = document.querySelector(".suggestion-box form");
 
 form.addEventListener("submit", function(e) {
@@ -1216,9 +1173,6 @@ form.addEventListener("submit", function(e) {
     alert("Thanks for your message! 💌");
     form.reset();
 });
-
-
-
 </script>
 </script>
 </body>
