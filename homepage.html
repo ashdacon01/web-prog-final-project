@@ -104,6 +104,8 @@ html, body {
     max-width: 700px;
 }
 
+
+
 /* =========================
    HERO SECTION (SECOND / SLIDER)
 ========================= */
@@ -206,90 +208,221 @@ html, body {
     opacity: 1;
 }
 
+
+
 /* =========================
-   SPECIALS SECTION (PROPER CENTER)
+   SPECIALS SECTION
 ========================= */
 .section {
-    padding: 60px 80px;
+    padding: 80px 40px;
     background: #000;
-    color: #fff;
+    color: #000;
     text-align: center;
+
+    border: 0px solid #c9a46c;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 0px;
+    position: relative;
+
+    box-shadow: 0 0 25px rgba(201,164,108,0.08);
+    overflow: hidden;
 }
+body {
+    margin: 0;
+    background: #000;
+}
+
+/* gold lines */
+.section::before,
+.section::after {
+    content: "";
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c9a46c, transparent);
+    opacity: 0.8;
+}
+
+.section::before { top: 25px; }
+.section::after { bottom: 25px; }
+
 .section h1 {
     color: #c9a46c;
-    letter-spacing: 2px;
     margin-bottom: 50px;
-    margin-top: 30px;
+    letter-spacing: 3px;
+    font-weight: 600;
 }
 
 /* =========================
-   CENTER WRAPPER (KEY FIX)
+   FIXED LAYOUT (IMPORTANT)
 ========================= */
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: center;   /* FIX: instead of space-between */
     align-items: center;
     gap: 70px;
 
-    width: fit-content;     /* 🔥 important */
-    margin: 0 auto;         /* 🔥 true centering */
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
+/* =========================
+   TABS
+========================= */
+.tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 170px;
+
+    border-left: 1px solid rgba(201,164,108,0.35);
+    padding-left: 18px;
+}
+
 .tab {
-    padding: 14px 16px;
+    padding: 12px 16px;
     cursor: pointer;
-    color: #ccc;
+    color: #aaa;
     border-radius: 8px;
-    transition: 0.3s ease;
-    margin-bottom: 10px;
-    border: 1px solid transparent;
+    transition: 0.25s ease;
+    position: relative;
 }
+
+.tab::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 1px;
+    background: rgba(201,164,108,0.6);
+    opacity: 0;
+    transition: 0.3s;
+}
+
 .tab:hover {
     color: #fff;
-    border: 1px solid rgba(201, 164, 108, 0.4);
-    background: rgba(201, 164, 108, 0.08);
+    background: rgba(201,164,108,0.08);
 }
+
+.tab:hover::before {
+    opacity: 1;
+}
+
 .tab.active {
     background: #c9a46c;
     color: #000;
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(201, 164, 108, 0.3);
+}
+
+.tab.active::before {
+    opacity: 1;
+    background: #c9a46c;
 }
 
 /* =========================
-   CONTENT (NO STRETCH)
+   CONTENT (FIXED WIDTH BALANCE)
 ========================= */
 .content {
-    width: 320px;           /* 🔥 fixed width */
-    border-left: 2px solid #c9a46c;
-    padding-left: 30px;
+    width: 360px;   /* FIX: slightly smaller for balance */
     text-align: left;
+
+    border-left: 1px solid rgba(201,164,108,0.4);
+    padding-left: 25px;
+}
+
+/* hide inactive */
+.tab-content {
+    display: none;
+    margin-bottom: 18px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* text */
+.content h3 {
+    color: #c9a46c;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: 0.25s ease;
+}
+
+.content h3:hover {
+    letter-spacing: 1px;
+    color: #e0c28a;
+}
+
+.content p {
+    font-size: 13.5px;
+    color: #ccc;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.content p strong {
+    color: #fff;
 }
 
 /* =========================
-   IMAGE
+   IMAGE (BALANCED)
 ========================= */
 .image {
-    width: 350px;
-    height: 350px;
+    width: 380px;   /* FIX: balanced with content */
+    height: 380px;
+
     border-radius: 50%;
     overflow: hidden;
-    flex-shrink: 0;         /* 🔥 prevents flex distortion */
+    border: 1px solid rgba(177, 160, 134, 0.4);
+    box-shadow: 0 25px 60px  rgba(177, 160, 134, 0.4);;
 }
+
 .image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        gap: 30px;
+    }
 
+    .tabs {
+        border-left: none;
+        padding-left: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .content {
+        width: 100%;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .image {
+        width: 100%;
+        height: 300px;
+        border-radius: 20px;
+    }
+}
 
 
 /* =========================
    FESTIVAL SECTION
 ========================= */
-/* =========================
-   FESTIVAL SECTION (AESTHETIC)
-========================= */
+
 .festival-section {
     padding: 70px 20px;
     background: radial-gradient(circle at top, #141414, #0b0b0b);
@@ -423,7 +556,6 @@ html, body {
     margin-top: 6px;
 }
 
-/* remove highlight */
 .festival-card:visited,
 .festival-card:focus,
 .festival-card:active {
@@ -607,6 +739,16 @@ html, body {
 }
 </style>
 
+
+
+
+
+
+
+
+
+
+
 <body>
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
@@ -677,53 +819,72 @@ html, body {
     </div>
 </section>
 
+
+
 <section class="section">
   <h1>SPECIALS</h1>
+
   <div class="container">
+
+    <!-- TABS -->
     <div class="tabs">
-        
-        <div class="tab active" onclick="showTab('cavite', 'img/bukopiess.png')">Cavite</div>
-        <div class="tab" onclick="showTab('cavite', ' ')">Laguna</div>
-        <div class="tab" onclick="showTab('batangas', 'img/batangas.jpg')">Batangas</div>
-        <div class="tab" onclick="showTab('rizal', 'img/bukopiess.png')">Rizal</div>
-        <div class="tab" onclick="showTab('quezon', 'img/quezon.jpg')">Quezon</div>
+      <div class="tab active" onclick="showTab('cavite', 'img/bukopiess.png')">Cavite</div>
+      <div class="tab" onclick="showTab('laguna', 'img/laguna.jpg')">Laguna</div>
+      <div class="tab" onclick="showTab('batangas', 'img/batangas.jpg')">Batangas</div>
+      <div class="tab" onclick="showTab('rizal', 'img/rizal.jpg')">Rizal</div>
+      <div class="tab" onclick="showTab('quezon', 'img/quezon.jpg')">Quezon</div>
     </div>
+
+    <!-- CONTENT -->
     <div class="content">
+
       <div class="tab-content active" id="cavite">
-        <div class="tab-content" id="cavite">
-        <h3 onclick="window.location.href='cavite.html#food'" style="cursor:pointer;">Cavite Favorites</h3>
+        <h3 onclick="window.location.href='cavite.html#food'">Cavite Favorites</h3>
         <p>
-          <strong>Bacalao</strong> – Salted fish stew.<br><br>
+          <strong>Bacalao</strong> – A traditional salt cod dish simmered with potatoes, bell peppers, tomatoes, and olive oil. 
+          Introduced during Spanish influence, it is commonly served during special occasions and family gatherings in Cavite.
         </p>
       </div>
-        <h3 onclick="window.location.href='laguna.html#food'" style="cursor:pointer;">Laguna Favorites</h3>
+
+      <div class="tab-content" id="laguna">
+        <h3 onclick="window.location.href='laguna.html#food'">Laguna Favorites</h3>
         <p>
-          <strong>Buko Pie</strong> – Creamy coconut dessert with flaky crust.<br><br>
+          <strong>Buko Pie</strong> – A famous Laguna delicacy made with young coconut meat, sweet cream filling, and flaky golden crust. 
+          Originating in Los Baños, it is best known for its soft texture and fresh coconut flavor.
         </p>
       </div>
+
       <div class="tab-content" id="batangas">
-        <h3 onclick="window.location.href='batangas.html#food'" style="cursor:pointer;">Batangas Favorites</h3>
+        <h3 onclick="window.location.href='batangas.html#food'">Batangas Favorites</h3>
         <p>
-          <strong>Bulalo</strong> – Rich beef marrow soup.<br><br>
+          <strong>Bulalo</strong> – A rich beef marrow soup slow-cooked for hours until tender. 
+          Made with corn, cabbage, and bone marrow, it is especially popular in Tagaytay due to its cool climate.
         </p>
       </div>
+
       <div class="tab-content" id="rizal">
-        <h3 onclick="window.location.href='rizal.html#food'" style="cursor:pointer;">Rizal Favorites</h3>
+        <h3 onclick="window.location.href='rizal.html#food'">Rizal Favorites</h3>
         <p>
-          <strong>Suman</strong> – Sticky rice in banana leaves.<br><br>
+          <strong>Suman</strong> – A traditional rice cake made from sticky rice cooked in coconut milk and wrapped in banana or palm leaves. 
+          Often paired with sugar or ripe mango, it is a common pasalubong from Rizal towns.
         </p>
       </div>
+
       <div class="tab-content" id="quezon">
-        <h3 onclick="window.location.href='quezonprovince.html#food'" style="cursor:pointer;">Quezon Favorites</h3>
+        <h3 onclick="window.location.href='quezonprovince.html#food'">Quezon Favorites</h3>
         <p>
-          <strong>Pancit Habhab</strong> – Noodles eaten without utensils.<br><br>
-          
+          <strong>Pancit Habhab</strong> – A signature Lucban noodle dish served on banana leaves and eaten without utensils. 
+          Made with sautéed noodles, pork, and vegetables, it is traditionally topped with vinegar for extra flavor.
         </p>
       </div>
+
     </div>
+
+    <!-- IMAGE -->
     <div class="image">
-      <img id="provinceImage" src="img/bukopiess.png" alt="Calabarzon Food">
+      <img id="provinceImage" src="img/bukopiess.png" alt="Province Image">
     </div>
+
   </div>
 </section>
 
@@ -856,15 +1017,22 @@ setInterval(changeSlides, 5000);
 </script>
 
 <script>
-function showTab(tabId, imgSrc) {
+function showTab(tabId, imgSrc, el) {
   document.querySelectorAll('.tab-content')
     .forEach(el => el.classList.remove('active'));
+
   document.querySelectorAll('.tab')
     .forEach(el => el.classList.remove('active'));
-  document.getElementById(tabId).classList.add('active');
-  event.target.classList.add('active');
-  document.getElementById('provinceImage').src = imgSrc;
+
+  const target = document.getElementById(tabId);
+  if (target) target.classList.add('active');
+
+  if (el) el.classList.add('active');
+
+  const img = document.getElementById('provinceImage');
+  if (img) img.src = imgSrc;
 }
+</script>
 </script>
 </body>
 </html>
