@@ -159,12 +159,12 @@ html, body {
 
 /* LEFT HERO CARD */
 .hero-card {
-    background: rgba(101, 176, 238, 0.92);
+    background: rgba(193, 222, 245, 0.92);
     padding: 40px;
-    width: 600px;
-    height: 420px;
+    width: 800px;
+    height: 620px;
     transform: translateX(40px);
-    border-radius: 12px;
+    border-radius: 5px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     display: flex;
     flex-direction: column;
@@ -173,25 +173,25 @@ html, body {
 /* HERO BUTTON */
 .hero-btn {
     position: absolute;
-    right: 30px;
-    margin-top: 320px;
+    right: 50px;
+    margin-top: 450px;
     padding: 10px;
     width: 160px;
     font-size: 14px;
     font-weight: 600;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     background: #fff;
     color: #000;
     cursor: pointer;
 }
 /* RIGHT SLIDER */
 .hero-slider {
-    width: 45%;
-    height: 420px;
+    width: 85%;
+    height: 620px;
     overflow: hidden;
     position: relative;
-    border-radius: 12px;
+    border-radius: 5px;
     box-shadow: 0 12px 30px rgba(0,0,0,0.3);
     transform: translateX(-20px);
 }
@@ -233,7 +233,6 @@ body {
     background: #000;
 }
 
-/* gold lines */
 .section::before,
 .section::after {
     content: "";
@@ -254,23 +253,15 @@ body {
     letter-spacing: 3px;
     font-weight: 600;
 }
-
-/* =========================
-   FIXED LAYOUT (IMPORTANT)
-========================= */
 .container {
     display: flex;
-    justify-content: center;   /* FIX: instead of space-between */
+    justify-content: center; 
     align-items: center;
     gap: 70px;
 
     max-width: 1200px;
     margin: 0 auto;
 }
-
-/* =========================
-   TABS
-========================= */
 .tabs {
     display: flex;
     flex-direction: column;
@@ -280,7 +271,6 @@ body {
     border-left: 1px solid rgba(201,164,108,0.35);
     padding-left: 18px;
 }
-
 .tab {
     padding: 12px 16px;
     cursor: pointer;
@@ -289,7 +279,6 @@ body {
     transition: 0.25s ease;
     position: relative;
 }
-
 .tab::before {
     content: "";
     position: absolute;
@@ -302,39 +291,29 @@ body {
     opacity: 0;
     transition: 0.3s;
 }
-
 .tab:hover {
     color: #fff;
     background: rgba(201,164,108,0.08);
 }
-
 .tab:hover::before {
     opacity: 1;
 }
-
 .tab.active {
     background: #c9a46c;
     color: #000;
     font-weight: 600;
 }
-
 .tab.active::before {
     opacity: 1;
     background: #c9a46c;
 }
-
-/* =========================
-   CONTENT (FIXED WIDTH BALANCE)
-========================= */
 .content {
-    width: 360px;   /* FIX: slightly smaller for balance */
+    width: 360px;   
     text-align: left;
 
     border-left: 1px solid rgba(201,164,108,0.4);
     padding-left: 25px;
 }
-
-/* hide inactive */
 .tab-content {
     display: none;
     margin-bottom: 18px;
@@ -343,8 +322,6 @@ body {
 .tab-content.active {
     display: block;
 }
-
-/* text */
 .content h3 {
     color: #c9a46c;
     cursor: pointer;
@@ -368,10 +345,6 @@ body {
 .content p strong {
     color: #fff;
 }
-
-/* =========================
-   IMAGE (BALANCED)
-========================= */
 .image {
     width: 380px;   /* FIX: balanced with content */
     height: 380px;
@@ -387,10 +360,6 @@ body {
     height: 100%;
     object-fit: cover;
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
 @media (max-width: 900px) {
     .container {
         flex-direction: column;
@@ -417,7 +386,6 @@ body {
         border-radius: 20px;
     }
 }
-
 
 /* =========================
    FESTIVAL SECTION
@@ -738,15 +706,6 @@ body {
     }
 }
 </style>
-
-
-
-
-
-
-
-
-
 
 
 <body>
