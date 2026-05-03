@@ -7,9 +7,7 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
 <style>
-
 @media (max-width: 768px) {
     .tour-hero {
         left: 5%;
@@ -35,8 +33,6 @@
         justify-content: center;
     }
 }
-
-
 /* =========================
    GLOBAL RESET / BASE STYLE
 ========================= */
@@ -67,7 +63,6 @@ html, body {
 .navbar .nav-link:hover {
     color: #ccc !important;
 }
-
 
 /* =========================
    HERO SECTION (MAIN TOP)
@@ -103,8 +98,6 @@ html, body {
     color: #fff;
     max-width: 700px;
 }
-
-
 
 /* =========================
    HERO SECTION (SECOND / SLIDER)
@@ -156,7 +149,6 @@ html, body {
     position: relative;
     z-index: 2;
 }
-
 /* LEFT HERO CARD */
 .hero-card {
     background: rgba(193, 222, 245, 0.92);
@@ -170,7 +162,6 @@ html, body {
     flex-direction: column;
     justify-content: center;
 }
-
 /* HERO BUTTON */
 .hero-btn {
     position: absolute;
@@ -186,7 +177,6 @@ html, body {
     color: #000;
     cursor: pointer;
 }
-
 /* RIGHT SLIDER */
 .hero-slider {
     width: 85%;
@@ -232,7 +222,6 @@ body {
     margin: 0;
     background: #000;
 }
-
 .section::before,
 .section::after {
     content: "";
@@ -243,10 +232,8 @@ body {
     background: linear-gradient(90deg, transparent, #c9a46c, transparent);
     opacity: 0.8;
 }
-
 .section::before { top: 25px; }
 .section::after { bottom: 25px; }
-
 .section h1 {
     color: #c9a46c;
     margin-bottom: 50px;
@@ -318,7 +305,6 @@ body {
     display: none;
     margin-bottom: 18px;
 }
-
 .tab-content.active {
     display: block;
 }
@@ -329,19 +315,16 @@ body {
     margin-bottom: 10px;
     transition: 0.25s ease;
 }
-
 .content h3:hover {
     letter-spacing: 1px;
     color: #e0c28a;
 }
-
 .content p {
     font-size: 13.5px;
     color: #ccc;
     line-height: 1.6;
     margin: 0;
 }
-
 .content p strong {
     color: #fff;
 }
@@ -354,7 +337,6 @@ body {
     border: 1px solid rgba(177, 160, 134, 0.4);
     box-shadow: 0 25px 60px  rgba(177, 160, 134, 0.4);;
 }
-
 .image img {
     width: 100%;
     height: 100%;
@@ -390,7 +372,6 @@ body {
 /* =========================
    FESTIVAL SECTION
 ========================= */
-
 .festival-section {
     padding: 70px 20px;
     background: radial-gradient(circle at top, #141414, #0b0b0b);
@@ -399,15 +380,12 @@ body {
     font-family: 'Poppins', sans-serif;
     padding-bottom: 120px;
 }
-
 .festival-title {
     color: #d6b46a;
     letter-spacing: 3px;
     margin-bottom: 45px;
     font-weight: 500;
 }
-
-/* GRID */
 .festival-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -415,8 +393,6 @@ body {
     max-width: 1000px;
     margin: auto;
 }
-
-/* CARD (more editorial feel) */
 .festival-card {
     display: flex;
     gap: 18px;
@@ -431,8 +407,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-
-/* subtle paper grain effect */
 .festival-card::before {
     content: "";
     position: absolute;
@@ -441,8 +415,6 @@ body {
     opacity: 0.06;
     pointer-events: none;
 }
-
-/* hover (soft lift, not aggressive) */
 .festival-card:hover {
     transform: translateY(-4px);
     border-color: rgba(214,180,106,0.55);
@@ -470,8 +442,6 @@ body {
         0 10px 20px rgba(0,0,0,0.35),
         inset 0 1px 2px rgba(255,255,255,0.35);
 }
-
-/* folded corner (more realistic paper fold) */
 .festival-date-paper .fold {
     position: absolute;
     top: 0;
@@ -482,49 +452,39 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 100%);
     box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
 }
-
-/* MONTH */
 .festival-date-paper .month {
     font-size: 11px;
     letter-spacing: 2px;
     color: #5a4500;
     text-transform: uppercase;
 }
-
-/* DAY */
 .festival-date-paper .day {
     font-size: 24px;
     font-weight: 700;
     color: #2b2100;
     line-height: 1;
 }
-
-/* INFO */
 .festival-info {
     text-align: left;
 }
-
 .festival-info h2 {
     margin: 0;
     font-size: 15px;
     color: #d6b46a;
     font-weight: 500;
 }
-
 .festival-info h3 {
     margin: 4px 0;
     font-size: 16px;
     font-weight: 600;
     color: #f1f1f1;
 }
-
 .festival-info p {
     font-size: 13px;
     color: #bdbdbd;
     line-height: 1.5;
     margin-top: 6px;
 }
-
 .festival-card:visited,
 .festival-card:focus,
 .festival-card:active {
@@ -532,12 +492,144 @@ body {
     text-decoration: none;
     color: inherit;
 }
-
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .festival-grid {
         grid-template-columns: 1fr;
     }
+}
+
+
+
+
+
+
+
+/* SECTION */
+.faq-section {
+    max-width: 950px;
+    margin: 50px auto 10px; 
+    text-align: center;
+    color: #fff;
+    padding-bottom: 80px; 
+}
+.faq-section h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+.faq-section p {
+    font-size: 16px;
+    color: #b0c4d4;
+    margin-bottom: 60px;
+}
+.faq {
+    background: #1f2c3a;
+    border-radius: 10px;
+    overflow: hidden; 
+}
+.faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: #dbe9f4;
+    text-align: left;
+    padding: 22px 30px;
+    font-size: 17px;
+    cursor: pointer;
+    position: relative;
+}
+
+.faq-question::after {
+    content: "▾";
+    position: absolute;
+    right: 30px;
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    background: #243545;
+    text-align: left;
+    padding: 0 30px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+}
+.faq-answer p {
+    margin: 20px 0;
+    font-size: 15px;
+    color: #bcd0df;
+    line-height: 1.6;
+}
+
+/* ============================*/
+/* SUGGESTION (FIXED PROPERLY) */
+/* =========================== */
+
+.suggestion-item {
+    margin-top: 50px;
+    background: #1f2c3a;        
+    border-radius: 10px;        
+    overflow: hidden;        
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.no-arrow::after {
+    display: none;
+}
+.suggestion-item .faq-answer {
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 30px;
+    background: #243545;
+}
+.suggestion-content p {
+    margin: 0 0 15px;
+    font-size: 15px;
+    color: #bcd0df;
+}
+.suggestion-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.suggestion-content input,
+.suggestion-content textarea {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: #243545;
+    color: #fff;
+    font-size: 14px;
+}
+.suggestion-content input::placeholder,
+.suggestion-content textarea::placeholder {
+    color: #8fa6b8;
+}
+.suggestion-content button {
+    align-self: flex-start;
+    background: #c9a46c;
+    color: #000;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.suggestion-content button:hover {
+    background: #e0b97a;
 }
 
 /* =========================
@@ -548,14 +640,11 @@ body {
     padding: 50px 0 25px;
     border-top: 1px solid #eee;
 }
-
-/* FULL-WIDTH CONTROL */
 .footer-container {
     max-width: 100%;
     margin-top: 0px;
     padding: 0 200px; 
 }
-
 .footer .row {
     display: flex;
     flex-wrap: wrap;
@@ -564,27 +653,20 @@ body {
     width: 100%;
     margin: 0;
 }
-
-/* COLUMNS */
 .footer .col-md-6 {
     width: 50%;
 }
-
 .footer-brand {
     font-size: 1.4rem;
     font-weight: 600;
     color: #333;
     margin-bottom: 1px;
 }
-
-/* TEXT */
 .footer-text {
     color: #6c757d;
     font-size: 0.9rem;
     max-width: 400px;
 }
-
-/* LINKS */
 .footer-links {
     display: flex;
     gap: 20px;
@@ -593,18 +675,14 @@ body {
     padding: 0;
     margin: 0;
 }
-
 .footer-links a {
     color: #6c757d;
     text-decoration: none;
     font-size: 0.9rem;
 }
-
 .footer-links a:hover {
     color: #0d6efd;
 }
-
-/* COPYRIGHT */
 .copyright {
     text-align: center;
     margin-top: 25px;
@@ -613,8 +691,6 @@ body {
     color: #6c757d;
     font-size: 0.85rem;
 }
-
-/* MOBILE */
 @media (max-width: 768px) {
     .footer .col-md-6 {
         width: 100%;
@@ -630,14 +706,6 @@ body {
         padding: 0 20px;
     }
 }
-
-
-
-
-
-
-
-
 /* =========================
    RESPONSIVE FIXES (SAFE)
 ========================= */
@@ -709,32 +777,52 @@ body {
 }
 </style>
 
-
 <body>
+
+<div id="top"></div>
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand">CALABARZON</a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav">
+
+    <a class="navbar-brand" href="#top">CALABARZON</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="mainNav">
+
       <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link">Home</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Provinces</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item">Cavite</a></li>
-            <li><a class="dropdown-item">Laguna</a></li>
-            <li><a class="dropdown-item">Batangas</a></li>
-            <li><a class="dropdown-item">Rizal</a></li>
-            <li><a class="dropdown-item">Quezon</a></li>
-          </ul>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="#top">Home</a>
         </li>
-        <li class="nav-item"><a class="nav-link">FAQs</a></li>
+
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle no-select" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Provinces
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="cavite.html">Cavite</a></li>
+            <li><a class="dropdown-item" href="laguna.html">Laguna</a></li>
+            <li><a class="dropdown-item" href="batangas.html">Batangas</a></li>
+            <li><a class="dropdown-item" href="rizal.html">Rizal</a></li>
+            <li><a class="dropdown-item" href="quezon.html">Quezon</a></li>
+        </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#faqs">FAQs</a>
+        </li>
+
       </ul>
+
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link">Blog</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="#blog">Blog</a>
+        </li>
       </ul>
+
     </div>
   </div>
 </nav>
@@ -750,8 +838,6 @@ body {
         <p class="lead">Cavite • Laguna • Batangas • Rizal • Quezon</p>
     </div>
 </div>
-
-
 <section class="hero-section">
     <div class="hero-bg">
         <div class="bg-track">
@@ -779,9 +865,6 @@ body {
         </div>
     </div>
 </section>
-
-
-
 <section class="section">
   <h1>SPECIALS</h1>
 
@@ -795,10 +878,7 @@ body {
       <div class="tab" onclick="showTab('rizal', 'img/rizal.jpg')">Rizal</div>
       <div class="tab" onclick="showTab('quezon', 'img/quezon.jpg')">Quezon</div>
     </div>
-
-    <!-- CONTENT -->
     <div class="content">
-
       <div class="tab-content active" id="cavite">
         <h3 onclick="window.location.href='cavite.html#food'">Cavite Favorites</h3>
         <p>
@@ -806,7 +886,6 @@ body {
           Introduced during Spanish influence, it is commonly served during special occasions and family gatherings in Cavite.
         </p>
       </div>
-
       <div class="tab-content" id="laguna">
         <h3 onclick="window.location.href='laguna.html#food'">Laguna Favorites</h3>
         <p>
@@ -814,7 +893,6 @@ body {
           Originating in Los Baños, it is best known for its soft texture and fresh coconut flavor.
         </p>
       </div>
-
       <div class="tab-content" id="batangas">
         <h3 onclick="window.location.href='batangas.html#food'">Batangas Favorites</h3>
         <p>
@@ -822,7 +900,6 @@ body {
           Made with corn, cabbage, and bone marrow, it is especially popular in Tagaytay due to its cool climate.
         </p>
       </div>
-
       <div class="tab-content" id="rizal">
         <h3 onclick="window.location.href='rizal.html#food'">Rizal Favorites</h3>
         <p>
@@ -830,7 +907,6 @@ body {
           Often paired with sugar or ripe mango, it is a common pasalubong from Rizal towns.
         </p>
       </div>
-
       <div class="tab-content" id="quezon">
         <h3 onclick="window.location.href='quezonprovince.html#food'">Quezon Favorites</h3>
         <p>
@@ -838,23 +914,12 @@ body {
           Made with sautéed noodles, pork, and vegetables, it is traditionally topped with vinegar for extra flavor.
         </p>
       </div>
-
     </div>
-
-    <!-- IMAGE -->
     <div class="image">
       <img id="provinceImage" src="img/bukopiess.png" alt="Province Image">
     </div>
-
   </div>
 </section>
-
-
-
-
-
-
-
 <section class="festival-section">
   <h1 class="festival-title">CALABARZON FESTIVAL CALENDAR</h1>
 
@@ -933,10 +998,99 @@ body {
   </div>
 </section>
 
+
+
+
+<section class="faq-section">
+    <h1>Frequently Asked Questions</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+    <div class="faq">
+
+        <div class="faq-item">
+            <button class="faq-question">1. What services does TanahAir offer?</button>
+            <div class="faq-answer">
+                <p>We provide design, branding, and digital solutions tailored for your business.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">2. Why should I choose a Design studio like TanahAir?</button>
+            <div class="faq-answer">
+                <p>We focus on creative, modern, and effective design strategies.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">3. How does TanahAir create content?</button>
+            <div class="faq-answer">
+                <p>We analyze your brand and build content based on your goals.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">4. What will be delivered? And when?</button>
+            <div class="faq-answer">
+                <p>Deliverables depend on your package, typically within agreed timelines.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">5. What often will results be reported?</button>
+            <div class="faq-answer">
+                <p>Reports are usually provided weekly or monthly.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ✅ OUTSIDE FAQ BOX (THIS FIXES EVERYTHING) -->
+    <div class="suggestion-item active">
+        <div class="faq-question no-arrow">
+            Still have questions?
+        </div>
+
+        <div class="faq-answer suggestion-content">
+            <p>Send us your suggestions or ask anything 👇</p>
+
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message..." rows="3" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <footer class="footer">
     <div class="footer-container"> 
         <div class="row align-items-start">
-            
             <div class="col-md-6">
                 <div class="footer-brand">CALABARZON Travel</div>
                 <p class="footer-text">
@@ -956,7 +1110,6 @@ body {
         </div>
     </div>
 </footer>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 window.addEventListener("scroll", function () {
@@ -998,6 +1151,39 @@ function showTab(tabId, imgSrc, el) {
   const img = document.getElementById('provinceImage');
   if (img) img.src = imgSrc;
 }
+
+
+
+
+
+
+const items = document.querySelectorAll(".faq-item");
+
+items.forEach(item => {
+    const btn = item.querySelector(".faq-question");
+
+    btn.addEventListener("click", () => {
+        items.forEach(i => {
+            if (i !== item) i.classList.remove("active");
+        });
+
+        item.classList.toggle("active");
+    });
+});
+
+
+
+
+const form = document.querySelector(".suggestion-box form");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Thanks for your message! 💌");
+    form.reset();
+});
+
+
+
 </script>
 </script>
 </body>
