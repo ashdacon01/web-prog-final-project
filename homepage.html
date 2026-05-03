@@ -1018,14 +1018,19 @@ setInterval(changeSlides, 5000);
 
 <script>
 function showTab(tabId, imgSrc, el) {
-  document.querySelectorAll('.tab-content')
+  document.querySelectorAll('.tab')
     .forEach(el => el.classList.remove('active'));
 
-  document.querySelectorAll('.tab')
+  document.querySelectorAll('.tab-content')
     .forEach(el => el.classList.remove('active'));
 
   const target = document.getElementById(tabId);
   if (target) target.classList.add('active');
+
+  // FIX: ensure tab still becomes active even if el is not passed
+  if (!el && event && event.currentTarget) {
+    el = event.currentTarget;
+  }
 
   if (el) el.classList.add('active');
 
