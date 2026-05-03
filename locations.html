@@ -240,33 +240,57 @@ html, body {
 <body>
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand">CALABARZON</a>
-    <button class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainNav">
+
+    <a class="navbar-brand" href="homepage.html">CALABARZON</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="mainNav">
+
       <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link">Home</a></li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="homepage.html">Home</a>
+        </li>
+
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Provinces</a>
+          <a class="nav-link dropdown-toggle no-select" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Provinces
+          </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item">Cavite</a></li>
-            <li><a class="dropdown-item">Laguna</a></li>
-            <li><a class="dropdown-item">Batangas</a></li>
-            <li><a class="dropdown-item">Rizal</a></li>
-            <li><a class="dropdown-item">Quezon</a></li>
+            <li><a class="dropdown-item" href="cavite.html">Cavite</a></li>
+            <li><a class="dropdown-item" href="laguna.html">Laguna</a></li>
+            <li><a class="dropdown-item" href="batangas.html">Batangas</a></li>
+            <li><a class="dropdown-item" href="rizal.html">Rizal</a></li>
+            <li><a class="dropdown-item" href="quezonprovince.html">Quezon</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a class="nav-link">FAQs</a></li>
-      </ul>
-      <ul class="navbar-nav ms-auto" style="font-weight: 500; font-size: larger;">
+
+        <!-- FIXED: ROUTES TO HOMEPAGE + SECTION -->
         <li class="nav-item">
-          <a class="nav-link">Blog</a>
+          <a class="nav-link" href="homepage.html#delicacy">Delicacy</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="homepage.html#festivals">Festivals</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="homepage.html#faqs">FAQs</a>
+        </li>
+
+      </ul>
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="homepage.html#blog">Blog</a>
         </li>
       </ul>
+
     </div>
   </div>
 </nav>
