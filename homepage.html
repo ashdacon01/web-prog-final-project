@@ -281,70 +281,155 @@ html, body {
     object-fit: cover;
 }
 
+
+
+
 /* =========================
    FESTIVAL SECTION
 ========================= */
+/* =========================
+   FESTIVAL SECTION (AESTHETIC)
+========================= */
 .festival-section {
-    padding: 60px 20px;
-    background: #0f0f0f;
+    padding: 70px 20px;
+    background: radial-gradient(circle at top, #141414, #0b0b0b);
     color: #fff;
     text-align: center;
     font-family: 'Poppins', sans-serif;
 }
 
 .festival-title {
-    color: #c9a46c;
-    letter-spacing: 2px;
-    margin-bottom: 40px;
+    color: #d6b46a;
+    letter-spacing: 3px;
+    margin-bottom: 45px;
+    font-weight: 500;
 }
 
 /* GRID */
 .festival-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 22px;
     max-width: 1000px;
     margin: auto;
 }
 
-/* CARD */
+/* CARD (more editorial feel) */
 .festival-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-    padding: 20px;
-    text-align: left;
-    transition: 0.3s ease;
+    display: flex;
+    gap: 18px;
+    text-decoration: none;
+    color: inherit;
+    background: linear-gradient(145deg, #121212, #0e0e0e);
+    border: 1px solid rgba(214,180,106,0.18);
+    border-radius: 16px;
+    padding: 18px;
+    transition: 0.35s ease;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
+/* subtle paper grain effect */
+.festival-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+    opacity: 0.06;
+    pointer-events: none;
+}
+
+/* hover (soft lift, not aggressive) */
 .festival-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(201,164,108,0.5);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transform: translateY(-4px);
+    border-color: rgba(214,180,106,0.55);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.55);
 }
 
-/* TEXT */
-.festival-card h2 {
-    color: #c9a46c;
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.festival-card h3 {
-    margin: 0;
-    font-size: 16px;
-}
-
-.festival-card .date {
-    color: #c9a46c;
+/* =========================
+   AESTHETIC CALENDAR TILE
+========================= */
+.festival-date-paper {
+    width: 92px;
+    height: 92px;
+    background: linear-gradient(180deg, #f6e7b5, #d4b35a);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-weight: 600;
-    margin: 8px 0;
+    flex-shrink: 0;
+
+    /* softer depth */
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.35),
+        inset 0 1px 2px rgba(255,255,255,0.35);
 }
 
-.festival-card p {
+/* folded corner (more realistic paper fold) */
+.festival-date-paper .fold {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 26px;
+    height: 26px;
+    background: linear-gradient(135deg, #e8d08a, #c9a23a);
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* MONTH */
+.festival-date-paper .month {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #5a4500;
+    text-transform: uppercase;
+}
+
+/* DAY */
+.festival-date-paper .day {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2b2100;
+    line-height: 1;
+}
+
+/* INFO */
+.festival-info {
+    text-align: left;
+}
+
+.festival-info h2 {
+    margin: 0;
+    font-size: 15px;
+    color: #d6b46a;
+    font-weight: 500;
+}
+
+.festival-info h3 {
+    margin: 4px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f1f1f1;
+}
+
+.festival-info p {
     font-size: 13px;
-    color: #ccc;
-    line-height: 1.4;
+    color: #bdbdbd;
+    line-height: 1.5;
+    margin-top: 6px;
+}
+
+/* remove highlight */
+.festival-card:visited,
+.festival-card:focus,
+.festival-card:active {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
 }
 
 /* RESPONSIVE */
@@ -353,6 +438,10 @@ html, body {
         grid-template-columns: 1fr;
     }
 }
+
+
+
+
 
 /* =========================
    FOOTER SECTION
@@ -639,44 +728,84 @@ html, body {
 </section>
 
 
+
+
+
+
+
 <section class="festival-section">
   <h1 class="festival-title">CALABARZON FESTIVAL CALENDAR</h1>
 
   <div class="festival-grid">
 
     <a href="laguna.html#anilag" class="festival-card">
-      <h2>Laguna</h2>
-      <h3>Anilag Festival</h3>
-      <p class="date">March 15</p>
-      <p>Showcases culture, agriculture, and traditions of Laguna.</p>
+      <div class="festival-date-paper">
+        <div class="fold"></div>
+        <div class="month">MARCH</div>
+        <div class="day">15</div>
+      </div>
+
+      <div class="festival-info">
+        <h2>Laguna</h2>
+        <h3>Anilag Festival</h3>
+        <p>Showcases culture, agriculture, and traditions of Laguna.</p>
+      </div>
     </a>
 
     <a href="quezonprovince.html#pahiyas" class="festival-card">
-      <h2>Quezon</h2>
-      <h3>Pahiyas Festival</h3>
-      <p class="date">May 15</p>
-      <p>Colorful harvest festival decorated with rice, fruits, and kiping.</p>
+      <div class="festival-date-paper">
+        <div class="fold"></div>
+        <div class="month">MAY</div>
+        <div class="day">15</div>
+      </div>
+
+      <div class="festival-info">
+        <h2>Quezon</h2>
+        <h3>Pahiyas Festival</h3>
+        <p>Colorful harvest festival decorated with rice, fruits, and kiping.</p>
+      </div>
     </a>
 
     <a href="batangas.html#parada" class="festival-card">
-      <h2>Batangas</h2>
-      <h3>Parada ng Lechon</h3>
-      <p class="date">June 24</p>
-      <p>Festive parade of roasted pigs during St. John the Baptist feast.</p>
+      <div class="festival-date-paper">
+        <div class="fold"></div>
+        <div class="month">JUNE</div>
+        <div class="day">24</div>
+      </div>
+
+      <div class="festival-info">
+        <h2>Batangas</h2>
+        <h3>Parada ng Lechon</h3>
+        <p>Festive parade of roasted pigs during St. John the Baptist feast.</p>
+      </div>
     </a>
 
     <a href="cavite.html#regada" class="festival-card">
-      <h2>Cavite</h2>
-      <h3>Regada Festival</h3>
-      <p class="date">August 25</p>
-      <p>Water festival featuring street games and celebrations.</p>
+      <div class="festival-date-paper">
+        <div class="fold"></div>
+        <div class="month">AUG</div>
+        <div class="day">25</div>
+      </div>
+
+      <div class="festival-info">
+        <h2>Cavite</h2>
+        <h3>Regada Festival</h3>
+        <p>Water festival featuring street games and celebrations.</p>
+      </div>
     </a>
 
     <a href="rizal.html#sumaka" class="festival-card">
-      <h2>Rizal</h2>
-      <h3>Sumaka Festival</h3>
-      <p class="date">November 23</p>
-      <p>Celebrates local products like suman, mango, and cashew.</p>
+      <div class="festival-date-paper">
+        <div class="fold"></div>
+        <div class="month">NOV</div>
+        <div class="day">23</div>
+      </div>
+
+      <div class="festival-info">
+        <h2>Rizal</h2>
+        <h3>Sumaka Festival</h3>
+        <p>Celebrates local products like suman, mango, and cashew.</p>
+      </div>
     </a>
 
   </div>
