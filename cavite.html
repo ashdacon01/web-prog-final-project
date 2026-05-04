@@ -152,60 +152,67 @@ html, body {
         text-align: center;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .navbar {
-    position: sticky;
+    background-color: transparent;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 9999;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-.navbar.transparent {
-    background-color: transparent !important;
-    box-shadow: none;
-    text-emphasis-color: #fff;
+    transition: 0.4s ease;
 }
 .navbar.scrolled {
-    background-color: #fff !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-.navbar.transparent .nav-link,
-.navbar.transparent .navbar-brand {
+.navbar .nav-link,
+.navbar .navbar-brand {
     color: #fff !important;
+}
+.navbar .nav-link:hover {
+    color: #ccc !important;
 }
 .navbar.scrolled .nav-link,
 .navbar.scrolled .navbar-brand {
     color: #000 !important;
 }
-.navbar.transparent .nav-link:hover {
-    color: #ddd !important;
-}
-.navbar.scrolled .nav-link:hover {
-    color: #ccc !important;
-}
-body {
-    background: #000;
-    margin: 0;
-    color: white;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -218,7 +225,6 @@ body {
     padding: 0 20px;
 }
 
-/* ROW LAYOUT */
 .row-item {
     display: flex;
     align-items: flex-start;
@@ -226,14 +232,12 @@ body {
     margin-bottom: 60px;
 }
 
-/* IMAGE (UNCHANGED SIZE) */
 .mountain-card {
     width: 800px;
     cursor: pointer;
     border-radius: 5px;
     overflow: hidden;
 }
-
 .mountain-card img {
     width: 100%;
     height: 500px;
@@ -241,7 +245,6 @@ body {
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
-
 .mountain-card:hover img {
     transform: scale(1.05);
 }
@@ -266,6 +269,7 @@ body {
     text-align: justify;
     word-break: normal;
     overflow-wrap: break-word;
+    color: #fff;
 }
 .tour-hero {
     position: absolute;
@@ -276,7 +280,12 @@ body {
     max-width: 700px;
     color: #c9a46c;
     width: 90%;
+    margin: -40px;
+    margin-bottom: 500px;
 }
+
+
+
 
 
 
@@ -846,21 +855,7 @@ html {
 
 
 
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-<nav class="navbar navbar-expand-lg transparent">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand">CALABARZON</a>
 
@@ -869,57 +864,47 @@ html {
     </button>
 
     <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-        <a class="nav-link" href="homepage.html">Home</a>
-        </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Provinces</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="cavite.html">Cavite</a></li>
-            <li><a class="dropdown-item" href="laguna.html">Laguna</a></li>
-            <li><a class="dropdown-item" href="batangas.html">Batangas</a></li>
-            <li><a class="dropdown-item" href="rizal.html">Rizal</a></li>
-            <li><a class="dropdown-item" href="quezon.html">Quezon</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#delicacy">Delicacy</a>
-        </li>
+  <!-- LEFT SIDE -->
+  <ul class="navbar-nav me-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="homepage.html">Home</a>
+    </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#festivals">Festivals</a>
-        </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Provinces</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="cavite.html">Cavite</a></li>
+        <li><a class="dropdown-item" href="laguna.html">Laguna</a></li>
+        <li><a class="dropdown-item" href="batangas.html">Batangas</a></li>
+        <li><a class="dropdown-item" href="rizal.html">Rizal</a></li>
+        <li><a class="dropdown-item" href="quezon.html">Quezon</a></li>
+      </ul>
+    </li>
 
-         <li class="nav-item">
-        <a class="nav-link" href="homepage.html#faqs">FAQs</a>
-        </li>
-    </div>
-      <div class="d-flex ms-auto">
-        <ul class="navbar-nav">
-        <li class="nav-item">
-        <a class="nav-link" href="index.html">Blog</a>
-      </li>
-    </ul>
-  </div>
+    <li class="nav-item">
+      <a class="nav-link" href="#delicacy">Delicacy</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#festivals">Festivals</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="homepage.html#faqs">FAQs</a>
+    </li>
+  </ul>
+
+  <!-- RIGHT SIDE -->
+  <ul class="navbar-nav ms-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">Blog</a>
+    </li>
+  </ul>
+
+</div>
 </div>
 </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -927,10 +912,6 @@ html {
 <div class="tour-hero">
     <h1 class="display-3 fw-bold">Mountain Escapes in Cavite</h1>
 </div>
-
-
-
-
 
 
 <div class="main-container">
@@ -1064,12 +1045,6 @@ html {
 </div>
 
 
-
-
-
-
-
-
 <section class="section" id="delicacy">
   <h1>CALABARZON DELICACY</h1>
   <div class="container">
@@ -1106,21 +1081,6 @@ html {
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <section class="festival-gallery-section" id="festivals">
@@ -1189,7 +1149,6 @@ It has become one of Cavite’s most anticipated seasonal celebrations, attracti
 
 
 
-
 <footer class="footer">
     <div class="footer-container"> 
         <div class="row align-items-start">
@@ -1213,74 +1172,87 @@ It has become one of Cavite’s most anticipated seasonal celebrations, attracti
     </div>
 </footer>
 
+
+
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+/* =========================
+   NAVBAR SCROLL EFFECT
+========================= */
+window.addEventListener("scroll", function () {
     const navbar = document.querySelector(".navbar");
-    function updateNavbar() {
-        if (window.scrollY > 50) {
-            navbar.classList.add("scrolled");
-            navbar.classList.remove("transparent");
-        } else {
-            navbar.classList.add("transparent");
-            navbar.classList.remove("scrolled");
-        }
-    }
-
-    window.addEventListener("scroll", function () {
-        updateBackButton();
-        updateNavbar();
-    });
-
-    window.addEventListener("resize", updateBackButton);
-
-    updateBackButton();
-    updateNavbar();
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
 
 
-function changeFoodImage(imagePath) {
-    const img = document.getElementById("foodMainImage");
+/* =========================
+   IMAGE SLIDER (FOREGROUND + BACKGROUND)
+========================= */
+const fgImages = document.querySelectorAll(".slide-track img");
+const bgImages = document.querySelectorAll(".bg-track img");
+let index = 0;
 
-    img.style.opacity = 0;
+function changeSlides() {
+    fgImages.forEach(img => img.classList.remove("active"));
+    bgImages.forEach(img => img.classList.remove("active"));
 
-    setTimeout(() => {
-        img.src = imagePath;
-        img.style.opacity = 1;
-    }, 200);
+    fgImages[index].classList.add("active");
+    bgImages[index].classList.add("active");
+
+    index = (index + 1) % fgImages.length;
 }
 
+changeSlides();
+setInterval(changeSlides, 5000);
+</script>
 
 
 
 
 
+
+<script>
+/* =========================
+   FESTIVAL MODAL (OPEN)
+========================= */
 const items = document.querySelectorAll('.festival-item');
-const modal = document.getElementById('festivalModal');
+const festivalModal = document.getElementById('festivalModal');
 const modalTitle = document.getElementById('modalTitle');
 const modalText = document.getElementById('modalText');
-const closeBtn = document.querySelector('.close-btn');
+const festivalCloseBtn = document.querySelector('.close-btn');
 
 items.forEach(item => {
     item.addEventListener('click', () => {
-        modal.classList.add('active');
+        festivalModal.classList.add('active');
         modalTitle.textContent = item.dataset.title;
         modalText.textContent = item.dataset.info;
     });
 });
 
-closeBtn.addEventListener('click', () => {
-    modal.classList.remove('active');
+/* CLOSE FESTIVAL MODAL */
+festivalCloseBtn.addEventListener('click', () => {
+    festivalModal.classList.remove('active');
 });
 
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.classList.remove('active');
+festivalModal.addEventListener('click', (e) => {
+    if (e.target === festivalModal) {
+        festivalModal.classList.remove('active');
     }
 });
+</script>
 
 
+<script>
+/* =========================
+   HASH AUTO SCROLL + HIGHLIGHT
+   (Scrolls to section from URL #hash)
+========================= */
 window.addEventListener("DOMContentLoaded", () => {
     const hash = window.location.hash;
 
@@ -1290,7 +1262,6 @@ window.addEventListener("DOMContentLoaded", () => {
         if (target) {
             target.scrollIntoView({ behavior: "smooth", block: "center" });
 
-            // OPTIONAL: highlight only (no modal)
             target.classList.add("highlight");
 
             setTimeout(() => {
@@ -1299,39 +1270,40 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+</script>
 
 
+<script>
+/* =========================
+   IMAGE ZOOM MODAL
+   (Fullscreen image + scroll lock)
+========================= */
+document.addEventListener("DOMContentLoaded", () => {
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    const modal = document.getElementById("imgModal");
+    const imgModal = document.getElementById("imgModal");
     const modalImg = document.getElementById("modalImg");
-    const closeBtn = document.querySelector(".close-btn");
+    const imgCloseBtn = document.querySelector(".close-btn");
 
-    // Save scroll position
     let scrollY = 0;
 
-    // Open modal on image click
     document.querySelectorAll(".zoomable").forEach(img => {
-        img.addEventListener("click", function () {
-            scrollY = window.scrollY; // store current position
+        img.addEventListener("click", () => {
 
-            modal.style.display = "flex";
-            modalImg.src = this.src;
+            scrollY = window.scrollY;
 
-            // lock scroll WITHOUT jumping
+            imgModal.style.display = "flex";
+            modalImg.src = img.src;
+
             document.body.style.position = "fixed";
             document.body.style.top = `-${scrollY}px`;
             document.body.style.width = "100%";
         });
     });
 
-    // Close modal function
-    function closeModal() {
-        modal.style.display = "none";
+    function closeImgModal() {
+        imgModal.style.display = "none";
         modalImg.src = "";
 
-        // restore scroll position
         document.body.style.position = "";
         document.body.style.top = "";
         document.body.style.width = "";
@@ -1339,59 +1311,53 @@ document.addEventListener("DOMContentLoaded", function () {
         window.scrollTo(0, scrollY);
     }
 
-    // Close button
-    closeBtn.addEventListener("click", closeModal);
+    imgCloseBtn.addEventListener("click", closeImgModal);
 
-    // Click outside image closes modal
-    modal.addEventListener("click", function (e) {
-        if (e.target === modal) {
-            closeModal();
+    imgModal.addEventListener("click", (e) => {
+        if (e.target === imgModal) {
+            closeImgModal();
         }
     });
 
-    // ESC key closes modal
-    document.addEventListener("keydown", function (e) {
+    document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
-            closeModal();
+            closeImgModal();
         }
     });
 
 });
 
+</script>
 
 
 
 
-
+<script>
 /* =========================
    TAB SWITCHING (FOOD SECTION)
 ========================= */
 function showTab(tabId, imgSrc, el) {
-  document.querySelectorAll('.tab')
-    .forEach(el => el.classList.remove('active'));
 
-  document.querySelectorAll('.tab-content')
-    .forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab')
+        .forEach(t => t.classList.remove('active'));
 
-  const target = document.getElementById(tabId);
-  if (target) target.classList.add('active');
+    document.querySelectorAll('.tab-content')
+        .forEach(t => t.classList.remove('active'));
 
-  if (!el && event && event.currentTarget) {
-    el = event.currentTarget;
-  }
+    const target = document.getElementById(tabId);
+    if (target) target.classList.add('active');
 
-  if (el) el.classList.add('active');
+    if (!el && window.event && window.event.currentTarget) {
+        el = window.event.currentTarget;
+    }
 
-  const img = document.getElementById('provinceImage');
-  if (img) img.src = imgSrc;
+    if (el) el.classList.add('active');
+
+    const img = document.getElementById('provinceImage');
+    if (img) img.src = imgSrc;
 }
 
 </script>
-
-
-</script>
-</script>
-
 
 </body>
 </html>
