@@ -11,9 +11,9 @@ html, body {
     overflow-x: hidden;
 }
 
-
-
-
+/* =========================
+   RESPONSIVE (MOBILE)
+========================= */
 
 @media (max-width: 768px) {
 
@@ -80,12 +80,8 @@ html, body {
         padding: 0 5px;
         text-align: left;
     }
-/* =========================
-   RESPONSIVE (MOBILE)
-========================= */
-@media (max-width: 768px) {
 
-    /* HERO (unchanged layout, just responsive positioning) */
+@media (max-width: 768px) {
     .tour-hero {
         position: relative;
         top: auto;
@@ -103,8 +99,6 @@ html, body {
         margin: 0;
         line-height: 1.3;
     }
-
-    /* CONTAINER (keep structure, remove forced margins only) */
     .main-container {
         margin: 100px auto 80px auto !important;
         padding: 0 15px;
@@ -155,20 +149,6 @@ html, body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .navbar {
     background-color: transparent;
     position: fixed;
@@ -197,25 +177,6 @@ html, body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .main-container {
     display: flex;
     flex-direction: column;
@@ -224,14 +185,12 @@ html, body {
     max-width: 1200px;
     padding: 0 20px;
 }
-
 .row-item {
     display: flex;
     align-items: flex-start;
     gap: 60px;
     margin-bottom: 60px;
 }
-
 .mountain-card {
     width: 800px;
     cursor: pointer;
@@ -283,13 +242,6 @@ html, body {
     margin: -40px;
     margin-bottom: 500px;
 }
-
-
-
-
-
-
-
 
 
 
@@ -354,8 +306,6 @@ html, body {
         transform: translateX(-50%);
     }
 }
-
-
 /* =========================
    IMAGE ZOOM MODAL
 ========================= */
@@ -392,9 +342,6 @@ html, body {
 .img-modal img {
     user-select: none;
 }
-
-
-
 
 
 
@@ -572,17 +519,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* =========================
    FESTIVAL SECTION
 ========================= */
@@ -623,14 +559,12 @@ body {
 .festival-item:nth-child(2) { animation-delay: 0.2s; }
 .festival-item:nth-child(3) { animation-delay: 0.3s; }
 
-
 .festival-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease, filter 0.6s ease;
 }
-
 .festival-item::after {
     content: "";
     position: absolute;
@@ -642,7 +576,6 @@ body {
         rgba(0,0,0,0.05)
     );
 }
-
 .festival-item h4 {
     position: absolute;
     bottom: 25px;
@@ -651,7 +584,6 @@ body {
     color: #fff;
     font-size: 20px;
 }
-
 .festival-item:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 60px rgba(145, 92, 13, 0.2);
@@ -660,7 +592,6 @@ body {
     transform: scale(1.1);
     filter: brightness(1.1);
 }
-
 .festival-gallery-section p {
      max-width: 800px;
     margin: 15px auto 40px auto;
@@ -670,14 +601,12 @@ body {
     color: #555;
     padding: 0 20px;
 }
-
 @keyframes fadeUp {
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
 /* =========================
    MODAL (GLASS STYLE)
 ========================= */
@@ -691,11 +620,9 @@ body {
     backdrop-filter: blur(10px);
     z-index: 9999;
 }
-
 .festival-modal.active {
     display: flex;
 }
-
 .festival-modal-content {
     width: 90%;
     max-width: 700px;
@@ -712,19 +639,15 @@ body {
     animation: pop 0.3s ease;
     position: relative;
 }
-
 .festival-modal-content h2 {
     color: #c9a46c;
     margin-bottom: 10px;
 }
-
 .festival-modal-content p {
     font-size: 14px;
     opacity: 0.9;
     line-height: 1.6;
 }
-
-/* CLOSE */
 .close-btn {
     position: absolute;
     top: 15px;
@@ -732,8 +655,6 @@ body {
     font-size: 26px;
     cursor: pointer;
 }
-
-/* POP ANIMATION */
 @keyframes pop {
     from {
         transform: scale(0.8);
@@ -744,8 +665,6 @@ body {
         opacity: 1;
     }
 }
-
-/* RESPONSIVE */
 @media (max-width: 992px) {
     .festival-grid-6 {
         grid-template-columns: 1fr;
@@ -759,31 +678,22 @@ body {
 
 
 
-
-
-
-
-
-
 .footer {
     background: #f8f9fa;
     padding: 50px 0 25px;
     border-top: 1px solid #eee;
 }
-
 .footer-brand {
     font-size: 1.4rem;
     font-weight: 600;
     color: #333;
     margin-bottom: 10px;
 }
-
 .footer-text {
     color: #6c757d;
     font-size: 0.9rem;
     max-width: 400px;
 }
-
 .footer-links {
     display: flex;
     gap: 20px;
@@ -792,21 +702,17 @@ body {
     padding: 0;
     list-style: none;
 }
-
 .footer-links a {
     color: #6c757d;
     text-decoration: none;
     font-size: 0.9rem;
 }
-
 .footer-links a:hover {
     color: #0d6efd;
 }
-
 .footer .row > div {
     margin-bottom: 5px;
 }
-
 .copyright {
     text-align: center;
     width: 100%;
@@ -816,23 +722,19 @@ body {
     color: #6c757d;
     font-size: 0.85rem;
 }
-
 .footer-container {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 15px;
 }
-
 .footer .row {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
 }
-
 .footer .col-md-6 {
     width: 50%;
 }
-
 @media (max-width: 768px) {
     .footer .col-md-6 {
         width: 100%;
@@ -851,26 +753,17 @@ html {
 <body>
 
 
-
-
-
-
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand">CALABARZON</a>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="mainNav">
-
-  <!-- LEFT SIDE -->
   <ul class="navbar-nav me-auto">
     <li class="nav-item">
       <a class="nav-link" href="homepage.html">Home</a>
     </li>
-
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Provinces</a>
       <ul class="dropdown-menu">
@@ -881,37 +774,31 @@ html {
         <li><a class="dropdown-item" href="quezon.html">Quezon</a></li>
       </ul>
     </li>
-
     <li class="nav-item">
       <a class="nav-link" href="#delicacy">Delicacy</a>
     </li>
-
     <li class="nav-item">
       <a class="nav-link" href="#festivals">Festivals</a>
     </li>
-
     <li class="nav-item">
       <a class="nav-link" href="homepage.html#faqs">FAQs</a>
     </li>
-  </ul>
-
-  <!-- RIGHT SIDE -->
+  </ul>>
   <ul class="navbar-nav ms-auto">
     <li class="nav-item">
       <a class="nav-link" href="index.html">Blog</a>
     </li>
   </ul>
-
 </div>
 </div>
 </nav>
 
 
 
-
 <div class="tour-hero">
     <h1 class="display-3 fw-bold">Mountain Escapes in Cavite</h1>
 </div>
+
 
 
 <div class="main-container">
@@ -1038,11 +925,13 @@ html {
     </div>
 </div>
 
-<!-- MODAL (added for zoom feature) -->
+
+
 <div id="imgModal" class="img-modal">
     <span class="close-btn">&times;</span>
     <img class="modal-content" id="modalImg">
 </div>
+
 
 
 <section class="section" id="delicacy">
@@ -1081,6 +970,7 @@ html {
     </div>
   </div>
 </section>
+
 
 
 <section class="festival-gallery-section" id="festivals">
@@ -1148,7 +1038,6 @@ It has become one of Cavite’s most anticipated seasonal celebrations, attracti
 </div>
 
 
-
 <footer class="footer">
     <div class="footer-container"> 
         <div class="row align-items-start">
@@ -1174,10 +1063,6 @@ It has become one of Cavite’s most anticipated seasonal celebrations, attracti
 
 
 
-
-
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 
@@ -1191,27 +1076,27 @@ window.addEventListener("scroll", function () {
 });
 
 
+
+
+
+
 /* =========================
    IMAGE SLIDER (FOREGROUND + BACKGROUND)
 ========================= */
 const fgImages = document.querySelectorAll(".slide-track img");
 const bgImages = document.querySelectorAll(".bg-track img");
 let index = 0;
-
 function changeSlides() {
     fgImages.forEach(img => img.classList.remove("active"));
     bgImages.forEach(img => img.classList.remove("active"));
-
     fgImages[index].classList.add("active");
     bgImages[index].classList.add("active");
 
     index = (index + 1) % fgImages.length;
 }
-
 changeSlides();
 setInterval(changeSlides, 5000);
 </script>
-
 
 
 
@@ -1226,7 +1111,6 @@ const festivalModal = document.getElementById('festivalModal');
 const modalTitle = document.getElementById('modalTitle');
 const modalText = document.getElementById('modalText');
 const festivalCloseBtn = document.querySelector('.close-btn');
-
 items.forEach(item => {
     item.addEventListener('click', () => {
         festivalModal.classList.add('active');
@@ -1234,18 +1118,16 @@ items.forEach(item => {
         modalText.textContent = item.dataset.info;
     });
 });
-
-/* CLOSE FESTIVAL MODAL */
 festivalCloseBtn.addEventListener('click', () => {
     festivalModal.classList.remove('active');
 });
-
 festivalModal.addEventListener('click', (e) => {
     if (e.target === festivalModal) {
         festivalModal.classList.remove('active');
     }
 });
 </script>
+
 
 
 <script>
@@ -1255,15 +1137,11 @@ festivalModal.addEventListener('click', (e) => {
 ========================= */
 window.addEventListener("DOMContentLoaded", () => {
     const hash = window.location.hash;
-
     if (hash) {
         const target = document.querySelector(hash);
-
         if (target) {
             target.scrollIntoView({ behavior: "smooth", block: "center" });
-
             target.classList.add("highlight");
-
             setTimeout(() => {
                 target.classList.remove("highlight");
             }, 2000);
@@ -1273,60 +1151,47 @@ window.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
+
 <script>
 /* =========================
    IMAGE ZOOM MODAL
    (Fullscreen image + scroll lock)
 ========================= */
 document.addEventListener("DOMContentLoaded", () => {
-
     const imgModal = document.getElementById("imgModal");
     const modalImg = document.getElementById("modalImg");
     const imgCloseBtn = document.querySelector(".close-btn");
-
     let scrollY = 0;
-
     document.querySelectorAll(".zoomable").forEach(img => {
         img.addEventListener("click", () => {
-
             scrollY = window.scrollY;
-
             imgModal.style.display = "flex";
             modalImg.src = img.src;
-
             document.body.style.position = "fixed";
             document.body.style.top = `-${scrollY}px`;
             document.body.style.width = "100%";
         });
     });
-
     function closeImgModal() {
         imgModal.style.display = "none";
         modalImg.src = "";
-
         document.body.style.position = "";
         document.body.style.top = "";
         document.body.style.width = "";
-
         window.scrollTo(0, scrollY);
     }
-
     imgCloseBtn.addEventListener("click", closeImgModal);
-
     imgModal.addEventListener("click", (e) => {
         if (e.target === imgModal) {
             closeImgModal();
         }
     });
-
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
             closeImgModal();
         }
     });
-
 });
-
 </script>
 
 
@@ -1337,22 +1202,16 @@ document.addEventListener("DOMContentLoaded", () => {
    TAB SWITCHING (FOOD SECTION)
 ========================= */
 function showTab(tabId, imgSrc, el) {
-
     document.querySelectorAll('.tab')
         .forEach(t => t.classList.remove('active'));
-
     document.querySelectorAll('.tab-content')
         .forEach(t => t.classList.remove('active'));
-
     const target = document.getElementById(tabId);
     if (target) target.classList.add('active');
-
     if (!el && window.event && window.event.currentTarget) {
         el = window.event.currentTarget;
     }
-
     if (el) el.classList.add('active');
-
     const img = document.getElementById('provinceImage');
     if (img) img.src = imgSrc;
 }
