@@ -120,11 +120,19 @@
     color: #ccc !important;
 }
 
+
+
+
+
 body {
     background: #000;
     margin: 0;
     color: white;
 }
+
+
+
+
 
 .main-container {
     display: flex;
@@ -188,6 +196,15 @@ body {
     max-width: 700px;
     width: 90%;
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -256,6 +273,78 @@ body {
         transform: translateX(-50%);
     }
 }
+
+
+
+/* =========================
+   IMAGE ZOOM MODAL
+========================= */
+
+/* Fullscreen background overlay */
+.img-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* Zoomed image */
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    transform: scale(1);
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10000;
+}
+
+/* optional: prevent image selection highlight */
+.img-modal img {
+    user-select: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -496,6 +585,8 @@ padding: 120px 0 30px;
     }
 }
 
+
+
 /* =========================
    MODAL (GLASS STYLE)
 ========================= */
@@ -573,25 +664,6 @@ padding: 120px 0 30px;
         height: 300px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .footer {
@@ -710,121 +782,128 @@ padding: 120px 0 30px;
 </nav>
 
 
-
-
-
 <div class="tour-hero">
     <h1 class="display-3 fw-bold">Mountain Escapes in Cavite</h1>
 </div>
+
+
+
+
+
+
 <div class="main-container">
     <div class="row-item">
 
+        <div class="mountain-card">
+            <img class="zoomable" src="img/cavite/picodeloro/picodeloro.png" alt="Pico de Loro">
+        </div>
 
-    <div class="mountain-card">
-        <img src="img/cavite/picodeloro/picodeloro.png" alt="Pico de Loro">
-    </div>
-    <div class="info-box">
-        <h2>Pico de Loro</h2>
-        <p style="text-align: justify;">
-            One of Cavite’s most iconic hiking destinations, known for its scenic trails, limestone formations, and the famous Monolith at the summit with panoramic views of the sea and surrounding mountains.
-        </p>
-        <p style="text-align: justify;">
-            The hike is considered moderate and usually takes 4–6 hours round trip. Climbers should expect steep and rocky sections, especially near the summit. Registration is required at the base, and guides may be needed depending on current regulations.
-        </p>
-        <p style="text-align: justify;">
-            Hikers are advised to bring enough water, sun protection, proper hiking shoes, and light snacks. Early morning climbs are recommended to avoid heat and crowds, and overnight camping may be subject to permits.
-        </p>
-    </div>
-</div>
-
-<div class="slider-section">
-
-    <div class="slider-label">
-        Captured moments of people on their travels.
+        <div class="info-box">
+            <h2>Pico de Loro</h2>
+            <p style="text-align: justify;">
+                One of Cavite’s most iconic hiking destinations, known for its scenic trails, limestone formations, and the famous Monolith at the summit with panoramic views of the sea and surrounding mountains.
+            </p>
+            <p style="text-align: justify;">
+                The hike is considered moderate and usually takes 4–6 hours round trip. Climbers should expect steep and rocky sections, especially near the summit. Registration is required at the base, and guides may be needed depending on current regulations.
+            </p>
+            <p style="text-align: justify;">
+                Hikers are advised to bring enough water, sun protection, proper hiking shoes, and light snacks. Early morning climbs are recommended to avoid heat and crowds, and overnight camping may be subject to permits.
+            </p>
+        </div>
     </div>
 
-    <div class="slider-track">
+    <div class="slider-section">
 
-        <!-- First set -->
-        <img src="img/cavite/picodeloro/picodeloro.png" alt="">
-        <img src="img/cavite/picodeloro/1.jpg" alt="">
-        <img src="img/cavite/picodeloro/2.jpg" alt="">
-        <img src="img/cavite/picodeloro/3.jpg" alt="">
-        <img src="img/cavite/picodeloro/4.jpg" alt="">
-        <img src="img/cavite/picodeloro/5.jpg" alt="">
-        <img src="img/cavite/picodeloro/6.jpg" alt="">
-        <img src="img/cavite/picodeloro/7.jpg" alt="">
-        <img src="img/cavite/picodeloro/8.jpg" alt="">
-        <img src="img/cavite/picodeloro/9.jpg" alt="">
+        <div class="slider-label">
+            Captured moments of people on their travels.
+        </div>
 
-        <!-- Duplicate set -->
-        <img src="img/cavite/picodeloro/picodeloro.png" alt="">
-        <img src="img/cavite/picodeloro/1.jpg" alt="">
-        <img src="img/cavite/picodeloro/2.jpg" alt="">
-        <img src="img/cavite/picodeloro/3.jpg" alt="">
-        <img src="img/cavite/picodeloro/4.jpg" alt="">
-        <img src="img/cavite/picodeloro/5.jpg" alt="">
-        <img src="img/cavite/picodeloro/6.jpg" alt="">
-        <img src="img/cavite/picodeloro/7.jpg" alt="">
-        <img src="img/cavite/picodeloro/8.jpg" alt="">
-        <img src="img/cavite/picodeloro/9.jpg" alt="">
+        <div class="slider-track">
+
+            <!-- First set -->
+            <img class="zoomable" src="img/cavite/picodeloro/picodeloro.png" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/1.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/2.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/3.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/4.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/5.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/6.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/7.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/8.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/9.jpg" alt="">
+
+            <!-- Duplicate set -->
+            <img class="zoomable" src="img/cavite/picodeloro/picodeloro.png" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/1.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/2.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/3.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/4.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/5.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/6.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/7.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/8.jpg" alt="">
+            <img class="zoomable" src="img/cavite/picodeloro/9.jpg" alt="">
+        </div>
     </div>
-</div>
+
     <div class="row-item">
-    <!-- LEFT: INFO -->
-    <div class="info-box">
-        <h2>Mt. Marami</h2>
-        <p style="text-align: justify;">
-            Mt. Marami is one of Cavite’s most popular hiking destinations, known for its sharp limestone formations, scenic grasslands, and the iconic Silyang Bato at the summit. It offers a challenging but rewarding trail with stunning views of nearby mountains and the sea.
-        </p>
-        <p style="text-align: justify;">
-            The hike is considered moderate to difficult and usually takes 5–7 hours round trip depending on pace. Climbers should expect long river crossings, rocky ascents, and exposed trails under the sun.
-        </p>
-        <p style="text-align: justify;">
-            Hikers are advised to bring enough water, sun protection, trekking shoes, and light snacks. Early morning start is highly recommended, and camping is allowed at designated areas for overnight hikes.
-        </p>
+
+        <div class="info-box">
+            <h2>Mt. Marami</h2>
+            <p style="text-align: justify;">
+                Mt. Marami is one of Cavite’s most popular hiking destinations, known for its sharp limestone formations, scenic grasslands, and the iconic Silyang Bato at the summit. It offers a challenging but rewarding trail with stunning views of nearby mountains and the sea.
+            </p>
+            <p style="text-align: justify;">
+                The hike is considered moderate to difficult and usually takes 5–7 hours round trip depending on pace. Climbers should expect long river crossings, rocky ascents, and exposed trails under the sun.
+            </p>
+            <p style="text-align: justify;">
+                Hikers are advised to bring enough water, sun protection, trekking shoes, and light snacks. Early morning start is highly recommended, and camping is allowed at designated areas for overnight hikes.
+            </p>
+        </div>
+
+        <div class="mountain-card">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite.png" alt="Mt. Marami">
+        </div>
     </div>
-    <div class="mountain-card">
-        <img src="img/cavite/mtmarami/mtmaramicavite.png" alt="Mt. Marami">
+
+    <div class="slider-section">
+
+        <div class="slider-label left">
+            Captured moments of hikers exploring Mt. Marami.
+        </div>
+
+        <div class="slider-track">
+
+            <img class="zoomable" src="img/cavite/mtmaramicavite.png" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite1.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite2.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite3.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite4.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite5.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite6.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite7.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite8.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/9.webp" alt="">
+
+            <img class="zoomable" src="img/cavite/mtmaramicavite.png" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite1.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite2.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite3.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite4.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite5.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite6.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite7.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite8.webp" alt="">
+            <img class="zoomable" src="img/cavite/mtmarami/9.webp" alt="">
+        </div>
     </div>
 </div>
-<div class="slider-section">
-    <div class="slider-label left">
-        Captured moments of hikers exploring Mt. Marami.
-    </div>
-    <div class="slider-track">
-        <img src="img/cavite/mtmaramicavite.png" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite1.webp" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite2.webp" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite3.webp" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite4.webp" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite5.webp" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite6.webp" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite7.webp" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite8.webp" alt="">
-        <img src="img/cavite/mtmarami/9.webp" alt="">
 
-        <img src="img/cavite/mtmaramicavite.png" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite1.webp" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite2.webp" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite3.webp" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite4.webp" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite5.webp" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite6.webp" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite7.webp" alt="">
-        <img src="img/cavite/mtmarami/mtmaramicavite8.webp" alt="">
-        <img src="img/cavite/mtmarami/9.webp" alt="">
-
-    </div>
+<!-- MODAL (added for zoom feature) -->
+<div id="imgModal" class="img-modal">
+    <span class="close-btn">&times;</span>
+    <img class="modal-content" id="modalImg">
 </div>
-
-
-
-
-
-
-
-
 
 
 
@@ -929,8 +1008,6 @@ It has become one of Cavite’s most anticipated seasonal celebrations, attracti
 
   </div>
 </section>
-
-
 <div class="festival-modal" id="festivalModal">
   <div class="festival-modal-content">
     <span class="close-btn">&times;</span>
@@ -938,30 +1015,9 @@ It has become one of Cavite’s most anticipated seasonal celebrations, attracti
     <p id="modalText"></p>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
+
+
 
 
 <footer class="footer">
@@ -1028,6 +1084,8 @@ function changeFoodImage(imagePath) {
 
 
 
+
+
 const items = document.querySelectorAll('.festival-item');
 const modal = document.getElementById('festivalModal');
 const modalTitle = document.getElementById('modalTitle');
@@ -1071,6 +1129,66 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.querySelector(".close-btn");
+
+    // Save scroll position
+    let scrollY = 0;
+
+    // Open modal on image click
+    document.querySelectorAll(".zoomable").forEach(img => {
+        img.addEventListener("click", function () {
+            scrollY = window.scrollY; // store current position
+
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+
+            // lock scroll WITHOUT jumping
+            document.body.style.position = "fixed";
+            document.body.style.top = `-${scrollY}px`;
+            document.body.style.width = "100%";
+        });
+    });
+
+    // Close modal function
+    function closeModal() {
+        modal.style.display = "none";
+        modalImg.src = "";
+
+        // restore scroll position
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+
+        window.scrollTo(0, scrollY);
+    }
+
+    // Close button
+    closeBtn.addEventListener("click", closeModal);
+
+    // Click outside image closes modal
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // ESC key closes modal
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            closeModal();
+        }
+    });
+
+});
+</script>
+
 
 </script>
 </script>
