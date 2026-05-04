@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cavite</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
 <style>
+    
 html, body {
     overflow-x: hidden;
 }
@@ -18,7 +18,6 @@ html, body {
         overflow-x: hidden;
         touch-action: pan-y;
     }
-
     .tour-hero {
         position: relative;
         top: auto;
@@ -85,6 +84,29 @@ html, body {
         padding: 0 5px;
         text-align: left;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 .navbar {
     position: sticky;
@@ -122,26 +144,32 @@ body {
 }
 
 
+
 .main-container {
     display: flex;
     flex-direction: column;
     gap: 40px;
     margin: 220px auto 150px auto;
-    max-width: 1200px;             
-    padding: 0 20px;               
+    max-width: 1200px;
+    padding: 0 20px;
 }
+
+/* ROW LAYOUT */
 .row-item {
     display: flex;
-    align-items: center;
-    gap: 50px;
+    align-items: flex-start;
+    gap: 60px;
     margin-bottom: 60px;
 }
+
+/* IMAGE (UNCHANGED SIZE) */
 .mountain-card {
-    width: 600px;
+    width: 800px;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
 }
+
 .mountain-card img {
     width: 100%;
     height: 500px;
@@ -149,23 +177,27 @@ body {
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
+
 .mountain-card:hover img {
     transform: scale(1.05);
 }
-.label {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 500;
-
+.row-item.reverse {
+    flex-direction: row-reverse;
 }
 .info-box {
     flex: 1;
+    min-width: 600px;
+    max-width: 600px;
+    text-align: left;
 }
 .info-box h2 {
-    margin-bottom: 10px;
+    color: #c9a46c;
+    margin-bottom: 15px;
 }
 .info-box p {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    line-height: 1.8;
+    text-align: justify;
 }
 .tour-hero {
     position: absolute;
@@ -174,8 +206,17 @@ body {
     transform: translateX(-50%);
     text-align: center;
     max-width: 700px;
+    color: #c9a46c;
     width: 90%;
 }
+
+
+
+
+
+
+
+
 
 
 .slider-section {
@@ -465,8 +506,9 @@ body {
 
 
 
-
-
+/* =========================
+   FESTIVAL SECTION
+========================= */
 .festival-gallery-section {
     background: #000;
     width: 100vw;
@@ -826,6 +868,9 @@ body {
         </div>
     </div>
 
+
+
+
     <div class="row-item">
 
         <div class="info-box">
@@ -845,6 +890,19 @@ body {
             <img class="zoomable" src="img/cavite/mtmarami/mtmaramicavite.png" alt="Mt. Marami">
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="slider-section">
 
@@ -888,30 +946,14 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section class="section" id="delicacy">
   <h1>CALABARZON DELICACY</h1>
-
   <div class="container">
-
     <div class="tabs">
       <div class="tab active" onclick="showTab('cavite','img/cavitebacalao.jpg')">Bacalao</div>
       <div class="tab" onclick="showTab('laguna', 'img/putobumbong.jpg')">Puto Bumbong</div>
       <div class="tab" onclick="showTab('batangas', 'img/tamales.webp')">Tamales</div>
     </div>
-
     <div class="content">
       <div class="tab-content active" id="cavite">
         <h3 onclick="window.location.href='cavite.html#food'"></h3>
@@ -920,7 +962,6 @@ body {
           Introduced during Spanish influence, it is commonly served during special occasions and family gatherings in Cavite.
         </p>
       </div>
-
       <div class="tab-content" id="laguna">
         <h3 onclick="window.location.href='laguna.html#food'"></h3>
             <p>
@@ -928,7 +969,6 @@ body {
                 It is topped with butter, grated coconut, and brown sugar, and is especially popular during the Christmas season.
             </p>
             </div>
-
             <div class="tab-content" id="batangas">
             <h3 onclick="window.location.href='batangas.html#food'"></h3>
             <p>
@@ -936,7 +976,6 @@ body {
                 It has a soft texture and a rich, slightly nutty flavor.
             </p>
         </div>
-
     </div>
     <div class="image">
       <img id="provinceImage" src="img/cavitebacalao.jpg" alt="Province Image">
