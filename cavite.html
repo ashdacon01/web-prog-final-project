@@ -156,6 +156,7 @@ body {
     margin-top: 10px;
     font-size: 18px;
     font-weight: 500;
+
 }
 .info-box {
     flex: 1;
@@ -281,143 +282,177 @@ body {
 
 
 
-.split-feature {
+/* =========================
+   SPECIALS SECTION
+========================= */
+.section {
+    padding: 80px 40px;
+    background: #000;
+    color: #000;
+    text-align: center;
+
+    border: 0px solid #c9a46c;
+    margin-top: -120px;
+    margin-bottom: 100px;
+    border-radius: 0px;
+    position: relative;
+
+    box-shadow: 0 0 25px rgba(201,164,108,0.08);
+    overflow: hidden;
+}
+body {
+    margin: 0;
+    background: #000;
+}
+.section::before,
+.section::after {
+    content: "";
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c9a46c, transparent);
+    opacity: 0.8;
+}
+.section::before { top: 0px; }
+.section::after { bottom: 0px; }
+.section h1 {
+    color: #c9a46c;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+.container {
     display: flex;
+    justify-content: center; 
     align-items: center;
-    justify-content: space-between;
-    gap: 60px;
+    gap: 70px;
 
     max-width: 1200px;
-    margin: 0 auto 120px auto;
-    padding: 70px 50px;
-
-    background: #ffffff;   /* separates from black bg */
-    color: #111;
-
-    border-radius: 25px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    margin: 0 auto;
 }
+.tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 170px;
 
-/* LEFT TEXT */
-.split-text {
-    flex: 1;
+    border-left: 1px solid rgba(201,164,108,0.35);
+    padding-left: 18px;
 }
-
-.split-text .sub {
-    color: #777;
-    letter-spacing: 2px;
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-.split-text h2 {
-    font-size: 2.5rem;
-    margin: 10px 0 20px;
-    color: #111;
-}
-
-.split-text p {
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
-/* MINI GRID */
-.mini-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.mini-box {
-    background: #f5f5f5;
-    padding: 15px;
-    border-radius: 12px;
-}
-
-.mini-box img {
-    width: 30px;
-    margin-bottom: 10px;
-}
-
-.mini-box h4 {
-    color: #111;
-    margin: 5px 0;
-}
-
-.mini-box p {
-    color: #555;
-    font-size: 14px;
-}
-
-.split-images {
-    flex: 0 0 420px;   /* 🔥 HARD LOCK WIDTH (THIS IS THE FIX) */
-    height: 420px;
-
+.tab {
+    padding: 12px 16px;
+    cursor: pointer;
+    color: #aaa;
+    border-radius: 8px;
+    transition: 0.25s ease;
     position: relative;
 }
-.img-main {
+.tab::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 1px;
+    background: rgba(201,164,108,0.6);
+    opacity: 0;
+    transition: 0.3s;
+}
+.tab:hover {
+    color: #fff;
+    background: rgba(201,164,108,0.08);
+}
+.tab:hover::before {
+    opacity: 1;
+}
+.tab.active {
+    background: #c9a46c;
+    color: #000;
+    font-weight: 600;
+}
+.tab.active::before {
+    opacity: 1;
+    background: #c9a46c;
+}
+.content {
+    width: 360px;   
+    text-align: left;
+
+    border-left: 1px solid rgba(201,164,108,0.4);
+    padding-left: 25px;
+}
+.tab-content {
+    display: none;
+    margin-bottom: 18px;
+}
+.tab-content.active {
+    display: block;
+}
+.content h3 {
+    color: #c9a46c;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: 0.25s ease;
+}
+.content h3:hover {
+    letter-spacing: 1px;
+    color: #e0c28a;
+}
+.content p {
+    font-size: 13.5px;
+    color: #ccc;
+    line-height: 1.6;
+    margin: 0;
+}
+.content p strong {
+    color: #fff;
+}
+.image {
+    width: 380px;   /* FIX: balanced with content */
+    height: 380px;
+
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgba(177, 160, 134, 0.4);
+    box-shadow: 0 25px 60px  rgba(177, 160, 134, 0.4);;
+}
+.image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-    border-radius: 15px;
-
-    display: block;
-
-    transition: opacity 0.25s ease;
-
-    flex-shrink: 0; /* safety */
 }
 
-.img-small {
-    position: absolute;
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 3px solid #fff;
-}
-
-/* floating images */
-.img-1 {
-    bottom: -20px;
-    left: -20px;
-}
-
-.img-2 {
-    top: -20px;
-    right: -20px;
-}
-.img-main {
-    transition: opacity 0.3s ease;
-}
-
-/* =========================
-   MOBILE RESPONSIVE ONLY FOR THIS SECTION
-========================= */
-@media (max-width: 768px) {
-
-    .split-feature {
+@media (max-width: 900px) {
+    .container {
         flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
+        gap: 30px;
     }
 
-    .mini-grid {
-        grid-template-columns: 1fr;
+    .tabs {
+        border-left: none;
+        padding-left: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .split-images {
+    .content {
         width: 100%;
-        min-height: 300px;
+        border-left: none;
+        padding-left: 0;
     }
 
-    .img-small {
-        width: 120px;
-        height: 120px;
+    .image {
+        width: 100%;
+        height: 300px;
+        border-radius: 20px;
     }
 }
+
+
 
 
 
@@ -465,7 +500,6 @@ body {
 
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-
 .festival-item:nth-child(1) { animation-delay: 0.1s; }
 .festival-item:nth-child(2) { animation-delay: 0.2s; }
 .festival-item:nth-child(3) { animation-delay: 0.3s; }
@@ -524,8 +558,6 @@ body {
         transform: translateY(0);
     }
 }
-
-
 
 /* =========================
    MODAL (GLASS STYLE)
@@ -604,6 +636,14 @@ body {
         height: 300px;
     }
 }
+
+
+
+
+
+
+
+
 
 
 .footer {
@@ -854,45 +894,116 @@ body {
 
 
 
-<section class="split-feature" id="food">
 
-    <div class="split-text">
-        <small class="sub">QUEZON PROVINCE CUISINE</small>
-        <h2>Local Food Delicacies</h2>
 
+
+
+
+
+
+<section class="section" id="delicacy">
+  <h1>CALABARZON DELICACY</h1>
+
+  <div class="container">
+
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('cavite','img/cavitebacalao.jpg')">Bacalao</div>
+      <div class="tab" onclick="showTab('laguna', 'img/putobumbong.jpg')">Puto Bumbong</div>
+      <div class="tab" onclick="showTab('batangas', 'img/tamales.webp')">Tamales</div>
+    </div>
+
+    <div class="content">
+      <div class="tab-content active" id="cavite">
+        <h3 onclick="window.location.href='cavite.html#food'"></h3>
         <p>
-            Quezon Province is known for its rich and comforting Filipino dishes 
-            that reflect its coastal and agricultural lifestyle.
+          <strong>Bacalao</strong> – A traditional salt cod dish simmered with potatoes, bell peppers, tomatoes, and olive oil. 
+          Introduced during Spanish influence, it is commonly served during special occasions and family gatherings in Cavite.
         </p>
+      </div>
 
-        <div class="mini-grid">
-
-            <!-- CLICKABLE ITEM 1 -->
-            <div class="mini-box" onclick="changeFoodImage('img/qp/ginataang.jpg')">
-                <img src="https://img.icons8.com/ios/50/1f3d36/coconut.png">
-                <h4>Ginataang Sariwa</h4>
-                <p>Fresh vegetables and seafood cooked in coconut milk.</p>
+      <div class="tab-content" id="laguna">
+        <h3 onclick="window.location.href='laguna.html#food'"></h3>
+            <p>
+                <strong>Puto Bumbong</strong> – A traditional Filipino rice cake made from purple glutinous rice, steamed in bamboo tubes. 
+                It is topped with butter, grated coconut, and brown sugar, and is especially popular during the Christmas season.
+            </p>
             </div>
 
-            <!-- CLICKABLE ITEM 2 -->
-            <div class="mini-box" onclick="changeFoodImage('img/qp/sinantol.jpg')">
-                <img src="https://img.icons8.com/ios/50/1f3d36/fish.png">
-                <h4>Sinantol</h4>
-                <p>Santol cooked in creamy coconut sauce with shrimp or pork.</p>
-            </div>
-
+            <div class="tab-content" id="batangas">
+            <h3 onclick="window.location.href='batangas.html#food'"></h3>
+            <p>
+                <strong>Tamales</strong> – A savory delicacy made with rice flour, chicken, peanuts, and eggs, wrapped in banana leaves. 
+                It has a soft texture and a rich, slightly nutty flavor.
+            </p>
         </div>
+
     </div>
-
-    <div class="split-images">
-        <!-- MAIN IMAGE (THIS WILL CHANGE) -->
-        <img class="img-main" id="foodMainImage" src="img/qp/jomalig.jpg">
-
-        <img class="img-small img-1" src="img/qp/polilo.jpg">
-        <img class="img-small img-2" src="img/batangas/fortuneisland.png">
+    <div class="image">
+      <img id="provinceImage" src="img/cavitebacalao.jpg" alt="Province Image">
     </div>
-
+  </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <section class="festival-gallery-section">
@@ -1129,6 +1240,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+
+
+
+
+
+/* =========================
+   TAB SWITCHING (FOOD SECTION)
+========================= */
+function showTab(tabId, imgSrc, el) {
+  document.querySelectorAll('.tab')
+    .forEach(el => el.classList.remove('active'));
+
+  document.querySelectorAll('.tab-content')
+    .forEach(el => el.classList.remove('active'));
+
+  const target = document.getElementById(tabId);
+  if (target) target.classList.add('active');
+
+  if (!el && event && event.currentTarget) {
+    el = event.currentTarget;
+  }
+
+  if (el) el.classList.add('active');
+
+  const img = document.getElementById('provinceImage');
+  if (img) img.src = imgSrc;
+}
+
 </script>
 
 
