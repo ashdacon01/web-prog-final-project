@@ -189,16 +189,53 @@ body {
     width: 90%;
 }
 
+
+
+
 .slider-section {
     overflow: hidden;
-    width: 100%;
+    width: 100vw;
     margin: 80px 0;
     margin-top: -70px;
+
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
+/* LABEL (fixed properly on slider) */
+.slider-label {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+    z-index: 5;
+
+    padding: 8px 14px;
+    border-radius: 8px;
+
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    pointer-events: none;
+}
+.slider-label.left {
+    left: 20px;
+    right: auto;
+}
+
+/* slider */
 .slider-track {
     display: flex;
-    width: calc(250px * 10);
+    width: max-content;
     animation: scroll 25s linear infinite;
 }
 
@@ -208,6 +245,7 @@ body {
     object-fit: cover;
     margin-right: 15px;
     border-radius: 10px;
+    flex-shrink: 0;
 }
 
 @keyframes scroll {
@@ -218,6 +256,17 @@ body {
         transform: translateX(-50%);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 .split-feature {
     display: flex;
@@ -625,9 +674,7 @@ padding: 120px 0 30px;
 }
 </style>
 </head>
-
 <body>
-
 <nav class="navbar navbar-expand-lg transparent">
   <div class="container-fluid">
     <a class="navbar-brand">CALABARZON</a>
@@ -650,7 +697,6 @@ padding: 120px 0 30px;
             <li><a class="dropdown-item">Quezon</a></li>
           </ul>
         </li>
-
         <li class="nav-item"><a class="nav-link">FAQs</a></li>
       </ul>
 
@@ -663,69 +709,130 @@ padding: 120px 0 30px;
   </div>
 </nav>
 
+
+
+
+
 <div class="tour-hero">
-    <h1 class="display-3 fw-bold">Golden & Remote Islands of Quezon</h1>
+    <h1 class="display-3 fw-bold">Mountain Escapes in Cavite</h1>
+</div>
+<div class="main-container">
+    <div class="row-item">
+
+
+    <div class="mountain-card">
+        <img src="img/cavite/picodeloro/picodeloro.png" alt="Pico de Loro">
+    </div>
+    <div class="info-box">
+        <h2>Pico de Loro</h2>
+        <p style="text-align: justify;">
+            One of Cavite’s most iconic hiking destinations, known for its scenic trails, limestone formations, and the famous Monolith at the summit with panoramic views of the sea and surrounding mountains.
+        </p>
+        <p style="text-align: justify;">
+            The hike is considered moderate and usually takes 4–6 hours round trip. Climbers should expect steep and rocky sections, especially near the summit. Registration is required at the base, and guides may be needed depending on current regulations.
+        </p>
+        <p style="text-align: justify;">
+            Hikers are advised to bring enough water, sun protection, proper hiking shoes, and light snacks. Early morning climbs are recommended to avoid heat and crowds, and overnight camping may be subject to permits.
+        </p>
+    </div>
 </div>
 
-<div class="main-container">
+<div class="slider-section">
 
+    <div class="slider-label">
+        Captured moments of people on their travels.
+    </div>
+
+    <div class="slider-track">
+
+        <!-- First set -->
+        <img src="img/cavite/picodeloro/picodeloro.png" alt="">
+        <img src="img/cavite/picodeloro/1.jpg" alt="">
+        <img src="img/cavite/picodeloro/2.jpg" alt="">
+        <img src="img/cavite/picodeloro/3.jpg" alt="">
+        <img src="img/cavite/picodeloro/4.jpg" alt="">
+        <img src="img/cavite/picodeloro/5.jpg" alt="">
+        <img src="img/cavite/picodeloro/6.jpg" alt="">
+        <img src="img/cavite/picodeloro/7.jpg" alt="">
+        <img src="img/cavite/picodeloro/8.jpg" alt="">
+        <img src="img/cavite/picodeloro/9.jpg" alt="">
+
+        <!-- Duplicate set -->
+        <img src="img/cavite/picodeloro/picodeloro.png" alt="">
+        <img src="img/cavite/picodeloro/1.jpg" alt="">
+        <img src="img/cavite/picodeloro/2.jpg" alt="">
+        <img src="img/cavite/picodeloro/3.jpg" alt="">
+        <img src="img/cavite/picodeloro/4.jpg" alt="">
+        <img src="img/cavite/picodeloro/5.jpg" alt="">
+        <img src="img/cavite/picodeloro/6.jpg" alt="">
+        <img src="img/cavite/picodeloro/7.jpg" alt="">
+        <img src="img/cavite/picodeloro/8.jpg" alt="">
+        <img src="img/cavite/picodeloro/9.jpg" alt="">
+    </div>
+</div>
     <div class="row-item">
-        <div class="mountain-card">
-            <img src="img/qp/polilo.jpg">
-            <div class="label">Polillo Group of Islands</div>
-        </div>
-
-        <div class="info-box">
-            <h2>Polillo Group of Islands</h2>
-            <p>
-                A remote group of islands in Quezon Province known for its pristine beaches, rich marine life, and untouched natural beauty. It offers a peaceful escape ideal for island hopping and eco-tourism.
-            </p>
-        </div>
+    <!-- LEFT: INFO -->
+    <div class="info-box">
+        <h2>Mt. Marami</h2>
+        <p style="text-align: justify;">
+            Mt. Marami is one of Cavite’s most popular hiking destinations, known for its sharp limestone formations, scenic grasslands, and the iconic Silyang Bato at the summit. It offers a challenging but rewarding trail with stunning views of nearby mountains and the sea.
+        </p>
+        <p style="text-align: justify;">
+            The hike is considered moderate to difficult and usually takes 5–7 hours round trip depending on pace. Climbers should expect long river crossings, rocky ascents, and exposed trails under the sun.
+        </p>
+        <p style="text-align: justify;">
+            Hikers are advised to bring enough water, sun protection, trekking shoes, and light snacks. Early morning start is highly recommended, and camping is allowed at designated areas for overnight hikes.
+        </p>
     </div>
-
-    <div class="slider-section">
-        <div class="slider-track">
-            <img src="img/qp/polilo.jpg">
-            <img src="img/qp/jomalig.jpg">
-            <img src="img/batangas/fortuneisland.png">
-            <img src="img/qp/polilo.jpg">
-            <img src="img/qp/jomalig.jpg">
-            <img src="img/qp/polilo.jpg">
-            <img src="img/qp/jomalig.jpg">
-            <img src="img/batangas/fortuneisland.png">
-            <img src="img/qp/polilo.jpg">
-            <img src="img/qp/jomalig.jpg">
-        </div>
+    <div class="mountain-card">
+        <img src="img/cavite/mtmarami/mtmaramicavite.png" alt="Mt. Marami">
     </div>
-
-    <div class="row-item">
-        <div class="info-box">
-            <h2>Jomalig Island</h2>
-            <p>
-                A remote golden-sand island in Quezon known for its unique golden beaches, scenic coastlines, and peaceful island lifestyle far from the city.
-            </p>
-        </div>
-
-        <div class="mountain-card">
-            <img src="img/qp/jomalig.jpg">
-            <div class="label">Jomalig Island</div>
-        </div>
+</div>
+<div class="slider-section">
+    <div class="slider-label left">
+        Captured moments of hikers exploring Mt. Marami.
     </div>
+    <div class="slider-track">
+        <img src="img/cavite/mtmaramicavite.png" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite1.webp" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite2.webp" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite3.webp" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite4.webp" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite5.webp" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite6.webp" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite7.webp" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite8.webp" alt="">
+        <img src="img/cavite/mtmarami/9.webp" alt="">
 
-    <div class="slider-section">
-        <div class="slider-track">
-            <img src="img/qp/polilo.jpg">
-            <img src="img/qp/jomalig.jpg">
-            <img src="img/batangas/fortuneisland.png">
-            <img src="img/qp/polilo.jpg">
-            <img src="img/qp/jomalig.jpg">
-            <img src="img/qp/polilo.jpg">
-            <img src="img/qp/jomalig.jpg">
-            <img src="img/batangas/fortuneisland.png">
-            <img src="img/qp/polilo.jpg">
-            <img src="img/qp/jomalig.jpg">
-        </div>
+        <img src="img/cavite/mtmaramicavite.png" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite1.webp" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite2.webp" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite3.webp" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite4.webp" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite5.webp" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite6.webp" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite7.webp" alt="">
+        <img src="img/cavite/mtmarami/mtmaramicavite8.webp" alt="">
+        <img src="img/cavite/mtmarami/9.webp" alt="">
+
     </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <section class="split-feature" id="food">
