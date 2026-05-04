@@ -7,6 +7,9 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
+html, body {
+    overflow-x: hidden;
+}
 @media (max-width: 768px) {
 
     body {
@@ -83,55 +86,40 @@
         text-align: left;
     }
 }
-
 .navbar {
     position: sticky;
     top: 0;
     z-index: 9999;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 .navbar.transparent {
     background-color: transparent !important;
     box-shadow: none;
     text-emphasis-color: #fff;
 }
-
 .navbar.scrolled {
     background-color: #fff !important;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-
 .navbar.transparent .nav-link,
 .navbar.transparent .navbar-brand {
     color: #fff !important;
 }
-
 .navbar.scrolled .nav-link,
 .navbar.scrolled .navbar-brand {
     color: #000 !important;
 }
-
 .navbar.transparent .nav-link:hover {
     color: #ddd !important;
 }
-
 .navbar.scrolled .nav-link:hover {
     color: #ccc !important;
 }
-
-
-
-
-
 body {
     background: #000;
     margin: 0;
     color: white;
 }
-
-
-
 
 
 .main-container {
@@ -142,21 +130,18 @@ body {
     max-width: 1200px;             
     padding: 0 20px;               
 }
-
 .row-item {
     display: flex;
     align-items: center;
     gap: 50px;
     margin-bottom: 60px;
 }
-
 .mountain-card {
     width: 600px;
     cursor: pointer;
     border-radius: 10px;
     overflow: hidden;
 }
-
 .mountain-card img {
     width: 100%;
     height: 500px;
@@ -164,29 +149,23 @@ body {
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
-
 .mountain-card:hover img {
     transform: scale(1.05);
 }
-
 .label {
     margin-top: 10px;
     font-size: 18px;
     font-weight: 500;
 }
-
 .info-box {
     flex: 1;
 }
-
 .info-box h2 {
     margin-bottom: 10px;
 }
-
 .info-box p {
     margin-bottom: 10px;
 }
-
 .tour-hero {
     position: absolute;
     top: 10%;
@@ -196,17 +175,6 @@ body {
     max-width: 700px;
     width: 90%;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 .slider-section {
@@ -221,8 +189,6 @@ body {
     margin-left: -50vw;
     margin-right: -50vw;
 }
-
-/* LABEL (fixed properly on slider) */
 .slider-label {
     position: absolute;
     top: 10px;
@@ -248,14 +214,11 @@ body {
     left: 20px;
     right: auto;
 }
-
-/* slider */
 .slider-track {
     display: flex;
     width: max-content;
     animation: scroll 25s linear infinite;
 }
-
 .slider-track img {
     width: 250px;
     height: 180px;
@@ -264,7 +227,6 @@ body {
     border-radius: 10px;
     flex-shrink: 0;
 }
-
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -275,12 +237,9 @@ body {
 }
 
 
-
 /* =========================
    IMAGE ZOOM MODAL
 ========================= */
-
-/* Fullscreen background overlay */
 .img-modal {
     display: none;
     position: fixed;
@@ -294,8 +253,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-/* Zoomed image */
 .modal-content {
     max-width: 90%;
     max-height: 90%;
@@ -303,8 +260,6 @@ body {
     border-radius: 8px;
     transform: scale(1);
 }
-
-/* Close button */
 .close-btn {
     position: absolute;
     top: 20px;
@@ -315,40 +270,9 @@ body {
     font-weight: bold;
     z-index: 10000;
 }
-
-/* optional: prevent image selection highlight */
 .img-modal img {
     user-select: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -432,7 +356,6 @@ body {
 
     position: relative;
 }
-/* MAIN IMAGE MUST ALWAYS FILL SPACE */
 .img-main {
     width: 100%;
     height: 100%;
@@ -497,15 +420,26 @@ body {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 .festival-gallery-section {
     background: #000;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-padding: 120px 0 30px;
+    padding: 120px 0 30px;
     text-align: center;
     color: #fff;
 }
-
 .festival-gallery-section h1 {
     color: #c9a46c;
     margin-bottom: 40px;
@@ -513,16 +447,12 @@ padding: 120px 0 30px;
     letter-spacing: 2px;
     font-size: 2.4rem;
 }
-
-/* GRID */
 .festival-grid-6 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
     width: 100%;
 }
-
-/* CARD */
 .festival-item {
     position: relative;
     height: 420px;
@@ -540,7 +470,7 @@ padding: 120px 0 30px;
 .festival-item:nth-child(2) { animation-delay: 0.2s; }
 .festival-item:nth-child(3) { animation-delay: 0.3s; }
 
-/* IMAGE */
+
 .festival-item img {
     width: 100%;
     height: 100%;
@@ -571,11 +501,21 @@ padding: 120px 0 30px;
 
 .festival-item:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(201, 164, 108, 0.2);
+    box-shadow: 0 20px 60px rgba(145, 92, 13, 0.2);
 }
 .festival-item:hover img {
     transform: scale(1.1);
     filter: brightness(1.1);
+}
+
+.festival-gallery-section p {
+     max-width: 800px;
+    margin: 15px auto 40px auto;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    padding: 0 20px;
 }
 
 @keyframes fadeUp {
@@ -958,7 +898,9 @@ padding: 120px 0 30px;
 <section class="festival-gallery-section">
 
   <h1>FESTIVALS & EVENTS</h1>
-
+<p>
+Cavite is known for its vibrant festivals and cultural events that showcase its rich history, religious devotion, and local traditions celebrated with colorful parades, music, and community gatherings throughout the year.
+</p>
   <div class="festival-grid-6">
 
     <div class="festival-item"
@@ -972,7 +914,7 @@ Food stalls and fairs also line the streets, offering local delicacies and refre
 
 Regada is more than just fun—it is a celebration of faith, unity, and gratitude, honoring St. John the Baptist while showcasing the identity and resilience of Caviteños.">
 
-      <img src="img/cavite/regada.jpg" alt="Regada Festival">
+      <img src="img/cavite/festival/r1.jpg" alt="Regada Festival">
       <h4>Regada</h4>
     </div>
 
@@ -987,7 +929,7 @@ The Karakol Festival reflects the deep Catholic faith of Caviteños, blending in
 
 Beyond its religious aspect, the festival also strengthens cultural identity and preserves long-standing traditions passed down through generations in Cavite.">
 
-      <img src="img/cavite/karakol.jpg" alt="Karakol Festival">
+      <img src="img/cavite/festival/r2.jpg" alt="Karakol Festival">
       <h4>Karakol</h4>
     </div>
 
@@ -1002,7 +944,7 @@ Paskuhan also emphasizes the importance of faith, gratitude, and togetherness, r
 
 It has become one of Cavite’s most anticipated seasonal celebrations, attracting visitors who want to experience a traditional Filipino Christmas celebration.">
 
-      <img src="img/cavite/paskuhan.jpg" alt="Paskuhan sa Imus">
+      <img src="img/cavite/festival/r3.jpg" alt="Paskuhan sa Imus">
       <h4>Paskuhan</h4>
     </div>
 
