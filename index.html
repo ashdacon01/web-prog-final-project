@@ -1,340 +1,1333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - iPortfolio Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homepage</title>
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+@media (max-width: 768px) {
+    .tour-hero {
+        left: 5%;
+        right: 5%;
+        max-width: 100%;
+    }
+    .tour-hero h1 {
+        font-size: 2rem;
+    }
+    .tour-hero p {
+        font-size: 1rem;
+    }
+    .footer .row {
+        text-align: center;
+    }
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 15px;
+    }
+    .social-links {
+        display: flex;
+        justify-content: center;
+    }
+}
+/* =========================
+   GLOBAL RESET / BASE STYLE
+========================= */
+html, body {
+    margin: 0;
+    overflow-x: hidden;
+}
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+/* =========================
+   NAVBAR SECTION
+========================= */
+.navbar {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: 0.4s ease;
+}
+.navbar.scrolled {
+    background: #000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: #fff !important;
+}
+.navbar .nav-link:hover {
+    color: #ccc !important;
+}
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-</head>
 
 
+/* =========================
+   HERO SECTION (MAIN TOP)
+========================= */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+.hero-image {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.hero-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+.tour-hero {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: #fff;
+    max-width: 700px;
+}
 
 
 
-<body class="index-page">
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-    <div class="profile-img">
-      <img src="me.png" alt="" class="img-fluid rounded-circle">
-    </div>
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Ashley Concepcion</h1>
-    </a>
-    <div class="social-links text-center">
-      <a href="https://x.com/ashdacon" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.facebook.com/ashdacon" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="https://www.instagram.com/ashdacon/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/ash-dacon/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-    </div>
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#photos"><i class="bi bi-images navicon"></i>Photos</a></li>  
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+
+/* =========================
+   HERO SECTION (SECOND / SLIDER)
+========================= */
+.hero-section {
+    height: 900px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero-bg {
+    position: absolute;
+    inset: 0;
+}
+.bg-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.bg-track img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(14px);
+    transform: scale(1.25);
+    opacity: 0;
+    transition: 1.5s ease-in-out;
+}
+.bg-track img.active {
+    opacity: 1;
+}
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+}
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 50px;
+    position: relative;
+    z-index: 2;
+}
+/* LEFT HERO CARD */
+.hero-card {
+    background: rgba(193, 222, 245, 0.92);
+    padding: 40px;
+    width: 800px;
+    height: 620px;
+    transform: translateX(40px);
+    border-radius: 5px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* HERO BUTTON */
+.hero-btn {
+    position: absolute;
+    right: 50px;
+    margin-top: 450px;
+    padding: 10px;
+    width: 160px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+}
+/* RIGHT SLIDER */
+.hero-slider {
+    width: 85%;
+    height: 620px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    transform: translateX(-20px);
+}
+.slide-track img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.slide-track img.active {
+    opacity: 1;
+}
+
+
+
+
+/* =========================
+   SPECIALS SECTION
+========================= */
+.section {
+    padding: 80px 40px;
+    background: #000;
+    color: #000;
+    text-align: center;
+
+    border: 0px solid #c9a46c;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 0px;
+    position: relative;
+
+    box-shadow: 0 0 25px rgba(201,164,108,0.08);
+    overflow: hidden;
+}
+body {
+    margin: 0;
+    background: #000;
+}
+.section::before,
+.section::after {
+    content: "";
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c9a46c, transparent);
+    opacity: 0.8;
+}
+.section::before { top: 0px; }
+.section::after { bottom: 0px; }
+.section h1 {
+    color: #c9a46c;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 70px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 170px;
+
+    border-left: 1px solid rgba(201,164,108,0.35);
+    padding-left: 18px;
+}
+.tab {
+    padding: 12px 16px;
+    cursor: pointer;
+    color: #aaa;
+    border-radius: 8px;
+    transition: 0.25s ease;
+    position: relative;
+}
+.tab::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 1px;
+    background: rgba(201,164,108,0.6);
+    opacity: 0;
+    transition: 0.3s;
+}
+.tab:hover {
+    color: #fff;
+    background: rgba(201,164,108,0.08);
+}
+.tab:hover::before {
+    opacity: 1;
+}
+.tab.active {
+    background: #c9a46c;
+    color: #000;
+    font-weight: 600;
+}
+.tab.active::before {
+    opacity: 1;
+    background: #c9a46c;
+}
+.content {
+    width: 360px;   
+    text-align: left;
+
+    border-left: 1px solid rgba(201,164,108,0.4);
+    padding-left: 25px;
+}
+.tab-content {
+    display: none;
+    margin-bottom: 18px;
+}
+.tab-content.active {
+    display: block;
+}
+.content h3 {
+    color: #c9a46c;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: 0.25s ease;
+}
+.content h3:hover {
+    letter-spacing: 1px;
+    color: #e0c28a;
+}
+.content p {
+    font-size: 13.5px;
+    color: #ccc;
+    line-height: 1.6;
+    margin: 0;
+}
+.content p strong {
+    color: #fff;
+}
+.image {
+    width: 380px;   /* FIX: balanced with content */
+    height: 380px;
+
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgba(177, 160, 134, 0.4);
+    box-shadow: 0 25px 60px  rgba(177, 160, 134, 0.4);;
+}
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.see-more {
+  display: inline-block;
+  margin-top: 6px;
+  color: #c9a46c;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.see-more:hover {
+  text-decoration: underline;
+}
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .tabs {
+        border-left: none;
+        padding-left: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .content {
+        width: 100%;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .image {
+        width: 100%;
+        height: 300px;
+        border-radius: 20px;
+    }
+}
+
+
+
+
+
+
+
+/* =========================
+   FESTIVAL SECTION
+========================= */
+.festival-section {
+    padding: 70px 20px;
+    background: radial-gradient(circle at top, #141414, #0b0b0b);
+    color: #fff;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding-bottom: 120px;
+}
+.festival-title {
+    color: #d6b46a;
+    letter-spacing: 3px;
+    margin-bottom: 45px;
+    font-weight: 500;
+}
+.festival-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    max-width: 1000px;
+    margin: auto;
+}
+.festival-card {
+    display: flex;
+    gap: 18px;
+    text-decoration: none;
+    color: inherit;
+    background: linear-gradient(145deg, #121212, #0e0e0e);
+    border: 1px solid rgba(214,180,106,0.18);
+    border-radius: 16px;
+    padding: 18px;
+    transition: 0.35s ease;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.festival-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+    opacity: 0.06;
+    pointer-events: none;
+}
+.festival-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(214,180,106,0.55);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.55);
+}
+
+
+/* =========================
+   AESTHETIC CALENDAR TILE
+========================= */
+.festival-date-paper {
+    width: 92px;
+    height: 92px;
+    background: linear-gradient(180deg, #f6e7b5, #d4b35a);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    flex-shrink: 0;
+
+    /* softer depth */
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.35),
+        inset 0 1px 2px rgba(255,255,255,0.35);
+}
+.festival-date-paper .fold {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 26px;
+    height: 26px;
+    background: linear-gradient(135deg, #e8d08a, #c9a23a);
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
+}
+.festival-date-paper .month {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #5a4500;
+    text-transform: uppercase;
+}
+.festival-date-paper .day {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2b2100;
+    line-height: 1;
+}
+.festival-info {
+    text-align: left;
+}
+.festival-info h2 {
+    margin: 0;
+    font-size: 15px;
+    color: #d6b46a;
+    font-weight: 500;
+}
+.festival-info h3 {
+    margin: 4px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f1f1f1;
+}
+.festival-info p {
+    font-size: 13px;
+    color: #bdbdbd;
+    line-height: 1.5;
+    margin-top: 6px;
+}
+.festival-card:visited,
+.festival-card:focus,
+.festival-card:active {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+}
+@media (max-width: 768px) {
+    .festival-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* =========================
+            FAQS
+========================= */
+#faqs {
+    scroll-margin-top: 90px;
+}
+
+.faq-section {
+    max-width: 1500px; /* widened */
+    margin: 50px auto 10px;
+    text-align: center;
+    color: #fff;
+    padding: 0 3% 80px; /* slightly tighter sides for wider layout feel */
+}
+
+.faq-section h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.faq-section p {
+    font-size: 16px;
+    color: #b0c4d4;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   2-COLUMN LAYOUT
+========================= */
+.faq-container {
+    display: flex;
+    gap: 60px; /* wider separation between FAQ and Suggestion */
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* LEFT SIDE (FAQ) */
+.faq {
+    flex: 1;
+    min-width: 0; /* prevents shrinking issues */
+    background: linear-gradient(145deg, #121212, #0e0e0e);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(214,180,106,0.18);
+    text-align: left;
+}
+
+/* FAQ ITEMS */
+.faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: #dbe9f4;
+    text-align: left;
+    padding: 22px 30px;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+}
+
+.faq-question::after {
+    content: "▾";
+    position: absolute;
+    right: 30px;
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    background: #243545;
+    text-align: left;
+    padding: 0 30px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+}
+
+.faq-answer p {
+    margin: 20px 0;
+    font-size: 15px;
+    color: #bcd0df;
+    line-height: 1.6;
+}
+
+/* =========================
+   RIGHT SIDE (SUGGESTION)
+========================= */
+.suggestion-item {
+    flex: 1;
+    min-width: 0; /* prevents overflow */
+    background: linear-gradient(145deg, #121212, #0e0e0e);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(214,180,106,0.18);
+    text-align: left;
+}
+
+.no-arrow::after {
+    display: none;
+}
+
+.suggestion-item .faq-answer {
+    max-height: none;
+    overflow: visible;
+    padding: 30px;
+    background: transparent;
+}
+
+.suggestion-content p {
+    margin: 0 0 15px;
+    font-size: 15px;
+    color: #bcd0df;
+    line-height: 1.6;
+}
+
+.suggestion-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.suggestion-content input,
+.suggestion-content textarea {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: #243545;
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.suggestion-content input::placeholder,
+.suggestion-content textarea::placeholder {
+    color: #8fa6b8;
+}
+
+.suggestion-content button {
+    align-self: flex-start;
+    background: #c9a46c;
+    color: #000;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.suggestion-content button:hover {
+    background: #e0b97a;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    .faq-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .faq-section {
+        padding: 0 5% 80px;
+    }
+}
+
+
+
+
+
+/* =========================
+   FOOTER SECTION
+========================= */
+.footer {
+    background: #f8f9fa;
+    padding: 50px 0 25px;
+    border-top: 1px solid #eee;
+}
+.footer-container {
+    max-width: 100%;
+    margin-top: 0px;
+    padding: 0 200px; 
+}
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+}
+.footer .col-md-6 {
+    width: 50%;
+}
+.footer-brand {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1px;
+}
+.footer-text {
+    color: #6c757d;
+    font-size: 0.9rem;
+    max-width: 400px;
+}
+.footer-links {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-links a {
+    color: #6c757d;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.footer-links a:hover {
+    color: #0d6efd;
+}
+.copyright {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+@media (max-width: 768px) {
+    .footer .col-md-6 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .footer-container {
+        padding: 0 20px;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE FIXES (SAFE)
+========================= */
+@media (max-width: 992px) {
+
+    .hero-overlay {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+    .hero-card {
+        width: 100%;
+        height: auto;
+        transform: none;
+    }
+    .hero-slider {
+        width: 100%;
+        height: 300px;
+        transform: none;
+    }
+    .hero-btn {
+        position: static;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .hero-section {
+        height: auto;
+        padding: 60px 0;
+    }
+    /* SPECIALS SECTION (stack layout) */
+    .section .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .content {
+        width: 100%;
+        border-left: none;
+        padding-left: 0;
+        text-align: center;
+    }
+    .image {
+        width: 250px;
+        height: 250px;
+    }
+}
+@media (max-width: 576px) {
+    .tour-hero h1 {
+        font-size: 1.6rem;
+    }
+    .tour-hero p {
+        font-size: 0.9rem;
+    }
+    .section {
+        padding: 40px 20px;
+    }
+    .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .tab {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .image {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+</style>
+<body>
+
+
+
+<div id="top"></div>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="#top">CALABARZON</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+
+      <ul class="navbar-nav me-auto">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="#top">Home</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle no-select" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Provinces
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="cavite.html">Cavite</a></li>
+            <li><a class="dropdown-item" href="laguna.html">Laguna</a></li>
+            <li><a class="dropdown-item" href="batangas.html">Batangas</a></li>
+            <li><a class="dropdown-item" href="rizal.html">Rizal</a></li>
+            <li><a class="dropdown-item" href="quezonprovince.html">Quezon</a></li>
+          </ul>
+        </li>
+
+        <!-- NEW SECTION LINKS -->
+        <li class="nav-item">
+          <a class="nav-link" href="#delicacy">Delicacy</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#festivals">Festivals</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#faqs">FAQs</a>
+        </li>
+
       </ul>
-    </nav>
-  </header>
 
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="portfolio.html">Portfolio</a>
+        </li>
+      </ul>
 
-
-
-
-
-  <main class="main">
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-      <img src="2.png" alt="" data-aos="fade-in" class="">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>Ash Concepcion</h2>
-        <p>I'm <span class="typed" data-typed-items="Student., a daughter., a partner., gay!">Student</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-      </div>
-    </section><!-- /Hero Section -->
-    <!-- About Section -->
-    <section id="about" class="about section">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>Currently pursuing a Bachelor of Science in Information Technology at Olivarez College Tagaytay, with a TESDA NC II certification in Computer System Servicing. I have gained hands-on experience in hardware and software troubleshooting, system installation, and basic networking through coursework, laboratory activities, and practical training. I am skilled in problem-solving and customer support, and I continue to build my ability to adapt to new technologies while strengthening my technical and communication skills.</p>
-      </div><!-- End Section Title -->
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="3.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 content">
-            <h2>I'm just girl &amp; guess I'm some kind of freak.</h2>
-            <p class="fst-italic py-3">
-              A motivated and adaptable individual who enjoys learning new things, improving skills, and taking on challenges with a positive and growth-oriented mindset.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 October 1997</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+123 456 7890</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Tagaytay, Cavite, Philippines</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>28</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Science in Information Technology</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>ashley.concepcion@olivarezcollegetagaytay.edu.ph</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Open to opportunities</span></li>
-                </ul>
-              </div>
-            </div>
-            <p class="py-3">
-              I am an enthusiastic and detail-oriented individual who values continuous learning and personal growth. I enjoy <br>exploring new ideas, developing practical skills, and applying what I learn to real-life situations. With a strong <br>sense of responsibility and adaptability, I am able to work both independently and collaboratively in different environments. 
-              I approach challenges with patience and determination, always aiming to improve and deliver <br>meaningful results.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section><!-- /About Section -->
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>
-          A summary of my educational background, skills, and experiences that reflect my growth, dedication, and continuous development. This section highlights my capabilities, achievements, and the knowledge I have gained, showcasing my readiness to take on new challenges and opportunities.
-        </p>
-      </div><!-- End Section Title -->
-      <div class="container">
-      <div class="row">
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="resume-title">Education</h3>
-        <div class="resume-item">
-          <h4>Bachelor of Science in Information Technology</h4>
-          <h5>Ongoing</h5>
-          <p><em>Olivarez College Tagaytay</em></p>
-          <p>
-            Developing proficiency in Java, Python, and C through academic projects and lab activities. Experienced in writing, debugging, and testing simple programs while applying algorithms, data structures, and control structures. Practicing object-oriented programming (OOP) concepts such as classes, inheritance, and polymorphism. Exposure to database programming with SQL and basic web development (HTML, CSS, JavaScript).
-          </p>
-        </div>
-        <br><br><br>
-        <div class="resume-item">
-          <h4>Bachelor of Science in Business Management (Major in Marketing)</h4>
-          <h5>2014 – 2016 (Undergraduate)</h5>
-          <p><em>Cavite State University</em></p>
-          <p>
-            Studied marketing principles, consumer behavior, and sales management. Gained skills in customer relationship management (CRM), advertising, and market research. Exposure to entrepreneurship, financial management, and business operations.
-          </p>
-        </div>
-      </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="resume-title">Professional Experience</h3>
-          <div class="resume-item">
-            <h4>Senior Agent – Collections</h4>
-            <h5>October 2022 – December 2023</h5>
-            <p><em>Credit One Bank | iQor Philippines</em></p>
-            <ul>
-              <li>Handled overdue accounts, negotiated payment arrangements, and ensured compliance with financial regulations.</li>
-              <li>Resolved escalated customer issues using strong communication, active listening, empathy, and conflict-resolution skills.</li>
-              <li>Updated and maintained accurate customer account records for compliance and data integrity.</li>
-              <li>Consistently achieved and exceeded monthly performance and collection targets.</li>
-            </ul>
-          </div>
-            
-          <div class="resume-item">
-            <h4>Technical Support – Service Desk</h4>
-            <h5>May 2018 – February 2019</h5>
-            <p><em>CitiBank | IBM Philippines</em></p>
-            <ul>
-              <li>Provided technical assistance to end-users, resolving account, software, and system access issues via phone and remote tools.</li>
-              <li>Troubleshot hardware and software problems, improving first-call resolution rates and minimizing downtime.</li>
-              <li>Guided users in account setup, password resets, and application navigation with clear, customer-friendly communication.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-
-
-
-  <section id="photos" class="portfolio section light-background">
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Photos</h2>
-      <p>Snapshots of my life, captured through moments that matter.</p>
     </div>
-    <div class="container">
-      <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-4 col-md-6">
-          <a href="port/DBQN3600.jpg" class="glightbox">
-            <img src="port/DBQN3600.jpg" class="img-fluid" alt="">
-          </a>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <a href="port/us.JPG" class="glightbox">
-          <img src="port/us.JPG" class="img-fluid" alt="">
-          </a>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <a href="port/gf2.jpg" class="glightbox">
-            <img src="port/gf2.jpg" class="img-fluid" alt="">
-          </a>
-        </div> 
-        <div class="col-lg-4 col-md-6">
-            <a href="port/IMG_4151.JPG" class="glightbox">
-            <img src="port/IMG_4151.JPG"  class="img-fluid" alt="">
-          </a>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <a href="port/eggie.JPG" class="glightbox">
-            <img src="port/eggie.JPG" class="img-fluid" alt="">
-          </a>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <a href="port/IMG_4152.JPG" class="glightbox">
-            <img src="port/IMG_4152.JPG" class="img-fluid" alt="">
-          </a>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <a href="port/meme.JPEG" class="glightbox">
-            <img src="port/meme.JPEG"class="img-fluid" alt="">
-          </a>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <a href="port/fam1.jpg" class="glightbox">
-            <img src="port/fam1.jpg"class="img-fluid" alt="">
-          </a>
-        </div>
-      
-        <div class="col-lg-4 col-md-6">
-          <a href="port/IMG_3411.jpg" class="glightbox">
-            <img src="port/IMG_3411.jpg"  class="img-fluid" alt="">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
   </div>
-    </section>
+</nav>
 
 
 
-    <section id="contact" class="contact section">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Open to internships, entry-level opportunities, and collaborations in IT and support roles.</p>
-      </div><!-- End Section Title -->
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-          <div class="col-lg-5">
-            <div class="info-wrap">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Address</h3>
-                  <p>Tagaytay, Cavite Philippines</p>
-                </div>
-              </div><!-- End Info Item -->
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55</p>
-                </div>
-              </div><!-- End Info Item -->
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email me</h3>
-                  <p>ashley.concepcion@olivarezcollegetagaytay</p>
-                </div>
-              </div><!-- End Info Item -->
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d19368.51631843783!2d120.9629!3d14.1153!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7e1d0c2b6a5d%3A0x4b8f4b1e4f4c8a3b!2sTagaytay%2C%20Cavite!5e0!3m2!1sen!2sph!4v1714819200000!5m2!1sen!2sph" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
-          <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
-                </div>
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
-                </div>
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                </div>
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-                </div>
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                  <button type="submit">Send me message</button>
-                </div>
-              </div>
-            </form>
-          </div>
-          <!-- End Contact Form -->
-        </div>
-      </div>
-    </section>
-  </main>
-
-
-
-  <footer id="footer" class="footer position-relative light-background">
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Concepcion, Ashley D.</strong> <span>All Rights Reserved</span></p>
-      </div>
+<div class="hero">
+    <div class="hero-image">
+        <img src="img/qp/Bundok_Banahawss.jpg" alt="Mount Banahaw">
     </div>
-  </footer>
+    <div class="tour-hero">
+        <h1 class="display-3 fw-bold">
+            Discover Hidden Hiking Mountains and Waterfalls in South Luzon
+        </h1>
+        <p class="lead">Cavite • Laguna • Batangas • Rizal • Quezon</p>
+    </div>
+</div>
 
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <div id="preloader"></div>
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <script src="assets/js/main.js"></script>
+<section class="hero-section">
+    <div class="hero-bg">
+        <div class="bg-track">
+            <img src="img/qp/jomalig.jpg" alt="">
+            <img src="img/batangas/fortuneisland.png" alt="">
+            <img src="img/qp/polilo.jpg" alt="">
+        </div>
+    </div>
+    <div class="hero-overlay">
+        <div class="hero-card">
+            <h6>CALABARZON REGION</h6>
+            <h1>RICH CULTURE & DESTINATIONS</h1>
+            <p>
+                CALABARZON (Cavite, Laguna, Batangas, Rizal, and Quezon) is a vibrant region in Southern Luzon
+                known for its historical landmarks, natural attractions, thriving industries, and diverse culture.
+            </p>
+            <button class="hero-btn" onclick="window.location.href='locations.html'">Explore Now</button>
+        </div>
+        <div class="hero-slider">
+            <div class="slide-track">
+                <img src="img/qp/jomalig.jpg" alt="">
+                <img src="img/batangas/fortuneisland.png" alt="">
+                <img src="img/qp/polilo.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
 
+
+
+
+
+
+
+
+<section class="section" id="delicacy">
+  <h1>HIGHLIGHTED CALABARZON DELICACY</h1>
+
+  <div class="container">
+
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('cavite','img/cavitebacalao.jpg')">Cavite</div>
+      <div class="tab" onclick="showTab('laguna', 'img/bukopiess.png')">Laguna</div>
+      <div class="tab" onclick="showTab('batangas', 'img/bulalobatangas.png')">Batangas</div>
+      <div class="tab" onclick="showTab('rizal', 'img/sumarizal.jpg')">Rizal</div>
+      <div class="tab" onclick="showTab('quezon', 'img/habhabqp.jpg')">Quezon</div>
+    </div>
+
+    <div class="content">
+
+      <div class="tab-content active" id="cavite">
+        <h3 onclick="window.location.href='cavite.html#food'">Cavite Favorites</h3>
+        <p>
+          <strong>Bacalao</strong> – A traditional salt cod dish simmered with potatoes, bell peppers, tomatoes, and olive oil. 
+          Introduced during Spanish influence, it is commonly served during special occasions and family gatherings in Cavite.
+          <br>
+          <a href="cavite.html#food" class="see-more">See more →</a>
+        </p>
+      </div>
+
+      <div class="tab-content" id="laguna">
+        <h3 onclick="window.location.href='laguna.html#food'">Laguna Favorites</h3>
+        <p>
+          <strong>Buko Pie</strong> – A famous Laguna delicacy made with young coconut meat, sweet cream filling, and flaky golden crust. 
+          Originating in Los Baños, it is best known for its soft texture and fresh coconut flavor.
+          <br>
+          <a href="laguna.html#food" class="see-more">See more →</a>
+        </p>
+      </div>
+
+      <div class="tab-content" id="batangas">
+        <h3 onclick="window.location.href='batangas.html#food'">Batangas Favorites</h3>
+        <p>
+          <strong>Bulalo</strong> – A rich beef marrow soup slow-cooked for hours until tender. 
+          Made with corn, cabbage, and bone marrow, it is especially popular in Tagaytay due to its cool climate.
+          <br>
+          <a href="batangas.html#food" class="see-more">See more →</a>
+        </p>
+      </div>
+
+      <div class="tab-content" id="rizal">
+        <h3 onclick="window.location.href='rizal.html#food'">Rizal Favorites</h3>
+        <p>
+          <strong>Suman</strong> – A traditional rice cake made from sticky rice cooked in coconut milk and wrapped in banana or palm leaves. 
+          Often paired with sugar or ripe mango, it is a common pasalubong from Rizal towns.
+          <br>
+          <a href="rizal.html#food" class="see-more">See more →</a>
+        </p>
+      </div>
+
+      <div class="tab-content" id="quezon">
+        <h3 onclick="window.location.href='quezonprovince.html#food'">Quezon Favorites</h3>
+        <p>
+          <strong>Pancit Habhab</strong> – A signature Lucban noodle dish served on banana leaves and eaten without utensils. 
+          Made with sautéed noodles, pork, and vegetables, it is traditionally topped with vinegar for extra flavor.
+          <br>
+          <a href="quezonprovince.html#food" class="see-more">See more →</a>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="image">
+      <img id="provinceImage" src="img/cavitebacalao.jpg" alt="Province Image">
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="festival-section" id="festivals">
+<h1 class="festival-title">HIGHLIGHTED FESTIVALS IN CALABARZON</h1>
+  <div class="festival-grid">
+    <a href="laguna.html#anilag" class="festival-card">
+      <div class="festival-date-paper">
+        <div class="fold"></div>
+        <div class="month">MARCH</div>
+        <div class="day">15</div>
+      </div>
+      <div class="festival-info">
+        <h2>Laguna</h2>
+        <h3>Anilag Festival</h3>
+        <p>Showcases culture, agriculture, and traditions of Laguna.</p>
+      </div>
+    </a>
+    <a href="quezonprovince.html#pahiyas" class="festival-card">
+      <div class="festival-date-paper">
+        <div class="fold"></div>
+        <div class="month">MAY</div>
+        <div class="day">15</div>
+      </div>
+      <div class="festival-info">
+        <h2>Quezon</h2>
+        <h3>Pahiyas Festival</h3>
+        <p>Colorful harvest festival decorated with rice, fruits, and kiping.</p>
+      </div>
+    </a>
+    <a href="batangas.html#parada" class="festival-card">
+      <div class="festival-date-paper">
+        <div class="fold"></div>
+        <div class="month">JUNE</div>
+        <div class="day">24</div>
+      </div>
+      <div class="festival-info">
+        <h2>Batangas</h2>
+        <h3>Parada ng Lechon</h3>
+        <p>Festive parade of roasted pigs during St. John the Baptist feast.</p>
+      </div>
+    </a>
+    <a href="cavite.html#regada" class="festival-card">
+      <div class="festival-date-paper">
+        <div class="fold"></div>
+        <div class="month">AUG</div>
+        <div class="day">25</div>
+      </div>
+      <div class="festival-info">
+        <h2>Cavite</h2>
+        <h3>Regada Festival</h3>
+        <p>Water festival featuring street games and celebrations.</p>
+      </div>
+    </a>
+    <a href="rizal.html#sumaka" class="festival-card">
+      <div class="festival-date-paper">
+        <div class="fold"></div>
+        <div class="month">NOV</div>
+        <div class="day">23</div>
+      </div>
+      <div class="festival-info">
+        <h2>Rizal</h2>
+        <h3>Sumaka Festival</h3>
+        <p>Celebrates local products like suman, mango, and cashew.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+<section class="faq-section" id="faqs">
+    <h1>Frequently Asked Questions</h1>
+    <p>Quick guide for exploring CALABARZON (Cavite, Laguna, Batangas, Rizal, Quezon).</p>
+
+    <div class="faq-container">
+
+        <!-- LEFT: FAQ -->
+        <div class="faq">
+            <div class="faq-item">
+                <button class="faq-question">1. What makes CALABARZON a popular travel destination?</button>
+                <div class="faq-answer">
+                    <p>CALABARZON is popular because it’s near Metro Manila and offers a mix of beaches, mountains, heritage towns, and nature spots in one region.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">2. Do I need a tour guide when visiting CALABARZON?</button>
+                <div class="faq-answer">
+                    <p>Most destinations can be explored independently, but hiring a local guide is helpful for hiking spots and hidden attractions.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">3. What outdoor activities can I do in CALABARZON?</button>
+                <div class="faq-answer">
+                    <p>You can go hiking in Rizal, island hopping in Batangas, sightseeing in Cavite, waterfall trekking in Laguna, and cultural tours in Quezon.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">4. How many days do I need to explore CALABARZON?</button>
+                <div class="faq-answer">
+                    <p>A 3–5 day trip is ideal for covering multiple provinces, but even a weekend trip can already let you explore one or two destinations.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">5. Are there budget-friendly travel options in CALABARZON?</button>
+                <div class="faq-answer">
+                    <p>Yes, CALABARZON is very budget-friendly with affordable transport, low-cost accommodations, and free natural attractions like beaches and waterfalls.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">6. What is the best time to visit CALABARZON?</button>
+                <div class="faq-answer">
+                    <p>The best time to visit CALABARZON is during the dry season (November to May) when outdoor activities like hiking, beach trips, and sightseeing are more enjoyable.</p>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <!-- RIGHT: SUGGESTION -->
+        <div class="suggestion-item active">
+            <div class="faq-question no-arrow">
+                Still have questions?
+            </div>
+
+            <div class="faq-answer suggestion-content">
+                <p>Send us your suggestions or ask anything 👇</p>
+
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message..." rows="3" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+    <div class="footer-container"> 
+        <div class="row align-items-start">
+            <div class="col-md-6">
+                <div class="footer-brand">CALABARZON Travel</div>
+                <p class="footer-text">
+                    Discover hidden hiking mountains and scenic destinations across South Luzon.
+                </p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <ul class="footer-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Provinces</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 CONCEPCION, ASHLEY D. All rights reserved.
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<script>
+/* =========================
+   NAVBAR SCROLL EFFECT
+========================= */
+window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+
+/* =========================
+   IMAGE SLIDER (FOREGROUND + BACKGROUND)
+========================= */
+const fgImages = document.querySelectorAll(".slide-track img");
+const bgImages = document.querySelectorAll(".bg-track img");
+let index = 0;
+
+function changeSlides() {
+    fgImages.forEach(img => img.classList.remove("active"));
+    bgImages.forEach(img => img.classList.remove("active"));
+
+    fgImages[index].classList.add("active");
+    bgImages[index].classList.add("active");
+
+    index = (index + 1) % fgImages.length;
+}
+
+changeSlides();
+setInterval(changeSlides, 5000);
+</script>
+
+
+<script>
+
+
+
+
+/* =========================
+   TAB SWITCHING (FOOD SECTION)
+========================= */
+function showTab(tabId, imgSrc, el) {
+  document.querySelectorAll('.tab')
+    .forEach(el => el.classList.remove('active'));
+
+  document.querySelectorAll('.tab-content')
+    .forEach(el => el.classList.remove('active'));
+
+  const target = document.getElementById(tabId);
+  if (target) target.classList.add('active');
+
+  if (!el && event && event.currentTarget) {
+    el = event.currentTarget;
+  }
+
+  if (el) el.classList.add('active');
+
+  const img = document.getElementById('provinceImage');
+  if (img) img.src = imgSrc;
+}
+
+
+/* =========================
+   FAQ ACCORDION
+========================= */
+const items = document.querySelectorAll(".faq-item");
+
+items.forEach(item => {
+    const btn = item.querySelector(".faq-question");
+
+    btn.addEventListener("click", () => {
+        items.forEach(i => {
+            if (i !== item) i.classList.remove("active");
+        });
+
+        item.classList.toggle("active");
+    });
+});
+
+
+/* =========================
+   SUGGESTION FORM
+========================= */
+const form = document.querySelector(".suggestion-box form");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Thanks for your message! 💌");
+    form.reset();
+});
+</script>
+</script>
+</script>
 </body>
 </html>
