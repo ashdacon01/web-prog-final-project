@@ -346,6 +346,16 @@ html, body {
 }
 
 
+
+
+
+
+
+
+
+
+
+
 /* =========================
    SPECIALS SECTION
 ========================= */
@@ -487,6 +497,18 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.see-more {
+  display: inline-block;
+  margin-top: 6px;
+  color: #c9a46c;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.see-more:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 900px) {
@@ -744,12 +766,8 @@ html {
   scroll-behavior: smooth;
 }
 </style>
-
-
-
 </head>
 <body>
-
 
 
 <nav class="navbar navbar-expand-lg">
@@ -792,10 +810,11 @@ html {
 </div>
 </nav>
 
+
+
 <div class="tour-hero">
     <h1 class="display-3 fw-bold">Waterfall Escapes in Laguna</h1>
 </div>
-
 
 
 
@@ -921,6 +940,7 @@ html {
         </div>
     </div>
 </div>
+
 <div id="imgModal" class="img-modal">
     <span class="close-btn">&times;</span>
     <img class="modal-content" id="modalImg">
@@ -928,10 +948,12 @@ html {
 
 
 
-
 <section class="section" id="delicacy">
+<div id="food"></div>
   <h1>LAGUNA DELICACY</h1>
+
   <div class="container">
+
     <div class="tabs">
       <div class="tab active" onclick="showTab('espasol','img/lespasol.jpg')">Espasol</div>
       <div class="tab" onclick="showTab('kesongputi', 'img/lkeso.jpg')">Kesong Puti</div>
@@ -939,40 +961,46 @@ html {
     </div>
 
     <div class="content">
-      
+
       <!-- ESPASOL -->
       <div class="tab-content active" id="espasol">
-        <h3 onclick="window.location.href='laguna.html#food'"></h3>
+        <h3>Espasol</h3>
         <p>
           <strong>Espasol</strong> – A soft, cylindrical rice cake made from glutinous rice flour and coconut milk, dusted with toasted rice flour. 
           It has a slightly chewy texture and a rich coconut flavor, making it one of Laguna’s most popular delicacies.
           <br><br>
           <strong>Where to buy:</strong> Espasol is widely available in 
           <em>Los Baños</em>, especially along roadside stalls and local delicacy shops. It is commonly sold as a fresh pasalubong item.
+          <br>
+          <a href="laguna.html#food" class="see-more">See more →</a>
         </p>
       </div>
 
       <!-- KESONG PUTI -->
       <div class="tab-content" id="kesongputi">
-        <h3 onclick="window.location.href='laguna.html#food'"></h3>
+        <h3>Kesong Puti</h3>
         <p>
           <strong>Kesong Puti</strong> – A soft white cheese made from carabao’s milk, known for its mild salty taste and creamy texture. 
           It is often eaten with bread or paired with native delicacies.
           <br><br>
           <strong>Where to buy:</strong> Kesong puti is commonly found in 
           <em>Santa Cruz</em>, <em>Pila</em>, and nearby towns. It is sold in local markets and specialty dairy shops.
+          <br>
+          <a href="laguna.html#food" class="see-more">See more →</a>
         </p>
       </div>
 
       <!-- URARO -->
       <div class="tab-content" id="uraro">
-        <h3 onclick="window.location.href='laguna.html#food'"></h3>
+        <h3>Uraro Cookies</h3>
         <p>
           <strong>Uraro (Arrowroot Cookies)</strong> – A delicate, crumbly cookie made from arrowroot flour, known for its light texture that melts in your mouth. 
           It is a traditional delicacy often enjoyed as a snack or pasalubong.
           <br><br>
           <strong>Where to buy:</strong> Uraro is popular in 
           <em>Pagsanjan</em> and nearby areas, commonly sold in local bakeries and pasalubong centers.
+          <br>
+          <a href="laguna.html#food" class="see-more">See more →</a>
         </p>
       </div>
 
@@ -981,6 +1009,7 @@ html {
     <div class="image">
       <img id="provinceImage" src="img/lespasol.jpg" alt="Province Image">
     </div>
+
   </div>
 </section>
 
@@ -1054,24 +1083,6 @@ These harvest celebrations reflect the strong agricultural roots of Laguna and t
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <footer class="footer">
     <div class="footer-container"> 
         <div class="row align-items-start">
@@ -1097,7 +1108,6 @@ These harvest celebrations reflect the strong agricultural roots of Laguna and t
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
 
 <script>
 /* =========================
@@ -1132,9 +1142,6 @@ setInterval(changeSlides, 5000);
 </script>
 
 
-
-
-
 <script>
 /* =========================
    FESTIVAL MODAL (OPEN)
@@ -1160,8 +1167,6 @@ festivalModal.addEventListener('click', (e) => {
     }
 });
 </script>
-
-
 
 <script>
 /* =========================
@@ -1224,9 +1229,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 </script>
-
-
-
 
 <script>
 /* =========================

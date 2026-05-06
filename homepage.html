@@ -351,6 +351,17 @@ body {
     object-fit: cover;
 }
 
+.see-more {
+  display: inline-block;
+  margin-top: 6px;
+  color: #c9a46c;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.see-more:hover {
+  text-decoration: underline;
+}
 @media (max-width: 900px) {
     .container {
         flex-direction: column;
@@ -884,7 +895,7 @@ body {
             <li><a class="dropdown-item" href="laguna.html">Laguna</a></li>
             <li><a class="dropdown-item" href="batangas.html">Batangas</a></li>
             <li><a class="dropdown-item" href="rizal.html">Rizal</a></li>
-            <li><a class="dropdown-item" href="quezon.html">Quezon</a></li>
+            <li><a class="dropdown-item" href="quezonprovince.html">Quezon</a></li>
           </ul>
         </li>
 
@@ -929,7 +940,6 @@ body {
 
 
 
-
 <section class="hero-section">
     <div class="hero-bg">
         <div class="bg-track">
@@ -960,6 +970,11 @@ body {
 
 
 
+
+
+
+
+
 <section class="section" id="delicacy">
   <h1>HIGHLIGHTED CALABARZON DELICACY</h1>
 
@@ -974,11 +989,14 @@ body {
     </div>
 
     <div class="content">
+
       <div class="tab-content active" id="cavite">
         <h3 onclick="window.location.href='cavite.html#food'">Cavite Favorites</h3>
         <p>
           <strong>Bacalao</strong> – A traditional salt cod dish simmered with potatoes, bell peppers, tomatoes, and olive oil. 
           Introduced during Spanish influence, it is commonly served during special occasions and family gatherings in Cavite.
+          <br>
+          <a href="cavite.html#food" class="see-more">See more →</a>
         </p>
       </div>
 
@@ -987,6 +1005,8 @@ body {
         <p>
           <strong>Buko Pie</strong> – A famous Laguna delicacy made with young coconut meat, sweet cream filling, and flaky golden crust. 
           Originating in Los Baños, it is best known for its soft texture and fresh coconut flavor.
+          <br>
+          <a href="laguna.html#food" class="see-more">See more →</a>
         </p>
       </div>
 
@@ -995,28 +1015,67 @@ body {
         <p>
           <strong>Bulalo</strong> – A rich beef marrow soup slow-cooked for hours until tender. 
           Made with corn, cabbage, and bone marrow, it is especially popular in Tagaytay due to its cool climate.
+          <br>
+          <a href="batangas.html#food" class="see-more">See more →</a>
         </p>
       </div>
+
       <div class="tab-content" id="rizal">
         <h3 onclick="window.location.href='rizal.html#food'">Rizal Favorites</h3>
         <p>
           <strong>Suman</strong> – A traditional rice cake made from sticky rice cooked in coconut milk and wrapped in banana or palm leaves. 
           Often paired with sugar or ripe mango, it is a common pasalubong from Rizal towns.
+          <br>
+          <a href="rizal.html#food" class="see-more">See more →</a>
         </p>
       </div>
+
       <div class="tab-content" id="quezon">
         <h3 onclick="window.location.href='quezonprovince.html#food'">Quezon Favorites</h3>
         <p>
           <strong>Pancit Habhab</strong> – A signature Lucban noodle dish served on banana leaves and eaten without utensils. 
           Made with sautéed noodles, pork, and vegetables, it is traditionally topped with vinegar for extra flavor.
+          <br>
+          <a href="quezonprovince.html#food" class="see-more">See more →</a>
         </p>
       </div>
+
     </div>
+
     <div class="image">
       <img id="provinceImage" src="img/cavitebacalao.jpg" alt="Province Image">
     </div>
+
   </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

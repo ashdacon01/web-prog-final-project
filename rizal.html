@@ -492,6 +492,18 @@ body {
     object-fit: cover;
 }
 
+.see-more {
+  display: inline-block;
+  margin-top: 6px;
+  color: #c9a46c;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.see-more:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
     .container {
         flex-direction: column;
@@ -913,59 +925,69 @@ html {
 </div>
 
 
-
 <section class="section" id="delicacy">
+  <div id="food"></div>
+
   <h1>RIZAL DELICACY</h1>
+
   <div class="container">
+
     <div class="tabs">
-      <div class="tab active" onclick="showTab('cavite','img/sumanibos.jpg')">Suman sa Ibos</div>
-      <div class="tab" onclick="showTab('laguna', 'img/cashew.jpg')">Cashew Nuts</div>
-      <div class="tab" onclick="showTab('batangas', 'img/sapin.jpg')">Sapin-Sapin</div>
+      <div class="tab active" onclick="showTab('suman','img/sumanibos.jpg')">Suman sa Ibos</div>
+      <div class="tab" onclick="showTab('kasoy', 'img/cashew.jpg')">Cashew Nuts</div>
+      <div class="tab" onclick="showTab('sapinsapin', 'img/sapin.jpg')">Sapin-Sapin</div>
     </div>
 
-   <div class="content">
-      
+    <div class="content">
+
       <!-- SUMAN -->
-      <div class="tab-content active" id="cavite">
-        <h3 onclick="window.location.href='rizal.html#food'"></h3>
+      <div class="tab-content active" id="suman">
+        <h3>Suman sa Ibos</h3>
         <p>
           <strong>Suman</strong> – A traditional Filipino rice cake made from glutinous rice and coconut milk, wrapped in palm or banana leaves. 
           It has a soft, slightly sticky texture and is often paired with sugar or ripe mango.
           <br><br>
           <strong>Where to buy:</strong> Suman is widely sold in Rizal, especially in 
           <em>Antipolo</em> and <em>Tanay</em>. It is commonly found in roadside stalls, public markets, and pasalubong centers.
+          <br>
+          <a href="rizal.html#food" class="see-more">See more →</a>
         </p>
       </div>
 
       <!-- KASOY -->
-      <div class="tab-content" id="laguna">
-        <h3 onclick="window.location.href='rizal.html#food'"></h3>
+      <div class="tab-content" id="kasoy">
+        <h3>Cashew Nuts</h3>
         <p>
           <strong>Kasoy (Cashew Nuts)</strong> – Antipolo is known for its locally produced cashew nuts, often roasted, salted, or caramelized. 
           These are popular snacks and are commonly bought as pasalubong by visitors.
           <br><br>
           <strong>Where to buy:</strong> Kasoy is widely available in 
           <em>Antipolo City</em>, especially near churches, tourist areas, and roadside pasalubong shops.
+          <br>
+          <a href="rizal.html#food" class="see-more">See more →</a>
         </p>
       </div>
 
-      <!-- KAKANIN -->
-      <div class="tab-content" id="batangas">
-        <h3 onclick="window.location.href='rizal.html#food'"></h3>
+      <!-- SAPIN-SAPIN -->
+      <div class="tab-content" id="sapinsapin">
+        <h3>Sapin-Sapin</h3>
         <p>
-          <strong>Sapin-sapin</strong> – Rizal is known for its variety of native rice delicacies. 
-          These include kalamay (sweet sticky rice), sapin-sapin (layered rice cake), and palitaw (rice cakes coated with coconut and sugar).
+          <strong>Sapin-sapin</strong> – A colorful layered rice cake made from glutinous rice flour, coconut milk, and sugar. 
+          It is soft, chewy, and often topped with latik (coconut caramel bits).
           <br><br>
           <strong>Where to buy:</strong> These delicacies are commonly sold in 
           <em>Antipolo</em> and nearby towns, especially in local markets and pasalubong centers along major roads.
+          <br>
+          <a href="rizal.html#food" class="see-more">See more →</a>
         </p>
       </div>
 
-</div>
+    </div>
 
     <div class="image">
       <img id="provinceImage" src="img/sumanibos.jpg" alt="Province Image">
     </div>
+
   </div>
 </section>
 
