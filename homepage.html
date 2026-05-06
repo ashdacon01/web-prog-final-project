@@ -66,14 +66,6 @@ html, body {
 
 
 
-
-
-
-
-
-
-
-
 /* =========================
    HERO SECTION (MAIN TOP)
 ========================= */
@@ -108,6 +100,9 @@ html, body {
     color: #fff;
     max-width: 700px;
 }
+
+
+
 
 /* =========================
    HERO SECTION (SECOND / SLIDER)
@@ -209,6 +204,9 @@ html, body {
 .slide-track img.active {
     opacity: 1;
 }
+
+
+
 
 /* =========================
    SPECIALS SECTION
@@ -386,8 +384,6 @@ body {
 
 
 
-
-
 /* =========================
    FESTIVAL SECTION
 ========================= */
@@ -519,37 +515,60 @@ body {
 }
 
 
+
 /* =========================
             FAQS
 ========================= */
 #faqs {
     scroll-margin-top: 90px;
 }
+
 .faq-section {
-    max-width: 950px;
+    max-width: 1500px; /* widened */
     margin: 50px auto 10px;
     text-align: center;
     color: #fff;
-    padding-bottom: 80px;
+    padding: 0 3% 80px; /* slightly tighter sides for wider layout feel */
 }
+
 .faq-section h1 {
     font-size: 42px;
     margin-bottom: 15px;
 }
+
 .faq-section p {
     font-size: 16px;
     color: #b0c4d4;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
+
+/* =========================
+   2-COLUMN LAYOUT
+========================= */
+.faq-container {
+    display: flex;
+    gap: 60px; /* wider separation between FAQ and Suggestion */
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* LEFT SIDE (FAQ) */
 .faq {
+    flex: 1;
+    min-width: 0; /* prevents shrinking issues */
     background: linear-gradient(145deg, #121212, #0e0e0e);
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid rgba(214,180,106,0.18);
+    text-align: left;
 }
+
+/* FAQ ITEMS */
 .faq-item {
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
+
 .faq-question {
     width: 100%;
     background: none;
@@ -562,6 +581,7 @@ body {
     cursor: pointer;
     position: relative;
 }
+
 .faq-question::after {
     content: "▾";
     position: absolute;
@@ -569,9 +589,11 @@ body {
     font-size: 18px;
     transition: transform 0.3s;
 }
+
 .faq-item.active .faq-question::after {
     transform: rotate(180deg);
 }
+
 .faq-answer {
     max-height: 0;
     overflow: hidden;
@@ -580,9 +602,11 @@ body {
     text-align: left;
     padding: 0 30px;
 }
+
 .faq-item.active .faq-answer {
     max-height: 300px;
 }
+
 .faq-answer p {
     margin: 20px 0;
     font-size: 15px;
@@ -590,39 +614,43 @@ body {
     line-height: 1.6;
 }
 
-
-
-
-/* ============================*/
-/* SUGGESTION */
-/* =========================== */
+/* =========================
+   RIGHT SIDE (SUGGESTION)
+========================= */
 .suggestion-item {
-    margin-top: 50px;
+    flex: 1;
+    min-width: 0; /* prevents overflow */
     background: linear-gradient(145deg, #121212, #0e0e0e);
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid rgba(214,180,106,0.18);
+    text-align: left;
 }
+
 .no-arrow::after {
     display: none;
 }
+
 .suggestion-item .faq-answer {
     max-height: none;
     overflow: visible;
     padding: 30px;
     background: transparent;
 }
+
 .suggestion-content p {
     margin: 0 0 15px;
     font-size: 15px;
     color: #bcd0df;
     line-height: 1.6;
 }
+
 .suggestion-content form {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
+
 .suggestion-content input,
 .suggestion-content textarea {
     width: 100%;
@@ -634,10 +662,12 @@ body {
     font-size: 14px;
     font-family: inherit;
 }
+
 .suggestion-content input::placeholder,
 .suggestion-content textarea::placeholder {
     color: #8fa6b8;
 }
+
 .suggestion-content button {
     align-self: flex-start;
     background: #c9a46c;
@@ -649,9 +679,26 @@ body {
     cursor: pointer;
     transition: 0.3s;
 }
+
 .suggestion-content button:hover {
     background: #e0b97a;
 }
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    .faq-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .faq-section {
+        padding: 0 5% 80px;
+    }
+}
+
+
 
 
 
@@ -807,18 +854,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <div id="top"></div>
 
 <nav class="navbar navbar-expand-lg">
@@ -880,22 +915,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="hero">
     <div class="hero-image">
         <img src="img/qp/Bundok_Banahawss.jpg" alt="Mount Banahaw">
@@ -907,8 +926,6 @@ body {
         <p class="lead">Cavite • Laguna • Batangas • Rizal • Quezon</p>
     </div>
 </div>
-
-
 
 
 
@@ -940,9 +957,6 @@ body {
         </div>
     </div>
 </section>
-
-
-
 
 
 
@@ -1075,58 +1089,79 @@ body {
 </section>
 
 
-
 <section class="faq-section" id="faqs">
     <h1>Frequently Asked Questions</h1>
     <p>Quick guide for exploring CALABARZON (Cavite, Laguna, Batangas, Rizal, Quezon).</p>
-    <div class="faq">
-        <div class="faq-item">
-            <button class="faq-question">1. What makes CALABARZON a popular travel destination?</button>
-            <div class="faq-answer">
-                <p>CALABARZON is popular because it’s near Metro Manila and offers a mix of beaches, mountains, heritage towns, and nature spots in one region.</p>
+
+    <div class="faq-container">
+
+        <!-- LEFT: FAQ -->
+        <div class="faq">
+            <div class="faq-item">
+                <button class="faq-question">1. What makes CALABARZON a popular travel destination?</button>
+                <div class="faq-answer">
+                    <p>CALABARZON is popular because it’s near Metro Manila and offers a mix of beaches, mountains, heritage towns, and nature spots in one region.</p>
+                </div>
             </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">2. Do I need a tour guide when visiting CALABARZON?</button>
-            <div class="faq-answer">
-                <p>Most destinations can be explored independently, but hiring a local guide is helpful for hiking spots and hidden attractions.</p>
+
+            <div class="faq-item">
+                <button class="faq-question">2. Do I need a tour guide when visiting CALABARZON?</button>
+                <div class="faq-answer">
+                    <p>Most destinations can be explored independently, but hiring a local guide is helpful for hiking spots and hidden attractions.</p>
+                </div>
             </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">3. What outdoor activities can I do in CALABARZON?</button>
-            <div class="faq-answer">
-                <p>You can go hiking in Rizal, island hopping in Batangas, sightseeing in Cavite, waterfall trekking in Laguna, and cultural tours in Quezon.</p>
+
+            <div class="faq-item">
+                <button class="faq-question">3. What outdoor activities can I do in CALABARZON?</button>
+                <div class="faq-answer">
+                    <p>You can go hiking in Rizal, island hopping in Batangas, sightseeing in Cavite, waterfall trekking in Laguna, and cultural tours in Quezon.</p>
+                </div>
             </div>
+
+            <div class="faq-item">
+                <button class="faq-question">4. How many days do I need to explore CALABARZON?</button>
+                <div class="faq-answer">
+                    <p>A 3–5 day trip is ideal for covering multiple provinces, but even a weekend trip can already let you explore one or two destinations.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">5. Are there budget-friendly travel options in CALABARZON?</button>
+                <div class="faq-answer">
+                    <p>Yes, CALABARZON is very budget-friendly with affordable transport, low-cost accommodations, and free natural attractions like beaches and waterfalls.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">6. What is the best time to visit CALABARZON?</button>
+                <div class="faq-answer">
+                    <p>The best time to visit CALABARZON is during the dry season (November to May) when outdoor activities like hiking, beach trips, and sightseeing are more enjoyable.</p>
+                </div>
+            </div>
+
+
+
+
         </div>
-        <div class="faq-item">
-            <button class="faq-question">4. How many days do I need to explore CALABARZON?</button>
-            <div class="faq-answer">
-                <p>A 3–5 day trip is ideal for covering multiple provinces, but even a weekend trip can already let you explore one or two destinations.</p>
+
+        <!-- RIGHT: SUGGESTION -->
+        <div class="suggestion-item active">
+            <div class="faq-question no-arrow">
+                Still have questions?
+            </div>
+
+            <div class="faq-answer suggestion-content">
+                <p>Send us your suggestions or ask anything 👇</p>
+
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message..." rows="3" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
         </div>
 
-        <div class="faq-item">
-            <button class="faq-question">5. Are there budget-friendly travel options in CALABARZON?</button>
-            <div class="faq-answer">
-                <p>Yes, CALABARZON is very budget-friendly with affordable transport, low-cost accommodations, and free natural attractions like beaches and waterfalls.</p>
-            </div>
-        </div>
-    </div>
-    <div class="suggestion-item active">
-        <div class="faq-question no-arrow">
-            Still have questions?
-        </div>
-
-        <div class="faq-answer suggestion-content">
-            <p>Send us your suggestions or ask anything 👇</p>
-
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message..." rows="3" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
     </div>
 </section>
 
